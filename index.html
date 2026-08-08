@@ -592,6 +592,37 @@
                 font-size: 0.85rem;
             }
         }
+
+/* Neon Pulse Modal Styles */
+.neon-iframe-container {
+    width: 100%;
+    height: 70vh;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+}
+
+.neon-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Loading spinner for iframe */
+.iframe-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(204, 34, 34, 0.1);
+    border-top: 3px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    pointer-events: none;
+}
     </style>
 </head>
 <body>
@@ -710,7 +741,9 @@
                 A selection of work that reflects my philosophy — clean, immersive,
                 and built with purpose.
             </p>
-                       <!-- NEON PULSE MODAL -->
+               
+
+            <!-- NEON PULSE MODAL -->
 <div class="modal-overlay" id="neonModal">
     <div class="modal-content" style="max-width: 95%; padding: 20px;">
         <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
@@ -727,10 +760,10 @@
         </div>
     </div>
 </div>
- <!--><div class="projects-grid">
+<!--<div class="projects-grid">
                 <div class="project-card glass">
                     <span class="icon">⚡</span>
-                    <h3>Neon Pulse</h3>
+                    <h3> Neon Pulse</h3>
                     <p>Real-time WebGL particle system with audio reactivity.</p>
                 </div><-->
                 <div class="project-card glass">
@@ -803,18 +836,7 @@
   <button type="submit" class="btn btn-primary"
     
     >Submit</button>
-                </form>
-
-
-
-
-
-
-
-
-
-
-                
+                </form>   
               <!--  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — I\'ll get back to you soon.');">
                     <input type="text" placeholder="Name" required />
                     <input type="email" placeholder="Email" required />
