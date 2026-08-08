@@ -829,10 +829,17 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <div class="project-card glass">
+                <!-- VOID CMS CARD -->
+                <div class="project-card glass" id="voidCmsTrigger">
                     <span class="icon">🖤</span>
                     <h3>Void CMS</h3>
                     <p>Headless CMS with a dark, minimal admin interface.</p>
+                    <div class="tech-tags">
+                        <span>Headless</span>
+                        <span>CRUD</span>
+                        <span>Minimal</span>
+                    </div>
+                    <p class="launch-hint">▶ Click to launch</p>
                 </div>
             </div>
         </div>
@@ -906,6 +913,30 @@
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Zen Flow.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="zenFlowModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    VOID CMS MODAL
+    ============================================================ -->
+    <div class="modal-overlay" id="voidCmsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="voidCmsModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">🖤 Void <span class="accent">CMS</span></h2>
+            
+            <div class="project-iframe-container">
+                <div class="iframe-loader" id="voidCmsLoader"></div>
+                <iframe 
+                    id="voidCmsIframe"
+                    src="Void CMS.html"
+                    allow="autoplay; fullscreen"
+                ></iframe>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="Void CMS.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="voidCmsModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1224,11 +1255,53 @@
             zenFlowLoader.classList.add('hidden');
         });
 
+        // ============================================================
+        // 9. VOID CMS MODAL CONTROLS
+        // ============================================================
+        const voidCmsModal = document.getElementById('voidCmsModal');
+        const voidCmsTrigger = document.getElementById('voidCmsTrigger');
+        const voidCmsClose = document.getElementById('voidCmsModalClose');
+        const voidCmsCloseBtn = document.getElementById('voidCmsModalCloseBtn');
+        const voidCmsIframe = document.getElementById('voidCmsIframe');
+        const voidCmsLoader = document.getElementById('voidCmsLoader');
+
+        function openVoidCmsModal() {
+            voidCmsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            voidCmsLoader.classList.remove('hidden');
+            const src = voidCmsIframe.src;
+            voidCmsIframe.src = '';
+            setTimeout(() => { voidCmsIframe.src = src; }, 100);
+        }
+
+        function closeVoidCmsModal() {
+            voidCmsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        voidCmsTrigger.addEventListener('click', openVoidCmsModal);
+        voidCmsClose.addEventListener('click', closeVoidCmsModal);
+        voidCmsCloseBtn.addEventListener('click', closeVoidCmsModal);
+
+        voidCmsModal.addEventListener('click', (e) => {
+            if (e.target === voidCmsModal) closeVoidCmsModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && voidCmsModal.classList.contains('active')) {
+                closeVoidCmsModal();
+            }
+        });
+
+        voidCmsIframe.addEventListener('load', function() {
+            voidCmsLoader.classList.add('hidden');
+        });
+
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('⚡ Neon Pulse · WebGL particles');
         console.log('🌀 Kuro · AI Calligraphy');
         console.log('🌊 Zen Flow · Ambient Soundscapes');
-        console.log('🖤 Void CMS · Coming soon');
+        console.log('🖤 Void CMS · Headless CMS');
         console.log('✨ Portfolio ready for deployment!');
     </script>
 </body>
