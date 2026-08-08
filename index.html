@@ -482,8 +482,21 @@
             color: var(--accent);
             margin-top: 8px;
         }
+        .project-card .tech-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .project-card .tech-tags span {
+            background: rgba(204, 34, 34, 0.15);
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
 
-        /* ---------- NEON MODAL ---------- */
+        /* ---------- MODAL (reusable) ---------- */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -526,7 +539,7 @@
             color: var(--text-primary);
         }
 
-        .neon-iframe-container {
+        .project-iframe-container {
             width: 100%;
             height: 70vh;
             border-radius: 12px;
@@ -534,7 +547,7 @@
             background: #000;
             position: relative;
         }
-        .neon-iframe-container iframe {
+        .project-iframe-container iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -649,7 +662,7 @@
             .nav-links {
                 display: none;
             }
-            .neon-iframe-container {
+            .project-iframe-container {
                 height: 50vh;
             }
         }
@@ -668,7 +681,7 @@
                 padding: 12px 24px;
                 font-size: 0.85rem;
             }
-            .neon-iframe-container {
+            .project-iframe-container {
                 height: 40vh;
             }
         }
@@ -777,24 +790,32 @@
                 and built with purpose.
             </p>
             <div class="projects-grid">
-                <!-- NEON PULSE CARD - Clickable -->
+                <!-- NEON PULSE CARD -->
                 <div class="project-card glass" id="neonPulseTrigger">
                     <span class="icon">⚡</span>
                     <h3>Neon Pulse</h3>
                     <p>Real-time WebGL particle system with audio reactivity.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
-                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">Three.js</span>
-                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">WebGL</span>
-                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">Audio</span>
+                    <div class="tech-tags">
+                        <span>Three.js</span>
+                        <span>WebGL</span>
+                        <span>Audio</span>
                     </div>
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <div class="project-card glass">
+                <!-- KURO CARD -->
+                <div class="project-card glass" id="kuroTrigger">
                     <span class="icon">🌀</span>
                     <h3>Kuro</h3>
                     <p>AI-powered Japanese calligraphy generator using GANs.</p>
+                    <div class="tech-tags">
+                        <span>GAN</span>
+                        <span>Canvas</span>
+                        <span>AI</span>
+                    </div>
+                    <p class="launch-hint">▶ Click to launch</p>
                 </div>
+
                 <div class="project-card glass">
                     <span class="icon">🌊</span>
                     <h3>Zen Flow</h3>
@@ -809,15 +830,16 @@
         </div>
     </section>
 
-    <!-- NEON PULSE MODAL -->
+    <!-- ============================================================
+    NEON PULSE MODAL
+    ============================================================ -->
     <div class="modal-overlay" id="neonModal">
         <div class="modal-content">
             <button class="modal-close" id="neonModalClose">✕</button>
             <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
             
-            <!-- Iframe Container -->
-            <div class="neon-iframe-container">
-                <div class="iframe-loader" id="iframeLoader"></div>
+            <div class="project-iframe-container">
+                <div class="iframe-loader" id="neonLoader"></div>
                 <iframe 
                     id="neonIframe"
                     src="Neon Pulse.html"
@@ -828,6 +850,30 @@
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Neon Pulse.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="neonModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    KURO MODAL
+    ============================================================ -->
+    <div class="modal-overlay" id="kuroModal">
+        <div class="modal-content">
+            <button class="modal-close" id="kuroModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">🌀 Kuro <span class="accent">· AI Calligraphy</span></h2>
+            
+            <div class="project-iframe-container">
+                <div class="iframe-loader" id="kuroLoader"></div>
+                <iframe 
+                    id="kuroIframe"
+                    src="Kuro.html"
+                    allow="autoplay; fullscreen"
+                ></iframe>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="Kuro.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="kuroModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1021,64 +1067,93 @@
         })();
 
         // ============================================================
-        // 6. NEON PULSE MODAL CONTROLS (FIXED)
+        // 6. NEON PULSE MODAL CONTROLS
         // ============================================================
         const neonModal = document.getElementById('neonModal');
         const neonTrigger = document.getElementById('neonPulseTrigger');
         const neonClose = document.getElementById('neonModalClose');
         const neonCloseBtn = document.getElementById('neonModalCloseBtn');
         const neonIframe = document.getElementById('neonIframe');
-        const iframeLoader = document.getElementById('iframeLoader');
+        const neonLoader = document.getElementById('neonLoader');
 
-        // Open Modal
         function openNeonModal() {
             neonModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
-            // Show loader
-            iframeLoader.classList.remove('hidden');
-            
-            // Reload iframe to reset animation
+            neonLoader.classList.remove('hidden');
             const src = neonIframe.src;
             neonIframe.src = '';
-            setTimeout(() => {
-                neonIframe.src = src;
-            }, 100);
+            setTimeout(() => { neonIframe.src = src; }, 100);
         }
 
-        // Close Modal
         function closeNeonModal() {
             neonModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // Event Listeners
         neonTrigger.addEventListener('click', openNeonModal);
         neonClose.addEventListener('click', closeNeonModal);
         neonCloseBtn.addEventListener('click', closeNeonModal);
 
-        // Close on overlay click
         neonModal.addEventListener('click', (e) => {
             if (e.target === neonModal) closeNeonModal();
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && neonModal.classList.contains('active')) {
                 closeNeonModal();
             }
         });
 
-        // Hide loader when iframe loads
         neonIframe.addEventListener('load', function() {
-            iframeLoader.classList.add('hidden');
+            neonLoader.classList.add('hidden');
+        });
+
+        // ============================================================
+        // 7. KURO MODAL CONTROLS
+        // ============================================================
+        const kuroModal = document.getElementById('kuroModal');
+        const kuroTrigger = document.getElementById('kuroTrigger');
+        const kuroClose = document.getElementById('kuroModalClose');
+        const kuroCloseBtn = document.getElementById('kuroModalCloseBtn');
+        const kuroIframe = document.getElementById('kuroIframe');
+        const kuroLoader = document.getElementById('kuroLoader');
+
+        function openKuroModal() {
+            kuroModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            kuroLoader.classList.remove('hidden');
+            const src = kuroIframe.src;
+            kuroIframe.src = '';
+            setTimeout(() => { kuroIframe.src = src; }, 100);
+        }
+
+        function closeKuroModal() {
+            kuroModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        kuroTrigger.addEventListener('click', openKuroModal);
+        kuroClose.addEventListener('click', closeKuroModal);
+        kuroCloseBtn.addEventListener('click', closeKuroModal);
+
+        kuroModal.addEventListener('click', (e) => {
+            if (e.target === kuroModal) closeKuroModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && kuroModal.classList.contains('active')) {
+                closeKuroModal();
+            }
+        });
+
+        kuroIframe.addEventListener('load', function() {
+            kuroLoader.classList.add('hidden');
         });
 
         console.log('🔥 Phase 1 · Foundation ready.');
         console.log('⚡ Neon Pulse · Modal with iframe loaded.');
+        console.log('🌀 Kuro · AI Calligraphy modal loaded.');
         console.log('🖤 Next: Cinematic Engine (rain, lightning, particles)');
-        console.log('🌀 Then: Sharingan & Amaterasu');
-        console.log('🐦 Then: Crow System');
         console.log('✨ Finally: Portfolio polish & optimization');
     </script>
 </body>
