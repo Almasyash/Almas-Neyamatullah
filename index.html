@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Almas Neyamatullah · Cinematic Portfolio</title>
 
-    <!-- ============================================================
-    FONTS · Japanese + Western
-    ============================================================ -->
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,700;14..32,900&display=swap" rel="stylesheet" />
 
-    <!-- ============================================================
-    STYLES
-    ============================================================ -->
     <style>
         /* ---------- RESET / BASE ---------- */
         *,
@@ -446,6 +441,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         .project-card::before {
             content: '';
@@ -480,6 +476,84 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             font-weight: 300;
+        }
+        .project-card .launch-hint {
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-top: 8px;
+        }
+
+        /* ---------- NEON MODAL ---------- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            max-width: 95%;
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            font-family: var(--font-en);
+            z-index: 10;
+        }
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .neon-iframe-container {
+            width: 100%;
+            height: 70vh;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+        .neon-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .iframe-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(204, 34, 34, 0.1);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            pointer-events: none;
+        }
+        .iframe-loader.hidden {
+            display: none;
         }
 
         /* ---------- CONTACT ---------- */
@@ -575,6 +649,9 @@
             .nav-links {
                 display: none;
             }
+            .neon-iframe-container {
+                height: 50vh;
+            }
         }
         @media (max-width: 500px) {
             .stat-grid {
@@ -591,63 +668,27 @@
                 padding: 12px 24px;
                 font-size: 0.85rem;
             }
+            .neon-iframe-container {
+                height: 40vh;
+            }
         }
-
-/* Neon Pulse Modal Styles */
-.neon-iframe-container {
-    width: 100%;
-    height: 70vh;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-    position: relative;
-}
-
-.neon-iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Loading spinner for iframe */
-.iframe-loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(204, 34, 34, 0.1);
-    border-top: 3px solid var(--accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    pointer-events: none;
-}
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    PRELOADER
-    ============================================================ -->
+    <!-- PRELOADER -->
     <div id="preloader" aria-hidden="true">
         <div class="ring"></div>
         <div class="jp-text">静寂</div>
     </div>
 
-    <!-- ============================================================
-    CUSTOM CURSOR
-    ============================================================ -->
+    <!-- CUSTOM CURSOR -->
     <div id="cursor"></div>
 
-    <!-- ============================================================
-    RAIN CANVAS (background)
-    ============================================================ -->
+    <!-- RAIN CANVAS -->
     <canvas id="rain-canvas"></canvas>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header id="header" role="banner">
         <div class="container nav-inner">
             <a href="#" class="logo">闇<span>·</span>Almas</a>
@@ -659,9 +700,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    HERO
-    ============================================================ -->
+    <!-- HERO -->
     <section id="hero">
         <div class="container hero-content">
             <div class="jp-kicker">── 魂のコード</div>
@@ -679,9 +718,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    ABOUT
-    ============================================================ -->
+    <!-- ABOUT -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">About<span class="accent">.</span></h2>
@@ -731,9 +768,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    PROJECTS
-    ============================================================ -->
+    <!-- PROJECTS -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Projects<span class="accent">.</span></h2>
@@ -741,31 +776,20 @@
                 A selection of work that reflects my philosophy — clean, immersive,
                 and built with purpose.
             </p>
-               
-
-            <!-- NEON PULSE MODAL -->
-<div class="modal-overlay" id="neonModal">
-    <div class="modal-content" style="max-width: 95%; padding: 20px;">
-        <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
-        <!-- Iframe Container -->
-        <div class="neon-iframe-container">
-            <iframe 
-                id="neonIframe"
-                src="Neon Pulse.html"
-                allow="autoplay; fullscreen"
-            ></iframe>
-        </div>
-        <div>
-            <a href="Neon Pulse.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-        </div>
-    </div>
-</div>
-<!--<div class="projects-grid">
-                <div class="project-card glass">
+            <div class="projects-grid">
+                <!-- NEON PULSE CARD - Clickable -->
+                <div class="project-card glass" id="neonPulseTrigger">
                     <span class="icon">⚡</span>
-                    <h3> Neon Pulse</h3>
+                    <h3>Neon Pulse</h3>
                     <p>Real-time WebGL particle system with audio reactivity.</p>
-                </div><-->
+                    <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">Three.js</span>
+                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">WebGL</span>
+                        <span style="background: rgba(204,34,34,0.15); padding: 2px 12px; border-radius: 12px; font-size: 0.7rem; color: var(--text-secondary);">Audio</span>
+                    </div>
+                    <p class="launch-hint">▶ Click to launch</p>
+                </div>
+
                 <div class="project-card glass">
                     <span class="icon">🌀</span>
                     <h3>Kuro</h3>
@@ -785,9 +809,30 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    CONTACT — UPDATED DETAILS
-    ============================================================ -->
+    <!-- NEON PULSE MODAL -->
+    <div class="modal-overlay" id="neonModal">
+        <div class="modal-content">
+            <button class="modal-close" id="neonModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
+            
+            <!-- Iframe Container -->
+            <div class="neon-iframe-container">
+                <div class="iframe-loader" id="iframeLoader"></div>
+                <iframe 
+                    id="neonIframe"
+                    src="Neon Pulse.html"
+                    allow="autoplay; fullscreen"
+                ></iframe>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="Neon Pulse.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="neonModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact<span class="accent">.</span></h2>
@@ -801,55 +846,35 @@
                         or a good conversation over coffee (virtual or otherwise).
                     </p>
                     <div class="contact-links">
-                        <!-- UPDATED: email -->
                         <a href="mailto:almasneyamt786@gmail.com">
                             <span class="emoji">📧</span> almasneyamt786@gmail.com
                         </a>
-                        <!-- UPDATED: GitHub -->
                         <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer">
                             <span class="emoji">🐙</span> github.com/Almasyash
                         </a>
-                        <!-- UPDATED: LinkedIn (placeholder username) -->
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <span class="emoji">🔗</span> linkedin.com/in/yourusername
                         </a>
-                        <!-- UPDATED: Portfolio -->
                         <a href="https://almasyash.github.io/Almas-Neyamatullah/" target="_blank" rel="noopener noreferrer">
                             <span class="emoji">🌐</span> almasyash.github.io/Almas-Neyamatullah
                         </a>
-                        <!-- optional resume (kept as placeholder) -->
-                        <a href="MD Elmas cv.pdf" target="_blank" rel="noopener noreferrer" >
+                        <a href="MD Elmas cv.pdf" target="_blank" rel="noopener noreferrer">
                             <span class="emoji">📄</span> Resume (PDF)
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm"
-  
-  action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="5c46b6a0-eed7-4253-952b-b2b50e0fb2ba">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="Email"
-    required>
-  <textarea placeholder="Your Message" required
-    
-    name="message" required></textarea>
-  <button type="submit" class="btn btn-primary"
-    
-    >Submit</button>
-                </form>   
-              <!--  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — I\'ll get back to you soon.');">
-                    <input type="text" placeholder="Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form><-->
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="5c46b6a0-eed7-4253-952b-b2b50e0fb2ba">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea placeholder="Your Message" name="message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>
@@ -859,21 +884,15 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    SCRIPTS
-    ============================================================ -->
+    <!-- SCRIPTS -->
     <script>
-        // ------------------------------------------------------------
         // 1. PRELOADER
-        // ------------------------------------------------------------
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             preloader.classList.add('hidden');
         });
 
-        // ------------------------------------------------------------
         // 2. CUSTOM CURSOR
-        // ------------------------------------------------------------
         (function initCursor() {
             const cursor = document.getElementById('cursor');
             if (!cursor) return;
@@ -892,7 +911,6 @@
                 cursor.style.display = 'none';
             });
 
-            // Hover effect on interactive elements
             document.querySelectorAll('a, .btn, .project-card, .skill-tag, .stat-card').forEach((el) => {
                 el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
                 el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
@@ -907,9 +925,7 @@
             animateCursor();
         })();
 
-        // ------------------------------------------------------------
-        // 3. RAIN CANVAS (performance-friendly)
-        // ------------------------------------------------------------
+        // 3. RAIN CANVAS
         (function initRain() {
             const canvas = document.getElementById('rain-canvas');
             const ctx = canvas.getContext('2d');
@@ -961,9 +977,7 @@
             drawRain();
         })();
 
-        // ------------------------------------------------------------
-        // 4. HEADER HIDE ON SCROLL DOWN
-        // ------------------------------------------------------------
+        // 4. HEADER HIDE ON SCROLL
         (function headerScroll() {
             const header = document.getElementById('header');
             let lastScroll = 0;
@@ -986,9 +1000,7 @@
             });
         })();
 
-        // ------------------------------------------------------------
-        // 5. SMOOTH REVEAL (Intersection Observer)
-        // ------------------------------------------------------------
+        // 5. SMOOTH REVEAL
         (function revealOnScroll() {
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries) => {
@@ -1008,11 +1020,62 @@
             });
         })();
 
-        // ------------------------------------------------------------
-        // 6. (Placeholder) future: Sharingan, Amaterasu, Crows, etc.
-        //     These will be added in later phases.
-        // ------------------------------------------------------------
+        // ============================================================
+        // 6. NEON PULSE MODAL CONTROLS (FIXED)
+        // ============================================================
+        const neonModal = document.getElementById('neonModal');
+        const neonTrigger = document.getElementById('neonPulseTrigger');
+        const neonClose = document.getElementById('neonModalClose');
+        const neonCloseBtn = document.getElementById('neonModalCloseBtn');
+        const neonIframe = document.getElementById('neonIframe');
+        const iframeLoader = document.getElementById('iframeLoader');
+
+        // Open Modal
+        function openNeonModal() {
+            neonModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Show loader
+            iframeLoader.classList.remove('hidden');
+            
+            // Reload iframe to reset animation
+            const src = neonIframe.src;
+            neonIframe.src = '';
+            setTimeout(() => {
+                neonIframe.src = src;
+            }, 100);
+        }
+
+        // Close Modal
+        function closeNeonModal() {
+            neonModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event Listeners
+        neonTrigger.addEventListener('click', openNeonModal);
+        neonClose.addEventListener('click', closeNeonModal);
+        neonCloseBtn.addEventListener('click', closeNeonModal);
+
+        // Close on overlay click
+        neonModal.addEventListener('click', (e) => {
+            if (e.target === neonModal) closeNeonModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && neonModal.classList.contains('active')) {
+                closeNeonModal();
+            }
+        });
+
+        // Hide loader when iframe loads
+        neonIframe.addEventListener('load', function() {
+            iframeLoader.classList.add('hidden');
+        });
+
         console.log('🔥 Phase 1 · Foundation ready.');
+        console.log('⚡ Neon Pulse · Modal with iframe loaded.');
         console.log('🖤 Next: Cinematic Engine (rain, lightning, particles)');
         console.log('🌀 Then: Sharingan & Amaterasu');
         console.log('🐦 Then: Crow System');
