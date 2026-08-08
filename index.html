@@ -816,11 +816,19 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <div class="project-card glass">
+                <!-- ZEN FLOW CARD -->
+                <div class="project-card glass" id="zenFlowTrigger">
                     <span class="icon">🌊</span>
                     <h3>Zen Flow</h3>
                     <p>Meditation app with dynamic ambient soundscapes.</p>
+                    <div class="tech-tags">
+                        <span>Web Audio</span>
+                        <span>Ambient</span>
+                        <span>Meditation</span>
+                    </div>
+                    <p class="launch-hint">▶ Click to launch</p>
                 </div>
+
                 <div class="project-card glass">
                     <span class="icon">🖤</span>
                     <h3>Void CMS</h3>
@@ -866,14 +874,38 @@
                 <div class="iframe-loader" id="kuroLoader"></div>
                 <iframe 
                     id="kuroIframe"
-                    src="kuro.html"
+                    src="Kuro.html"
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
             
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="kuro.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <a href="Kuro.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="kuroModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    ZEN FLOW MODAL
+    ============================================================ -->
+    <div class="modal-overlay" id="zenFlowModal">
+        <div class="modal-content">
+            <button class="modal-close" id="zenFlowModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">🌊 Zen <span class="accent">Flow</span></h2>
+            
+            <div class="project-iframe-container">
+                <div class="iframe-loader" id="zenFlowLoader"></div>
+                <iframe 
+                    id="zenFlowIframe"
+                    src="Zen Flow.html"
+                    allow="autoplay; fullscreen"
+                ></iframe>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="Zen Flow.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="zenFlowModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1150,11 +1182,54 @@
             kuroLoader.classList.add('hidden');
         });
 
-        console.log('🔥 Phase 1 · Foundation ready.');
-        console.log('⚡ Neon Pulse · Modal with iframe loaded.');
-        console.log('🌀 Kuro · AI Calligraphy modal loaded.');
-        console.log('🖤 Next: Cinematic Engine (rain, lightning, particles)');
-        console.log('✨ Finally: Portfolio polish & optimization');
+        // ============================================================
+        // 8. ZEN FLOW MODAL CONTROLS
+        // ============================================================
+        const zenFlowModal = document.getElementById('zenFlowModal');
+        const zenFlowTrigger = document.getElementById('zenFlowTrigger');
+        const zenFlowClose = document.getElementById('zenFlowModalClose');
+        const zenFlowCloseBtn = document.getElementById('zenFlowModalCloseBtn');
+        const zenFlowIframe = document.getElementById('zenFlowIframe');
+        const zenFlowLoader = document.getElementById('zenFlowLoader');
+
+        function openZenFlowModal() {
+            zenFlowModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            zenFlowLoader.classList.remove('hidden');
+            const src = zenFlowIframe.src;
+            zenFlowIframe.src = '';
+            setTimeout(() => { zenFlowIframe.src = src; }, 100);
+        }
+
+        function closeZenFlowModal() {
+            zenFlowModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        zenFlowTrigger.addEventListener('click', openZenFlowModal);
+        zenFlowClose.addEventListener('click', closeZenFlowModal);
+        zenFlowCloseBtn.addEventListener('click', closeZenFlowModal);
+
+        zenFlowModal.addEventListener('click', (e) => {
+            if (e.target === zenFlowModal) closeZenFlowModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && zenFlowModal.classList.contains('active')) {
+                closeZenFlowModal();
+            }
+        });
+
+        zenFlowIframe.addEventListener('load', function() {
+            zenFlowLoader.classList.add('hidden');
+        });
+
+        console.log('🔥 Portfolio · All projects loaded!');
+        console.log('⚡ Neon Pulse · WebGL particles');
+        console.log('🌀 Kuro · AI Calligraphy');
+        console.log('🌊 Zen Flow · Ambient Soundscapes');
+        console.log('🖤 Void CMS · Coming soon');
+        console.log('✨ Portfolio ready for deployment!');
     </script>
 </body>
 </html>
