@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Pulse · WebGL Audio Reactivity</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    #info {
+      position: fixed;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      letter-spacing: 2px;
+      pointer-events: none;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+      z-index: 10;
+      backdrop-filter: blur(2px);
+    }
+    #info span {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+    #upload-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 20;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: rgba(10, 10, 20, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 8px 16px 8px 20px;
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      pointer-events: auto;
+    }
+    #upload-container label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #upload-container label:hover {
+      color: white;
+    }
+    #upload-container input[type="file"] {
+      display: none;
+    }
+    #file-name {
+      color: #8af0ff;
+      font-size: 12px;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      opacity: 0.8;
+    }
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #00f0ff;
+      border-radius: 50%;
+      animation: pulse-dot 1.6s ease-in-out infinite;
+      box-shadow: 0 0 16px #00f0ff88;
+    }
+    @keyframes pulse-dot {
+      0% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.3; transform: scale(0.8); }
+    }
+  </style>
+</head>
+<body>
+  <div id="upload-container">
+    <label for="audio-upload">
+      <span class="pulse-dot"></span> 
+      <span>UPLOAD AUDIO</span>
+    </label>
+    <input type="file" id="audio-upload" accept="audio/*">
+    <span id="file-name">no track</span>
+  </div>
+  <div id="info"><span>NEON PULSE · real-time particle synth</span></div>
+
+  <!-- Import Three.js and add-ons from CDN -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.126.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.126.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    // --- SETUP SCENE ---
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x050510);
+
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1.2, 4.5);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    document.body.prepend(renderer.domElement);
+
+    // subtle controls for interactivity (optional, but adds to experience)
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.8;
+    controls.enableZoom = true;
+    controls.enablePan = false;
+    controls.target.set(0, 0, 0);
+    controls.update();
+
+    // --- LIGHTS (for subtle glow on particles, though points are self-illuminated) ---
+    const ambient = new THREE.AmbientLight(0x404060);
+    scene.add(ambient);
+    const backLight = new THREE.PointLight(0x4466ff, 0.5);
+    backLight.position.set(-2, 1, -3);
+    scene.add(backLight);
+
+    // --- CREATE PARTICLE SYSTEM ---
+    const particleCount = 6500;
+    const geometry = new THREE.BufferGeometry();
+
+    // positions: sphere distribution with some randomness
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const sizes = new Float32Array(particleCount);
+    const randoms = new Float32Array(particleCount); // for animation variety
+
+    const color1 = new THREE.Color(0x00f0ff); // cyan
+    const color2 = new THREE.Color(0xff44aa); // hot pink
+
+    for (let i = 0; i < particleCount; i++) {
+      // spherical distribution with radius between 1.2 and 2.8
+      const radius = 1.6 + Math.random() * 1.6;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
+
+      positions[i*3] = x;
+      positions[i*3+1] = y;
+      positions[i*3+2] = z;
+
+      // mix colors based on position
+      const mixVal = (y / 3.0 + 0.5) * 0.8 + 0.2 * Math.random();
+      const col = color1.clone().lerp(color2, mixVal);
+      colors[i*3] = col.r;
+      colors[i*3+1] = col.g;
+      colors[i*3+2] = col.b;
+
+      sizes[i] = 0.08 + Math.random() * 0.18;
+      randoms[i] = Math.random() * Math.PI * 2;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1));
+
+    // custom shader material for soft glowing points with audio reactivity
+    const vertexShader = `
+      attribute float size;
+      attribute vec3 color;
+      attribute float aRandom;
+
+      uniform float uTime;
+      uniform float uAudioLow;
+      uniform float uAudioMid;
+      uniform float uAudioHigh;
+      uniform float uAudioEnergy;
+
+      varying vec3 vColor;
+
+      void main() {
+        vColor = color;
+
+        // original position
+        vec3 pos = position;
+
+        // audio-driven pulse: expand/contract based on low + mid
+        float pulse = 1.0 + 0.12 * uAudioLow + 0.08 * uAudioMid;
+        // add a subtle wave based on time and random offset
+        float wave = sin(uTime * 1.2 + aRandom * 4.0) * 0.04;
+        pulse += wave * 0.3;
+
+        // high frequencies add shimmer displacement
+        float shimmer = uAudioHigh * 0.2;
+        vec3 dir = normalize(pos);
+        pos += dir * (pulse - 1.0) * 0.8;
+        // tangential shimmer
+        vec3 tangent = normalize(cross(dir, vec3(0.0, 1.0, 0.0)));
+        if (length(tangent) < 0.1) tangent = normalize(cross(dir, vec3(1.0, 0.0, 0.0)));
+        pos += tangent * shimmer * 0.3;
+
+        // size modulation by audio energy
+        float sizeMod = 1.0 + 0.6 * uAudioEnergy;
+        float finalSize = size * sizeMod * (0.9 + 0.2 * sin(uTime * 2.0 + aRandom));
+
+        vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+        gl_PointSize = finalSize * (300.0 / -mvPosition.z);
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    `;
+
+    const fragmentShader = `
+      varying vec3 vColor;
+
+      uniform float uTime;
+      uniform float uAudioEnergy;
+
+      void main() {
+        // soft circular point with glow
+        vec2 center = gl_PointCoord - vec2(0.5);
+        float dist = length(center);
+        if (dist > 0.5) discard;
+
+        // glow falloff
+        float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+        alpha = pow(alpha, 1.5);
+        // extra bright core
+        float core = 1.0 - smoothstep(0.0, 0.2, dist);
+        vec3 color = vColor + vec3(0.4, 0.6, 1.0) * core * 0.5;
+
+        // audio energy adds a white flash to the core
+        float flash = uAudioEnergy * 0.3 * (1.0 - dist * 1.2);
+        color += vec3(0.8, 0.9, 1.0) * flash;
+
+        // subtle time-varying hue shift
+        float hueShift = sin(uTime * 0.5 + dist * 8.0) * 0.04;
+        color += vec3(hueShift * 0.5, 0.0, -hueShift * 0.3);
+
+        gl_FragColor = vec4(color, alpha * 0.95);
+      }
+    `;
+
+    const uniforms = {
+      uTime: { value: 0 },
+      uAudioLow: { value: 0 },
+      uAudioMid: { value: 0 },
+      uAudioHigh: { value: 0 },
+      uAudioEnergy: { value: 0 }
+    };
+
+    const material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
+
+    const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+
+    // --- ADD SOME BACKGROUND STARS (static) for depth ---
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 800;
+    const starPos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const r = 6 + Math.random() * 12;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      starPos[i*3] = r * Math.sin(phi) * Math.cos(theta);
+      starPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+      starPos[i*3+2] = r * Math.cos(phi);
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({
+      color: 0x88aaff,
+      size: 0.06,
+      transparent: true,
+      opacity: 0.3,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const stars = new THREE.Points(starGeo, starMat);
+    scene.add(stars);
+
+    // --- AUDIO SETUP ---
+    let audioContext = null;
+    let analyser = null;
+    let dataArray = null;
+    let source = null;
+    let isAudioReady = false;
+    let audioBuffer = null;
+
+    // frequency bands
+    let lowSum = 0, midSum = 0, highSum = 0, energy = 0;
+
+    function initAudio() {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+      }
+    }
+
+    function processAudio() {
+      if (!analyser || !isAudioReady) return;
+      analyser.getByteFrequencyData(dataArray);
+      
+      const len = dataArray.length;
+      let low = 0, mid = 0, high = 0;
+      const lowEnd = Math.floor(len * 0.3);
+      const midEnd = Math.floor(len * 0.7);
+      
+      for (let i = 0; i < lowEnd; i++) low += dataArray[i];
+      for (let i = lowEnd; i < midEnd; i++) mid += dataArray[i];
+      for (let i = midEnd; i < len; i++) high += dataArray[i];
+      
+      low = low / lowEnd / 255;
+      mid = mid / (midEnd - lowEnd) / 255;
+      high = high / (len - midEnd) / 255;
+      
+      // smooth and scale
+      lowSum = lowSum * 0.7 + low * 0.3;
+      midSum = midSum * 0.7 + mid * 0.3;
+      highSum = highSum * 0.7 + high * 0.3;
+      energy = (lowSum + midSum + highSum) / 3;
+      
+      // clamp
+      lowSum = Math.min(lowSum, 1.0);
+      midSum = Math.min(midSum, 1.0);
+      highSum = Math.min(highSum, 1.0);
+      energy = Math.min(energy, 1.0);
+      
+      // update uniforms
+      uniforms.uAudioLow.value = lowSum * 0.8;
+      uniforms.uAudioMid.value = midSum * 0.6;
+      uniforms.uAudioHigh.value = highSum * 0.5;
+      uniforms.uAudioEnergy.value = energy * 0.7;
+    }
+
+    // Handle file upload
+    const fileInput = document.getElementById('audio-upload');
+    const fileNameDisplay = document.getElementById('file-name');
+
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      fileNameDisplay.textContent = file.name.length > 18 ? file.name.slice(0, 16) + '…' : file.name;
+      
+      try {
+        initAudio();
+        // resume context if suspended
+        if (audioContext && audioContext.state === 'suspended') {
+          await audioContext.resume();
+        }
+        
+        const arrayBuffer = await file.arrayBuffer();
+        audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        
+        // disconnect any previous source
+        if (source) {
+          try { source.disconnect(); } catch(e) {}
+        }
+        
+        source = audioContext.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(analyser);
+        analyser.connect(audioContext.destination);
+        source.loop = true;
+        source.start(0);
+        isAudioReady = true;
+        
+        // update UI
+        document.querySelector('#upload-container label span:last-child').textContent = '▶ PLAYING';
+        document.querySelector('#upload-container label span:last-child').style.color = '#8af0ff';
+        
+      } catch (err) {
+        console.warn('Audio error:', err);
+        fileNameDisplay.textContent = '⚠️ error';
+        isAudioReady = false;
+      }
+    });
+
+    // Also try to resume audio on any user interaction (for autoplay policy)
+    document.addEventListener('click', () => {
+      if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+    });
+    document.addEventListener('touchstart', () => {
+      if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+    });
+
+    // --- RESIZE HANDLER ---
+    window.addEventListener('resize', onWindowResize, false);
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    // --- ANIMATION LOOP ---
+    let clock = new THREE.Clock();
+
+    function animate() {
+      const delta = clock.getDelta();
+      const elapsedTime = performance.now() / 1000;
+      
+      // update uniforms
+      uniforms.uTime.value = elapsedTime * 0.6;
+      
+      // process audio data
+      processAudio();
+      
+      // auto-rotate with controls
+      controls.update();
+      
+      // subtle star rotation
+      stars.rotation.y += delta * 0.008;
+      stars.rotation.x += delta * 0.003;
+      
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // --- INITIAL DEMO: generate some dummy audio data so particles move even without file ---
+    // we'll feed a gentle synthetic pulse
+    setInterval(() => {
+      if (!isAudioReady) {
+        // generate fake audio data for visual feedback
+        const t = performance.now() / 1000;
+        const fakeLow = 0.3 + 0.2 * Math.sin(t * 0.8) + 0.1 * Math.sin(t * 1.7);
+        const fakeMid = 0.2 + 0.25 * Math.sin(t * 1.2 + 1.2) + 0.1 * Math.sin(t * 2.3);
+        const fakeHigh = 0.15 + 0.15 * Math.sin(t * 2.5 + 0.7) + 0.1 * Math.sin(t * 4.1);
+        const fakeEnergy = (fakeLow + fakeMid + fakeHigh) / 3;
+        uniforms.uAudioLow.value = fakeLow * 0.6;
+        uniforms.uAudioMid.value = fakeMid * 0.5;
+        uniforms.uAudioHigh.value = fakeHigh * 0.4;
+        uniforms.uAudioEnergy.value = fakeEnergy * 0.5;
+      }
+    }, 50);
+
+    console.log('🚀 Neon Pulse active · upload audio to drive the particles!');
+  </script>
+</body>
+</html>
