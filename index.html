@@ -432,7 +432,7 @@
         /* ---------- PROJECTS ---------- */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -829,15 +829,15 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <!-- VOID CMS CARD -->
-                <div class="project-card glass" id="voidCmsTrigger">
-                    <span class="icon">🖤</span>
-                    <h3>Void CMS</h3>
-                    <p>Headless CMS with a dark, minimal admin interface.</p>
+                <!-- TO-DO LIST CARD (replaces Void CMS) -->
+                <div class="project-card glass" id="todoListTrigger">
+                    <span class="icon">✅</span>
+                    <h3>To-Do List</h3>
+                    <p>Productive task manager with local storage & smart filters.</p>
                     <div class="tech-tags">
-                        <span>Headless</span>
+                        <span>LocalStorage</span>
                         <span>CRUD</span>
-                        <span>Minimal</span>
+                        <span>Filters</span>
                     </div>
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
@@ -918,25 +918,25 @@
     </div>
 
     <!-- ============================================================
-    VOID CMS MODAL
+    TO-DO LIST MODAL (replaces Void CMS)
     ============================================================ -->
-    <div class="modal-overlay" id="voidCmsModal">
+    <div class="modal-overlay" id="todoListModal">
         <div class="modal-content">
-            <button class="modal-close" id="voidCmsModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">🖤 Void <span class="accent">CMS</span></h2>
+            <button class="modal-close" id="todoListModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">✅ To-Do <span class="accent">List</span></h2>
             
             <div class="project-iframe-container">
-                <div class="iframe-loader" id="voidCmsLoader"></div>
+                <div class="iframe-loader" id="todoListLoader"></div>
                 <iframe 
-                    id="voidCmsIframe"
-                    src="Void CMS.html"
+                    id="todoListIframe"
+                    src="Todo List App.html"
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
             
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Void CMS.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="voidCmsModalCloseBtn">Close</button>
+                <a href="Todo List App.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="todoListModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1256,52 +1256,52 @@
         });
 
         // ============================================================
-        // 9. VOID CMS MODAL CONTROLS
+        // 9. TO-DO LIST MODAL CONTROLS (replaces Void CMS)
         // ============================================================
-        const voidCmsModal = document.getElementById('voidCmsModal');
-        const voidCmsTrigger = document.getElementById('voidCmsTrigger');
-        const voidCmsClose = document.getElementById('voidCmsModalClose');
-        const voidCmsCloseBtn = document.getElementById('voidCmsModalCloseBtn');
-        const voidCmsIframe = document.getElementById('voidCmsIframe');
-        const voidCmsLoader = document.getElementById('voidCmsLoader');
+        const todoListModal = document.getElementById('todoListModal');
+        const todoListTrigger = document.getElementById('todoListTrigger');
+        const todoListClose = document.getElementById('todoListModalClose');
+        const todoListCloseBtn = document.getElementById('todoListModalCloseBtn');
+        const todoListIframe = document.getElementById('todoListIframe');
+        const todoListLoader = document.getElementById('todoListLoader');
 
-        function openVoidCmsModal() {
-            voidCmsModal.classList.add('active');
+        function openTodoListModal() {
+            todoListModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            voidCmsLoader.classList.remove('hidden');
-            const src = voidCmsIframe.src;
-            voidCmsIframe.src = '';
-            setTimeout(() => { voidCmsIframe.src = src; }, 100);
+            todoListLoader.classList.remove('hidden');
+            const src = todoListIframe.src;
+            todoListIframe.src = '';
+            setTimeout(() => { todoListIframe.src = src; }, 100);
         }
 
-        function closeVoidCmsModal() {
-            voidCmsModal.classList.remove('active');
+        function closeTodoListModal() {
+            todoListModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        voidCmsTrigger.addEventListener('click', openVoidCmsModal);
-        voidCmsClose.addEventListener('click', closeVoidCmsModal);
-        voidCmsCloseBtn.addEventListener('click', closeVoidCmsModal);
+        todoListTrigger.addEventListener('click', openTodoListModal);
+        todoListClose.addEventListener('click', closeTodoListModal);
+        todoListCloseBtn.addEventListener('click', closeTodoListModal);
 
-        voidCmsModal.addEventListener('click', (e) => {
-            if (e.target === voidCmsModal) closeVoidCmsModal();
+        todoListModal.addEventListener('click', (e) => {
+            if (e.target === todoListModal) closeTodoListModal();
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && voidCmsModal.classList.contains('active')) {
-                closeVoidCmsModal();
+            if (e.key === 'Escape' && todoListModal.classList.contains('active')) {
+                closeTodoListModal();
             }
         });
 
-        voidCmsIframe.addEventListener('load', function() {
-            voidCmsLoader.classList.add('hidden');
+        todoListIframe.addEventListener('load', function() {
+            todoListLoader.classList.add('hidden');
         });
 
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('⚡ Neon Pulse · WebGL particles');
         console.log('🌀 Kuro · AI Calligraphy');
         console.log('🌊 Zen Flow · Ambient Soundscapes');
-        console.log('🖤 Void CMS · Headless CMS');
+        console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');
     </script>
 </body>
