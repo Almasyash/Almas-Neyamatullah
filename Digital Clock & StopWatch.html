@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock & Stopwatch</title>
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0b1120 0%, #1a2639 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 40px;
+      padding: 40px 35px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+      color: #f0f3fa;
+      text-align: center;
+    }
+
+    /* ----- TABS / SWITCHER ----- */
+    .tab {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px;
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: white;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    /* ----- SECTIONS ----- */
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    /* ----- CLOCK STYLES ----- */
+    .clock-display {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #a78bfa, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 20px 0 10px;
+    }
+
+    .date-display {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    /* ----- STOPWATCH STYLES ----- */
+    .stopwatch-display {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f1f5f9;
+      margin: 20px 0 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .sw-btn {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      color: white;
+    }
+
+    .btn-start {
+      background: linear-gradient(135deg, #10b981, #059669);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+    }
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-stop {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+    }
+    .btn-stop:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-reset {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+    }
+    .btn-reset:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 500px) {
+      .clock-display {
+        font-size: 2.6rem;
+      }
+      .stopwatch-display {
+        font-size: 2.8rem;
+      }
+      .container {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation Tabs -->
+  <div class="tab">
+    <button class="tab-btn active" onclick="switchTab('clock')">Digital Clock</button>
+    <button class="tab-btn" onclick="switchTab('stopwatch')">Stopwatch</button>
+  </div>
+
+  <!-- Clock Section -->
+  <div id="clockSection" class="section active">
+    <div class="clock-display" id="clockTime">00:00:00 AM</div>
+    <div class="date-display" id="clockDate">Loading date...</div>
+  </div>
+
+  <!-- Stopwatch Section -->
+  <div id="stopwatchSection" class="section">
+    <div class="stopwatch-display" id="swDisplay">00:00:00</div>
+    <div class="btn-group">
+      <button class="sw-btn btn-start" id="startBtn">Start</button>
+      <button class="sw-btn btn-stop" id="stopBtn">Stop</button>
+      <button class="sw-btn btn-reset" id="resetBtn">Reset</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ==================== TAB SWITCHING LOGIC ====================
+  function switchTab(tabName) {
+    const clockSec = document.getElementById('clockSection');
+    const swSec = document.getElementById('stopwatchSection');
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    if (tabName === 'clock') {
+      clockSec.classList.add('active');
+      swSec.classList.remove('active');
+      buttons[0].classList.add('active');
+    } else {
+      swSec.classList.add('active');
+      clockSec.classList.remove('active');
+      buttons[1].classList.add('active');
+    }
+  }
+
+  // ==================== DIGITAL CLOCK LOGIC ====================
+  function updateClock() {
+    const now = new Date();
+    
+    // Time formatting
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const formattedHours = String(hours).padStart(2, '0');
+
+    document.getElementById('clockTime').textContent = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
+
+    // Date formatting
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('clockDate').textContent = now.toLocaleDateString('en-US', options);
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock(); // Initial call
+
+  // ==================== STOPWATCH LOGIC ====================
+  let startTime = 0;
+  let elapsedTime = 0;
+  let timerInterval = null;
+  let isRunning = false;
+
+  const swDisplay = document.getElementById('swDisplay');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const resetBtn = document.getElementById('resetBtn');
+
+  function formatTime(time) {
+    const milliseconds = Math.floor((time % 1000) / 10);
+    const seconds = Math.floor((time / 1000) % 60);
+    const minutes = Math.floor((time / (1000 * 60)) % 60);
+
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(2, '0')}`;
+  }
+
+  startBtn.addEventListener('click', () => {
+    if (!isRunning) {
+      startTime = Date.now() - elapsedTime;
+      timerInterval = setInterval(() => {
+        elapsedTime = Date.now() - startTime;
+        swDisplay.textContent = formatTime(elapsedTime);
+      }, 10);
+      isRunning = true;
+    }
+  });
+
+  stopBtn.addEventListener('click', () => {
+    if (isRunning) {
+      clearInterval(timerInterval);
+      isRunning = false;
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    startTime = 0;
+    elapsedTime = 0;
+    isRunning = false;
+    swDisplay.textContent = "00:00:00";
+  });
+</script>
+
+</body>
+</html>
