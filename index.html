@@ -803,15 +803,15 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <!-- KURO CARD -->
-                <div class="project-card glass" id="kuroTrigger">
-                    <span class="icon">🌀</span>
-                    <h3>Kuro</h3>
-                    <p>AI-powered Japanese calligraphy generator using GANs.</p>
+                <!-- DIGITAL CLOCK & STOPWATCH CARD (replaces Kuro) -->
+                <div class="project-card glass" id="clockStopwatchTrigger">
+                    <span class="icon">⏰</span>
+                    <h3>Clock & Stopwatch</h3>
+                    <p>Digital clock with date &amp; stopwatch with millisecond precision.</p>
                     <div class="tech-tags">
-                        <span>GAN</span>
-                        <span>Canvas</span>
-                        <span>AI</span>
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                        <span>HTML</span>
                     </div>
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
@@ -829,7 +829,7 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <!-- TO-DO LIST CARD (replaces Void CMS) -->
+                <!-- TO-DO LIST CARD -->
                 <div class="project-card glass" id="todoListTrigger">
                     <span class="icon">✅</span>
                     <h3>To-Do List</h3>
@@ -852,7 +852,6 @@
         <div class="modal-content">
             <button class="modal-close" id="neonModalClose">✕</button>
             <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
-            
             <div class="project-iframe-container">
                 <div class="iframe-loader" id="neonLoader"></div>
                 <iframe 
@@ -861,7 +860,6 @@
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
-            
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Neon Pulse.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="neonModalCloseBtn">Close</button>
@@ -870,25 +868,23 @@
     </div>
 
     <!-- ============================================================
-    KURO MODAL
+    CLOCK & STOPWATCH MODAL (replaces Kuro)
     ============================================================ -->
-    <div class="modal-overlay" id="kuroModal">
+    <div class="modal-overlay" id="clockStopwatchModal">
         <div class="modal-content">
-            <button class="modal-close" id="kuroModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">🌀 Kuro <span class="accent">· AI Calligraphy</span></h2>
-            
+            <button class="modal-close" id="clockStopwatchModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">⏰ Digital <span class="accent">Clock &amp; Stopwatch</span></h2>
             <div class="project-iframe-container">
-                <div class="iframe-loader" id="kuroLoader"></div>
+                <div class="iframe-loader" id="clockStopwatchLoader"></div>
                 <iframe 
-                    id="kuroIframe"
-                    src="kuro.html"
+                    id="clockStopwatchIframe"
+                    src="Digital Clock & Stopwatch.html"
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
-            
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="kuro.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="kuroModalCloseBtn">Close</button>
+                <a href="Digital Clock & Stopwatch.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="clockStopwatchModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -900,7 +896,6 @@
         <div class="modal-content">
             <button class="modal-close" id="zenFlowModalClose">✕</button>
             <h2 style="margin-bottom: 15px;">🌊 Zen <span class="accent">Flow</span></h2>
-            
             <div class="project-iframe-container">
                 <div class="iframe-loader" id="zenFlowLoader"></div>
                 <iframe 
@@ -909,7 +904,6 @@
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
-            
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Zen Flow.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="zenFlowModalCloseBtn">Close</button>
@@ -918,13 +912,12 @@
     </div>
 
     <!-- ============================================================
-    TO-DO LIST MODAL (replaces Void CMS)
+    TO-DO LIST MODAL
     ============================================================ -->
     <div class="modal-overlay" id="todoListModal">
         <div class="modal-content">
             <button class="modal-close" id="todoListModalClose">✕</button>
             <h2 style="margin-bottom: 15px;">✅ To-Do <span class="accent">List</span></h2>
-            
             <div class="project-iframe-container">
                 <div class="iframe-loader" id="todoListLoader"></div>
                 <iframe 
@@ -933,7 +926,6 @@
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
-            
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Todo List App.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="todoListModalCloseBtn">Close</button>
@@ -1172,45 +1164,45 @@
         });
 
         // ============================================================
-        // 7. KURO MODAL CONTROLS
+        // 7. CLOCK & STOPWATCH MODAL CONTROLS (replaces Kuro)
         // ============================================================
-        const kuroModal = document.getElementById('kuroModal');
-        const kuroTrigger = document.getElementById('kuroTrigger');
-        const kuroClose = document.getElementById('kuroModalClose');
-        const kuroCloseBtn = document.getElementById('kuroModalCloseBtn');
-        const kuroIframe = document.getElementById('kuroIframe');
-        const kuroLoader = document.getElementById('kuroLoader');
+        const clockStopwatchModal = document.getElementById('clockStopwatchModal');
+        const clockStopwatchTrigger = document.getElementById('clockStopwatchTrigger');
+        const clockStopwatchClose = document.getElementById('clockStopwatchModalClose');
+        const clockStopwatchCloseBtn = document.getElementById('clockStopwatchModalCloseBtn');
+        const clockStopwatchIframe = document.getElementById('clockStopwatchIframe');
+        const clockStopwatchLoader = document.getElementById('clockStopwatchLoader');
 
-        function openKuroModal() {
-            kuroModal.classList.add('active');
+        function openClockStopwatchModal() {
+            clockStopwatchModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            kuroLoader.classList.remove('hidden');
-            const src = kuroIframe.src;
-            kuroIframe.src = '';
-            setTimeout(() => { kuroIframe.src = src; }, 100);
+            clockStopwatchLoader.classList.remove('hidden');
+            const src = clockStopwatchIframe.src;
+            clockStopwatchIframe.src = '';
+            setTimeout(() => { clockStopwatchIframe.src = src; }, 100);
         }
 
-        function closeKuroModal() {
-            kuroModal.classList.remove('active');
+        function closeClockStopwatchModal() {
+            clockStopwatchModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        kuroTrigger.addEventListener('click', openKuroModal);
-        kuroClose.addEventListener('click', closeKuroModal);
-        kuroCloseBtn.addEventListener('click', closeKuroModal);
+        clockStopwatchTrigger.addEventListener('click', openClockStopwatchModal);
+        clockStopwatchClose.addEventListener('click', closeClockStopwatchModal);
+        clockStopwatchCloseBtn.addEventListener('click', closeClockStopwatchModal);
 
-        kuroModal.addEventListener('click', (e) => {
-            if (e.target === kuroModal) closeKuroModal();
+        clockStopwatchModal.addEventListener('click', (e) => {
+            if (e.target === clockStopwatchModal) closeClockStopwatchModal();
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && kuroModal.classList.contains('active')) {
-                closeKuroModal();
+            if (e.key === 'Escape' && clockStopwatchModal.classList.contains('active')) {
+                closeClockStopwatchModal();
             }
         });
 
-        kuroIframe.addEventListener('load', function() {
-            kuroLoader.classList.add('hidden');
+        clockStopwatchIframe.addEventListener('load', function() {
+            clockStopwatchLoader.classList.add('hidden');
         });
 
         // ============================================================
@@ -1256,7 +1248,7 @@
         });
 
         // ============================================================
-        // 9. TO-DO LIST MODAL CONTROLS (replaces Void CMS)
+        // 9. TO-DO LIST MODAL CONTROLS
         // ============================================================
         const todoListModal = document.getElementById('todoListModal');
         const todoListTrigger = document.getElementById('todoListTrigger');
@@ -1299,7 +1291,7 @@
 
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('⚡ Neon Pulse · WebGL particles');
-        console.log('🌀 Kuro · AI Calligraphy');
+        console.log('⏰ Clock & Stopwatch · Digital time tools');
         console.log('🌊 Zen Flow · Ambient Soundscapes');
         console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');
