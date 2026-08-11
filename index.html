@@ -803,7 +803,20 @@
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
 
-                <!-- DIGITAL CLOCK & STOPWATCH CARD (replaces Kuro) -->
+                <!-- DR. MUGDHA MOHAN CARD (replaces Zen Flow) -->
+                <div class="project-card glass" id="drMugdhaTrigger">
+                    <span class="icon">💎</span>
+                    <h3>Dr. Mugdha Mohan</h3>
+                    <p>Skin Care Centre — Best Dermatologist in Bettiah.</p>
+                    <div class="tech-tags">
+                        <span>Healthcare</span>
+                        <span>SEO</span>
+                        <span>Booking</span>
+                    </div>
+                    <p class="launch-hint">▶ Click to launch</p>
+                </div>
+
+                <!-- DIGITAL CLOCK & STOPWATCH CARD -->
                 <div class="project-card glass" id="clockStopwatchTrigger">
                     <span class="icon">⏰</span>
                     <h3>Clock & Stopwatch</h3>
@@ -812,19 +825,6 @@
                         <span>JavaScript</span>
                         <span>CSS</span>
                         <span>HTML</span>
-                    </div>
-                    <p class="launch-hint">▶ Click to launch</p>
-                </div>
-
-                <!-- ZEN FLOW CARD -->
-                <div class="project-card glass" id="zenFlowTrigger">
-                    <span class="icon">🌊</span>
-                    <h3>Zen Flow</h3>
-                    <p>Meditation app with dynamic ambient soundscapes.</p>
-                    <div class="tech-tags">
-                        <span>Web Audio</span>
-                        <span>Ambient</span>
-                        <span>Meditation</span>
                     </div>
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
@@ -868,7 +868,29 @@
     </div>
 
     <!-- ============================================================
-    CLOCK & STOPWATCH MODAL (replaces Kuro)
+    DR. MUGDHA MOHAN MODAL (replaces Zen Flow)
+    ============================================================ -->
+    <div class="modal-overlay" id="drMugdhaModal">
+        <div class="modal-content">
+            <button class="modal-close" id="drMugdhaModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">💎 Dr. Mugdha Mohan <span class="accent">Skin Care Centre</span></h2>
+            <div class="project-iframe-container">
+                <div class="iframe-loader" id="drMugdhaLoader"></div>
+                <iframe 
+                    id="drMugdhaIframe"
+                    src="Dr. Mugdha Mohan.html"
+                    allow="autoplay; fullscreen"
+                ></iframe>
+            </div>
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="Dr. Mugdha Mohan.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="drMugdhaModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    CLOCK & STOPWATCH MODAL
     ============================================================ -->
     <div class="modal-overlay" id="clockStopwatchModal">
         <div class="modal-content">
@@ -885,28 +907,6 @@
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="Digital Clock & StopWatch.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
                 <button class="btn btn-outline" id="clockStopwatchModalCloseBtn">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-    ZEN FLOW MODAL
-    ============================================================ -->
-    <div class="modal-overlay" id="zenFlowModal">
-        <div class="modal-content">
-            <button class="modal-close" id="zenFlowModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">🌊 Zen <span class="accent">Flow</span></h2>
-            <div class="project-iframe-container">
-                <div class="iframe-loader" id="zenFlowLoader"></div>
-                <iframe 
-                    id="zenFlowIframe"
-                    src="Zen Flow.html"
-                    allow="autoplay; fullscreen"
-                ></iframe>
-            </div>
-            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Zen Flow.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="zenFlowModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1164,7 +1164,49 @@
         });
 
         // ============================================================
-        // 7. CLOCK & STOPWATCH MODAL CONTROLS (replaces Kuro)
+        // 7. DR. MUGDHA MOHAN MODAL CONTROLS (replaces Zen Flow)
+        // ============================================================
+        const drMugdhaModal = document.getElementById('drMugdhaModal');
+        const drMugdhaTrigger = document.getElementById('drMugdhaTrigger');
+        const drMugdhaClose = document.getElementById('drMugdhaModalClose');
+        const drMugdhaCloseBtn = document.getElementById('drMugdhaModalCloseBtn');
+        const drMugdhaIframe = document.getElementById('drMugdhaIframe');
+        const drMugdhaLoader = document.getElementById('drMugdhaLoader');
+
+        function openDrMugdhaModal() {
+            drMugdhaModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            drMugdhaLoader.classList.remove('hidden');
+            const src = drMugdhaIframe.src;
+            drMugdhaIframe.src = '';
+            setTimeout(() => { drMugdhaIframe.src = src; }, 100);
+        }
+
+        function closeDrMugdhaModal() {
+            drMugdhaModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        drMugdhaTrigger.addEventListener('click', openDrMugdhaModal);
+        drMugdhaClose.addEventListener('click', closeDrMugdhaModal);
+        drMugdhaCloseBtn.addEventListener('click', closeDrMugdhaModal);
+
+        drMugdhaModal.addEventListener('click', (e) => {
+            if (e.target === drMugdhaModal) closeDrMugdhaModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && drMugdhaModal.classList.contains('active')) {
+                closeDrMugdhaModal();
+            }
+        });
+
+        drMugdhaIframe.addEventListener('load', function() {
+            drMugdhaLoader.classList.add('hidden');
+        });
+
+        // ============================================================
+        // 8. CLOCK & STOPWATCH MODAL CONTROLS
         // ============================================================
         const clockStopwatchModal = document.getElementById('clockStopwatchModal');
         const clockStopwatchTrigger = document.getElementById('clockStopwatchTrigger');
@@ -1203,48 +1245,6 @@
 
         clockStopwatchIframe.addEventListener('load', function() {
             clockStopwatchLoader.classList.add('hidden');
-        });
-
-        // ============================================================
-        // 8. ZEN FLOW MODAL CONTROLS
-        // ============================================================
-        const zenFlowModal = document.getElementById('zenFlowModal');
-        const zenFlowTrigger = document.getElementById('zenFlowTrigger');
-        const zenFlowClose = document.getElementById('zenFlowModalClose');
-        const zenFlowCloseBtn = document.getElementById('zenFlowModalCloseBtn');
-        const zenFlowIframe = document.getElementById('zenFlowIframe');
-        const zenFlowLoader = document.getElementById('zenFlowLoader');
-
-        function openZenFlowModal() {
-            zenFlowModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            zenFlowLoader.classList.remove('hidden');
-            const src = zenFlowIframe.src;
-            zenFlowIframe.src = '';
-            setTimeout(() => { zenFlowIframe.src = src; }, 100);
-        }
-
-        function closeZenFlowModal() {
-            zenFlowModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        zenFlowTrigger.addEventListener('click', openZenFlowModal);
-        zenFlowClose.addEventListener('click', closeZenFlowModal);
-        zenFlowCloseBtn.addEventListener('click', closeZenFlowModal);
-
-        zenFlowModal.addEventListener('click', (e) => {
-            if (e.target === zenFlowModal) closeZenFlowModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && zenFlowModal.classList.contains('active')) {
-                closeZenFlowModal();
-            }
-        });
-
-        zenFlowIframe.addEventListener('load', function() {
-            zenFlowLoader.classList.add('hidden');
         });
 
         // ============================================================
@@ -1291,8 +1291,8 @@
 
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('⚡ Neon Pulse · WebGL particles');
+        console.log('💎 Dr. Mugdha Mohan · Skin Care Centre');
         console.log('⏰ Clock & Stopwatch · Digital time tools');
-        console.log('🌊 Zen Flow · Ambient Soundscapes');
         console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');
     </script>
