@@ -790,18 +790,22 @@
                 and built with purpose.
             </p>
             <div class="projects-grid">
-                <!-- NEON PULSE CARD -->
-                <div class="project-card glass" id="neonPulseTrigger">
-                    <span class="icon">⚡</span>
-                    <h3>Neon Pulse</h3>
-                    <p>Real-time WebGL particle system with audio reactivity.</p>
+                
+
+                <!-- RIGID FITNESS CLUB CARD -->
+                <div class="project-card glass" id="rigidFitnessTrigger">
+                    <span class="icon">🏋️</span>
+                    <h3>Rigid Fitness Club</h3>
+                    <p>Premium gym & fitness center website in Bettiah with membership plans, trainers, and BMI calculator.</p>
                     <div class="tech-tags">
-                        <span>Three.js</span>
-                        <span>WebGL</span>
-                        <span>Audio</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
                     </div>
                     <p class="launch-hint">▶ Click to launch</p>
                 </div>
+
 
                 <!-- DR. MUGDHA MOHAN CARD (replaces Zen Flow) -->
                 <div class="project-card glass" id="drMugdhaTrigger">
@@ -846,23 +850,24 @@
     </section>
 
     <!-- ============================================================
-    NEON PULSE MODAL
+    RIGID FITNESS CLUB MODAL
     ============================================================ -->
-    <div class="modal-overlay" id="neonModal">
+    <div class="modal-overlay" id="rigidFitnessModal">
         <div class="modal-content">
-            <button class="modal-close" id="neonModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">⚡ Neon <span class="accent">Pulse</span></h2>
+            <button class="modal-close" id="rigidFitnessModalClose">✕</button>
+            <h2 style="margin-bottom: 15px;">🏋️ Rigid Fitness Club <span class="accent">Gym Website</span></h2>
             <div class="project-iframe-container">
-                <div class="iframe-loader" id="neonLoader"></div>
+                <div class="iframe-loader" id="rigidFitnessLoader"></div>
                 <iframe 
-                    id="neonIframe"
-                    src="Neon Pulse.html"
+                    id="rigidFitnessIframe"
+                    src=""
+                    data-src="Rigid-Fitness-Club.html"
                     allow="autoplay; fullscreen"
                 ></iframe>
             </div>
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Neon Pulse.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="neonModalCloseBtn">Close</button>
+                <a href="Rigid-Fitness-Club.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+                <button class="btn btn-outline" id="rigidFitnessModalCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -1122,45 +1127,45 @@
         })();
 
         // ============================================================
-        // 6. NEON PULSE MODAL CONTROLS
+        // 6. RIGID FITNESS CLUB MODAL CONTROLS
         // ============================================================
-        const neonModal = document.getElementById('neonModal');
-        const neonTrigger = document.getElementById('neonPulseTrigger');
-        const neonClose = document.getElementById('neonModalClose');
-        const neonCloseBtn = document.getElementById('neonModalCloseBtn');
-        const neonIframe = document.getElementById('neonIframe');
-        const neonLoader = document.getElementById('neonLoader');
+        const rigidFitnessModal = document.getElementById('rigidFitnessModal');
+        const rigidFitnessTrigger = document.getElementById('rigidFitnessTrigger');
+        const rigidFitnessClose = document.getElementById('rigidFitnessModalClose');
+        const rigidFitnessCloseBtn = document.getElementById('rigidFitnessModalCloseBtn');
+        const rigidFitnessIframe = document.getElementById('rigidFitnessIframe');
+        const rigidFitnessLoader = document.getElementById('rigidFitnessLoader');
 
-        function openNeonModal() {
-            neonModal.classList.add('active');
+        function openRigidFitnessModal() {
+            rigidFitnessModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            neonLoader.classList.remove('hidden');
-            const src = neonIframe.src;
-            neonIframe.src = '';
-            setTimeout(() => { neonIframe.src = src; }, 100);
+            rigidFitnessLoader.classList.remove('hidden');
+            const targetSrc = rigidFitnessIframe.getAttribute('data-src') || 'Rigid-Fitness-Club.html';
+            rigidFitnessIframe.src = targetSrc;
         }
 
-        function closeNeonModal() {
-            neonModal.classList.remove('active');
+        function closeRigidFitnessModal() {
+            rigidFitnessModal.classList.remove('active');
             document.body.style.overflow = '';
+            rigidFitnessIframe.src = '';
         }
 
-        neonTrigger.addEventListener('click', openNeonModal);
-        neonClose.addEventListener('click', closeNeonModal);
-        neonCloseBtn.addEventListener('click', closeNeonModal);
+        rigidFitnessTrigger.addEventListener('click', openRigidFitnessModal);
+        rigidFitnessClose.addEventListener('click', closeRigidFitnessModal);
+        rigidFitnessCloseBtn.addEventListener('click', closeRigidFitnessModal);
 
-        neonModal.addEventListener('click', (e) => {
-            if (e.target === neonModal) closeNeonModal();
+        rigidFitnessModal.addEventListener('click', (e) => {
+            if (e.target === rigidFitnessModal) closeRigidFitnessModal();
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && neonModal.classList.contains('active')) {
-                closeNeonModal();
+            if (e.key === 'Escape' && rigidFitnessModal.classList.contains('active')) {
+                closeRigidFitnessModal();
             }
         });
 
-        neonIframe.addEventListener('load', function() {
-            neonLoader.classList.add('hidden');
+        rigidFitnessIframe.addEventListener('load', function() {
+            rigidFitnessLoader.classList.add('hidden');
         });
 
         // ============================================================
@@ -1290,7 +1295,7 @@
         });
 
         console.log('🔥 Portfolio · All projects loaded!');
-        console.log('⚡ Neon Pulse · WebGL particles');
+        console.log('🏋️ Rigid Fitness Club · Gym Website');
         console.log('💎 Dr. Mugdha Mohan · Skin Care Centre');
         console.log('⏰ Clock & Stopwatch · Digital time tools');
         console.log('✅ To-Do List · Productive task manager');

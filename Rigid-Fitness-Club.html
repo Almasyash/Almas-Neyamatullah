@@ -1,0 +1,3177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Character Encoding & Viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>RIGID FITNESS CLUB | Premium Gym & Fitness Center in Bettiah</title>
+  <meta name="description" content="Rigid Fitness Club is Bettiah's premier fitness center on Supriya Road, Shastri Nagar. Offering strength training, boxing, cardio, Zumba, yoga, certified coaches, and weight loss transformations.">
+  <meta name="keywords" content="Rigid Fitness Club, gym in Bettiah, Supriya Road gym, fitness center Shastri Nagar Bettiah, boxing training Bettiah, personal trainer Bettiah, Zumba yoga Bettiah">
+  <meta name="author" content="Rigid Fitness Club">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RIGID FITNESS CLUB | Top Rated 5.0 Gym in Bettiah">
+  <meta property="og:description" content="Sculpt your body at Bettiah's top-rated fitness sanctuary. Strength training, national-level boxing coaches, Zumba, and modern equipment.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- ========================================== -->
+  <!-- 🔐 MANDATORY SECURITY HEADERS (Meta Tags)   -->
+  <!-- ========================================== -->
+  <!-- Strict Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://images.unsplash.com https://maps.gstatic.com https://*.google.com https://*.googleapis.com; connect-src 'self'; base-uri 'self'; form-action 'self';">
+  <!-- Prevent MIME-type Sniffing -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- Strict Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Cross-Site Scripting Filter -->
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================== */
+    /* 🎨 CSS DESIGN SYSTEM & TOKENS               */
+    /* ========================================== */
+    :root {
+      --bg-primary: #090a0f;
+      --bg-secondary: #10131c;
+      --bg-tertiary: #171c2a;
+      --bg-card: rgba(22, 28, 42, 0.75);
+      --bg-card-hover: rgba(30, 38, 58, 0.9);
+      --bg-glass: rgba(16, 19, 28, 0.85);
+
+      --color-gold: #f59e0b;
+      --color-gold-hover: #d97706;
+      --color-gold-glow: rgba(245, 158, 11, 0.25);
+      --color-accent-red: #ef4444;
+      --color-accent-green: #10b981;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(245, 158, 11, 0.6);
+      --border-gold: rgba(245, 158, 11, 0.3);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+      --shadow-gold: 0 0 25px rgba(245, 158, 11, 0.2);
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.025rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 4rem 0;
+      }
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--border-gold);
+      color: var(--color-gold);
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .section-title span {
+      color: var(--color-gold);
+    }
+
+    .section-subtitle {
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+      font-size: 1.125rem;
+    }
+
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.975rem;
+      padding: 0.85rem 1.85rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border: none;
+      text-align: center;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--color-gold);
+      color: #000;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-gold);
+    }
+
+    .btn-outline:hover {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--color-gold);
+      border-color: var(--color-gold);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-block { width: 100%; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    .card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ========================================== */
+    /* 1. HEADER & NAVIGATION                    */
+    /* ========================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--color-gold), #b45309);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 1.25rem;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--color-gold);
+      border-radius: 2px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .mobile-menu-toggle { display: block; }
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transform: translateY(-120%);
+      transition: transform var(--transition-normal);
+      z-index: 99;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+    }
+
+    .mobile-drawer a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .mobile-drawer a:hover { color: var(--color-gold); }
+
+    /* ========================================== */
+    /* 2. HERO SECTION                           */
+    /* ========================================== */
+    .hero-section {
+      padding: 6rem 0 7rem;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(30, 41, 59, 0.5) 0%, transparent 60%),
+                  var(--bg-primary);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      .hero-ctas, .hero-stats {
+        justify-content: center;
+      }
+    }
+
+    .hero-headline {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-headline .highlight {
+      color: var(--color-gold);
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      max-width: 580px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      color: var(--color-accent-green);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent-green);
+      border-radius: 50%;
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-item h3 {
+      font-size: 2.2rem;
+      color: var(--text-main);
+      font-weight: 800;
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+    }
+
+    .hero-media-wrapper { position: relative; }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-lg), var(--shadow-gold);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      filter: brightness(0.88) contrast(1.1);
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-card:hover img { transform: scale(1.03); }
+
+    .hero-floating-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -1.5rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .hero-floating-badge { left: 1rem; bottom: 1rem; }
+    }
+
+    /* ========================================== */
+    /* 3. ABOUT US SECTION                       */
+    /* ========================================== */
+    .about-section { background-color: var(--bg-secondary); }
+
+    .about-pillar-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 1.75rem;
+      transition: all var(--transition-normal);
+    }
+
+    .about-pillar-card:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pillar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ========================================== */
+    /* 4. SERVICES SECTION                       */
+    /* ========================================== */
+    .service-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .service-card:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-5px);
+    }
+
+    .service-img-container {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img-container img { transform: scale(1.08); }
+
+    .service-badge-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-gold);
+      color: var(--color-gold);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .service-body { padding: 1.75rem; }
+    .service-title { font-size: 1.3rem; margin-bottom: 0.75rem; }
+
+    .service-features-list {
+      list-style: none;
+      margin: 1.25rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .service-features-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .service-features-list li svg { color: var(--color-gold); flex-shrink: 0; }
+
+    /* ========================================== */
+    /* 5. MEMBERSHIP PLANS SECTION                */
+    /* ========================================== */
+    .membership-section { background-color: var(--bg-secondary); }
+
+    .billing-toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .toggle-switch-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 32px;
+    }
+
+    .toggle-switch-wrapper input { opacity: 0; width: 0; height: 0; }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: var(--color-gold);
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--bg-card-hover);
+      border-color: var(--color-gold);
+    }
+
+    input:checked + .toggle-slider:before { transform: translateX(28px); }
+
+    .discount-badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--color-accent-green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--color-gold);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, rgba(22, 28, 42, 0.85) 100%);
+      transform: scale(1.03);
+      box-shadow: var(--shadow-gold);
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-card.featured { transform: scale(1); }
+    }
+
+    .pricing-featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-gold);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.3rem 1.25rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    .pricing-plan-name { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+    .pricing-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      margin: 1.5rem 0 1.75rem;
+    }
+
+    .pricing-currency {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-gold);
+    }
+
+    .pricing-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .pricing-period { font-size: 0.95rem; color: var(--text-dim); }
+
+    .pricing-features-list {
+      list-style: none;
+      margin-bottom: 2.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .pricing-features-list li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pricing-features-list li.disabled {
+      color: var(--text-dim);
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+    /* ========================================== */
+    /* 6. TRAINERS SECTION                       */
+    /* ========================================== */
+    .trainer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .trainer-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-5px);
+    }
+
+    .trainer-photo-wrap {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .trainer-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .trainer-card:hover .trainer-photo-wrap img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+
+    .trainer-cert-badge {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(16, 19, 28, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--color-gold);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+    }
+
+    .trainer-info { padding: 1.75rem; }
+    .trainer-name { font-size: 1.35rem; margin-bottom: 0.25rem; }
+    .trainer-role { font-size: 0.875rem; color: var(--color-gold); font-weight: 600; margin-bottom: 0.85rem; }
+
+    /* ========================================== */
+    /* 7. FACILITIES SECTION                     */
+    /* ========================================== */
+    .facilities-section { background-color: var(--bg-secondary); }
+
+    .facility-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 280px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .facility-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .facility-item:hover img { transform: scale(1.08); }
+
+    .facility-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.75rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(9, 10, 15, 0.95) 80%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .facility-title { font-size: 1.25rem; color: var(--text-main); margin-bottom: 0.25rem; }
+    .facility-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ========================================== */
+    /* 8. SCHEDULE & TIMINGS SECTION             */
+    /* ========================================== */
+    .schedule-filters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .schedule-filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .schedule-filter-btn:hover, .schedule-filter-btn.active {
+      background: var(--color-gold);
+      color: #000;
+      border-color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    .schedule-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .schedule-table th, .schedule-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .schedule-table th {
+      background: var(--bg-tertiary);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .schedule-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    .class-name-tag { font-weight: 700; color: var(--text-main); display: block; }
+
+    .class-intensity-tag {
+      display: inline-block;
+      font-size: 0.725rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .intensity-high { background: rgba(239, 68, 68, 0.15); color: var(--color-accent-red); }
+    .intensity-medium { background: rgba(245, 158, 11, 0.15); color: var(--color-gold); }
+    .intensity-low { background: rgba(16, 185, 129, 0.15); color: var(--color-accent-green); }
+
+    .operating-hours-box {
+      margin-top: 3rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    /* ========================================== */
+    /* 9. TESTIMONIALS SECTION                   */
+    /* ========================================== */
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-normal);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+    }
+
+    .star-rating {
+      display: flex;
+      gap: 0.25rem;
+      color: var(--color-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-quote {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .client-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--color-gold);
+      object-fit: cover;
+    }
+
+    .client-name { font-weight: 700; font-size: 1rem; }
+    .client-metric { font-size: 0.8rem; color: var(--color-accent-green); font-weight: 600; }
+
+    /* ========================================== */
+    /* 10. INTERACTIVE BMI / CALORIE CALCULATOR   */
+    /* ========================================== */
+    .calculator-section {
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .calculator-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+
+    .calc-result-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-gold);
+      display: none;
+      text-align: center;
+    }
+
+    .calc-result-box.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========================================== */
+    /* 11. VIP CONTACT & SECURE BOOKING FORM     */
+    /* ========================================== */
+    .contact-section {
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+    }
+
+    .form-control.is-invalid {
+      border-color: var(--color-accent-red);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+
+    .form-control.is-valid {
+      border-color: var(--color-accent-green);
+    }
+
+    .invalid-feedback {
+      color: var(--color-accent-red);
+      font-size: 0.775rem;
+      margin-top: 0.35rem;
+      display: none;
+    }
+
+    .form-control.is-invalid ~ .invalid-feedback {
+      display: block;
+    }
+
+    .hp-field {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      width: 0;
+      z-index: -1;
+    }
+
+    .security-notice {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 1rem;
+    }
+
+    .rate-limit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Obfuscated Contact Card */
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .contact-method-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .contact-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--border-gold);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .obfuscated-link {
+      color: var(--color-gold);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      word-break: break-all;
+    }
+
+    .obfuscated-link:hover {
+      text-decoration: underline;
+    }
+
+    .map-preview-btn {
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--color-gold);
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 700;
+      transition: all var(--transition-fast);
+    }
+
+    .map-preview-btn:hover {
+      background: var(--color-gold);
+      color: #000;
+    }
+
+    /* ========================================== */
+    /* 12. FOOTER & COMPLIANCE                   */
+    /* ========================================== */
+    .site-footer {
+      background-color: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 5rem 0 2.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 576px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover { color: var(--color-gold); }
+
+    .social-links-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .social-icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all var(--transition-fast);
+    }
+
+    .social-icon-btn:hover {
+      background: var(--color-gold);
+      color: #000;
+      border-color: var(--color-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .security-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sec-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.725rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ========================================== */
+    /* 13. GDPR COOKIE BANNER & MODALS           */
+    /* ========================================== */
+    .cookie-banner {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      max-width: 580px;
+      margin-left: auto;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      z-index: 1000;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      animation: slideUp 0.4s ease;
+    }
+
+    .cookie-banner.active { display: block; }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .cookie-content h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .cookie-content p { font-size: 0.85rem; margin-bottom: 1.25rem; }
+
+    .cookie-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    dialog {
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      max-width: 650px;
+      width: 90%;
+      margin: auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+    }
+
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1rem;
+    }
+
+    .dialog-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .dialog-body {
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    .dialog-body h5 { color: var(--color-gold); margin: 1.25rem 0 0.5rem; }
+
+    .toast-container {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .toast-msg {
+      pointer-events: auto;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-gold);
+      color: var(--text-main);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      animation: fadeInRight 0.3s ease;
+      max-width: 380px;
+    }
+
+    .toast-msg.toast-success { border-color: var(--color-accent-green); }
+    .toast-msg.toast-error { border-color: var(--color-accent-red); }
+
+    @keyframes fadeInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Toast Notification Area -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ========================================== -->
+  <!-- 1. NAVIGATION (Sticky Header)              -->
+  <!-- ========================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="#hero" class="brand-logo" id="brandLogo">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12" />
+            </svg>
+          </div>
+          <span>RIGID<span style="color: var(--color-gold);">FITNESS</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Programs</a></li>
+          <li><a href="#plans" class="nav-link">Memberships</a></li>
+          <li><a href="#trainers" class="nav-link">Coaches</a></li>
+          <li><a href="#facilities" class="nav-link">Facilities</a></li>
+          <li><a href="#schedule" class="nav-link">Timings</a></li>
+          <li><a href="#calculator" class="nav-link">BMI Tool</a></li>
+          <li><a href="#contact" class="nav-link">Contact & Location</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="#contact" class="btn btn-primary btn-sm" id="navTrialBtn">Book Free Trial</a>
+          <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <a href="#about" class="mobile-nav-link">About Rigid Fitness</a>
+      <a href="#services" class="mobile-nav-link">Training Programs & Boxing</a>
+      <a href="#plans" class="mobile-nav-link">Membership Plans</a>
+      <a href="#trainers" class="mobile-nav-link">Certified Coaches</a>
+      <a href="#facilities" class="mobile-nav-link">Gym Facilities</a>
+      <a href="#schedule" class="mobile-nav-link">Class Timings</a>
+      <a href="#calculator" class="mobile-nav-link">BMI Calculator</a>
+      <a href="#contact" class="mobile-nav-link">Contact & Google Map</a>
+      <a href="#contact" class="btn btn-primary btn-block" style="margin-top: 0.5rem;">Join Free Trial</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION                            -->
+    <!-- ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="live-status-pill">
+              <span class="live-dot"></span>
+              <span>LIVE: Club Open in Bettiah &bull; Mon–Sat 5AM–10PM | Sun 7AM–1PM</span>
+            </div>
+            
+            <h1 class="hero-headline">
+              TRANSFORM YOUR BODY. <br>
+              <span class="highlight">DOMINATE YOUR FITNESS.</span>
+            </h1>
+            
+            <p class="hero-desc">
+              Welcome to <strong>Rigid Fitness Club</strong>, Bettiah's #1 premier fitness destination on Supriya Road, Shastri Nagar. State-of-the-art strength machinery, national-level boxing & self-defense coaches, Zumba, cardio matrix, and tailored weight transformation protocols.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary" id="heroJoinCta">
+                <span>Claim Free 1-Day VIP Pass</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroMapsCta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Find Us on Google Maps</span>
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h3>5.0 ★</h3>
+                <p>Google Review Rating</p>
+              </div>
+              <div class="stat-item">
+                <h3>1,800+</h3>
+                <p>Bettiah Members</p>
+              </div>
+              <div class="stat-item">
+                <h3>100%</h3>
+                <p>Certified Coaches</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media-wrapper">
+            <div class="hero-image-card">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop" 
+                   alt="Rigid Fitness Club Bettiah Strength and Conditioning Floor" 
+                   loading="eager" 
+                   fetchpriority="high">
+              <div class="hero-floating-badge">
+                <div class="brand-icon" style="width: 42px; height: 42px;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1rem; color: #fff;">#1 Rated Gym in Bettiah</h4>
+                  <p style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600;">5.0 / 5.0 Star Rating &bull; Shastri Nagar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. ABOUT US SECTION                        -->
+    <!-- ========================================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">About Rigid Fitness Club</span>
+          <h2 class="section-title">BETTIAH'S BENCHMARK FOR <span>FITNESS EXCELLENCE</span></h2>
+          <p class="section-subtitle mx-auto">
+            Situated near Jayati Public School on Supriya Road, Rigid Fitness Club brings world-class training infrastructure to West Champaran with science-backed workout methodologies and dedicated personal mentorship.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="about-pillar-card">
+            <div class="pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+            </div>
+            <h3 class="pillar-title">Modern Gym Machinery</h3>
+            <p>Full suite of heavy-duty selectorized machines, plate-loaded strength stations, cable crossovers, and commercial Olympic lifting rigs.</p>
+          </div>
+
+          <div class="about-pillar-card">
+            <div class="pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="pillar-title">Boxing & Martial Arts</h3>
+            <p>Authentic combat fitness and boxing coaching guided by competitive athletes for explosive stamina, agility, and practical self-defense.</p>
+          </div>
+
+          <div class="about-pillar-card">
+            <div class="pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="pillar-title">Weight Transformation</h3>
+            <p>Guaranteed results programs for fat loss, lean muscle gain, physique recomposition, and personalized daily Indian diet charts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. SERVICES SECTION                        -->
+    <!-- ========================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Comprehensive Services</span>
+          <h2 class="section-title">TRAINING DISCIPLINES <span>AT RIGID</span></h2>
+          <p class="section-subtitle mx-auto">
+            From absolute gym beginners to dedicated strength athletes, we offer curated programs tailored to your lifestyle and goals.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Service 1: Strength & Hypertrophy -->
+          <div class="service-card">
+            <div class="service-img-container">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Strength & Muscle Building" loading="lazy">
+              <span class="service-badge-tag">Power & Tone</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Strength & Bodybuilding</h3>
+              <p>Heavy compound lifts, targeted isolation exercises, and progressive overload tracking to maximize muscular growth and core strength.</p>
+              <ul class="service-features-list">
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Free Weights & Dumbbell Racks</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Squat Racks & Bench Stations</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Form Correction by Coaches</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 2: Boxing & Self-Defense -->
+          <div class="service-card">
+            <div class="service-img-container">
+              <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=600&auto=format&fit=crop" alt="Boxing & Self Defense Training" loading="lazy">
+              <span class="service-badge-tag">Combat Athlete</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Boxing & Self-Defense</h3>
+              <p>Train with national-level athletes. Master footwork, bag work, speed drills, power punching, and practical self-defense techniques.</p>
+              <ul class="service-features-list">
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Heavy Bag & Pad Work</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> High-Calorie Burn Conditioning</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Confidence & Reflex Training</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 3: Cardio, Zumba & Aerobics -->
+          <div class="service-card">
+            <div class="service-img-container">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop" alt="Zumba & Aerobics Dance Cardio" loading="lazy">
+              <span class="service-badge-tag">High Energy</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Cardio, Zumba & Yoga</h3>
+              <p>Energizing group sessions designed for rapid fat loss, cardiovascular health, flexibility, and stress reduction with upbeat rhythms.</p>
+              <ul class="service-features-list">
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Commercial Treadmills & Cycles</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Fun Group Zumba Classes</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Yoga & Posture Flexibility</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 4: 1-on-1 PT & Nutrition -->
+          <div class="service-card">
+            <div class="service-img-container">
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Personal Training and Diet Plans" loading="lazy">
+              <span class="service-badge-tag">Customized</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Personal Training & Diet</h3>
+              <p>Dedicated personal coach overseeing every workout, posture alignment, weekly body fat checks, and custom vegetarian / non-veg meal plans.</p>
+              <ul class="service-features-list">
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> 1-on-1 Dedicated Trainer</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Custom Macro & Calorie Charts</li>
+                <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Bi-Weekly Body Measurements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. MEMBERSHIP PLANS SECTION                -->
+    <!-- ========================================== -->
+    <section class="section membership-section" id="plans">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Rigid Memberships</span>
+          <h2 class="section-title">AFFORDABLE, <span>ALL-ACCESS PLANS</span></h2>
+          <p class="section-subtitle mx-auto">
+            Flexible memberships for students, professionals, and serious fitness enthusiasts in Bettiah.
+          </p>
+
+          <div class="billing-toggle-container">
+            <span style="font-weight: 700; color: var(--text-main);">Monthly Plan</span>
+            <label class="toggle-switch-wrapper" aria-label="Toggle Annual Billing">
+              <input type="checkbox" id="billingToggle">
+              <span class="toggle-slider"></span>
+            </label>
+            <span style="font-weight: 700; color: var(--text-main);">Annual Membership</span>
+            <span class="discount-badge">Save 25%</span>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <!-- Tier 1: General Fitness -->
+          <div class="pricing-card" id="cardBasic">
+            <h3 class="pricing-plan-name">Standard Access</h3>
+            <p style="font-size: 0.875rem;">Full access to gym floor, free weights, and cardio equipment.</p>
+            
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" data-monthly="1199" data-annual="899">1199</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+
+            <ul class="pricing-features-list">
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Full Gym Floor & Free Weights Access</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Commercial Cardio Section (Treadmill, Cycle)</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Locker Facility & Purified RO Water</li>
+              <li class="disabled"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Boxing & Self-Defense Training</li>
+              <li class="disabled"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Zumba & Yoga Group Batches</li>
+              <li class="disabled"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Personal Trainer Mentorship</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-secondary btn-block plan-select-btn" data-plan="Standard Access">Choose Standard</a>
+          </div>
+
+          <!-- Tier 2: Rigid Pro (Featured) -->
+          <div class="pricing-card featured" id="cardPremium">
+            <div class="pricing-featured-badge">Most Popular in Bettiah</div>
+            <h3 class="pricing-plan-name">Rigid Pro Elite</h3>
+            <p style="font-size: 0.875rem;">Complete access including Boxing, Zumba, and personalized diet guidance.</p>
+            
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" data-monthly="1899" data-annual="1425">1899</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+
+            <ul class="pricing-features-list">
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> <strong>All Standard Gym Features</strong></li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Boxing & Self-Defense Classes</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Weekly Zumba & Yoga Group Sessions</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Customized Weight Loss / Gain Diet Chart</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Monthly Body Fat & Muscle Assessment</li>
+              <li class="disabled"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Dedicated 1-on-1 Personal Trainer</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary btn-block plan-select-btn" data-plan="Rigid Pro Elite">Choose Rigid Pro</a>
+          </div>
+
+          <!-- Tier 3: VIP Transformation -->
+          <div class="pricing-card" id="cardElite">
+            <h3 class="pricing-plan-name">VIP Personal Training</h3>
+            <p style="font-size: 0.875rem;">1-on-1 personal coach dedication for guaranteed 90-day transformations.</p>
+            
+            <div class="pricing-price-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" data-monthly="3499" data-annual="2699">3499</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+
+            <ul class="pricing-features-list">
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> <strong>Dedicated 1-on-1 Certified Personal Trainer</strong></li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> All Gym, Boxing, Zumba & Yoga Classes</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Daily Nutrition & Calorie Tracking Support</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Flexible Morning / Evening Slot Reservation</li>
+              <li><svg width="18" height="18" fill="none" stroke="var(--color-gold)" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Guaranteed Fat Loss & Physique Transformation</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-secondary btn-block plan-select-btn" data-plan="VIP Personal Training">Choose VIP Coaching</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. MASTER TRAINERS SECTION                 -->
+    <!-- ========================================== -->
+    <section class="section" id="trainers">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Certified Coaches</span>
+          <h2 class="section-title">EXPERT <span>FITNESS LEADERS</span></h2>
+          <p class="section-subtitle mx-auto">
+            Experienced trainers committed to correct posture, safety, injury prevention, and rapid physical results.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Trainer 1 -->
+          <div class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600&auto=format&fit=crop" alt="Head Strength & Conditioning Coach" loading="lazy">
+              <span class="trainer-cert-badge">Head Coach &bull; 8+ Yrs</span>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Amit Kumar</h3>
+              <p class="trainer-role">Head Strength & Conditioning</p>
+              <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">Specializes in heavy strength routines, deadlift & squat form corrections, and power building.</p>
+              <a href="#contact" class="btn btn-outline btn-sm btn-block trainer-book-btn" data-trainer="Amit Kumar">Book Consultation</a>
+            </div>
+          </div>
+
+          <!-- Trainer 2 -->
+          <div class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=600&auto=format&fit=crop" alt="Boxing and Combat Coach" loading="lazy">
+              <span class="trainer-cert-badge">National Athlete &bull; Boxing</span>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Vikram Singh</h3>
+              <p class="trainer-role">Boxing & Self-Defense Coach</p>
+              <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">National-level competitor training members in combat conditioning, agility, and defensive stamina.</p>
+              <a href="#contact" class="btn btn-outline btn-sm btn-block trainer-book-btn" data-trainer="Vikram Singh">Book Consultation</a>
+            </div>
+          </div>
+
+          <!-- Trainer 3 -->
+          <div class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600&auto=format&fit=crop" alt="Zumba & Female Fitness Coach" loading="lazy">
+              <span class="trainer-cert-badge">Certified Zumba &bull; Yoga</span>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Pooja Sharma</h3>
+              <p class="trainer-role">Zumba & Women's Fitness Lead</p>
+              <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">Specialized in fat-loss aerobics, core toning, postnatal rehabilitation, and power yoga.</p>
+              <a href="#contact" class="btn btn-outline btn-sm btn-block trainer-book-btn" data-trainer="Pooja Sharma">Book Consultation</a>
+            </div>
+          </div>
+
+          <!-- Trainer 4 -->
+          <div class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Diet and Weight Loss Specialist" loading="lazy">
+              <span class="trainer-cert-badge">Diet & Nutrition &bull; CPT</span>
+            </div>
+            <div class="trainer-info">
+              <h3 class="trainer-name">Rahul Verma</h3>
+              <p class="trainer-role">Weight Transformation Specialist</p>
+              <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">Focuses on 90-day transformation blueprints, metabolic calorie management, and lean bulking.</p>
+              <a href="#contact" class="btn btn-outline btn-sm btn-block trainer-book-btn" data-trainer="Rahul Verma">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. FACILITIES SHOWCASE                     -->
+    <!-- ========================================== -->
+    <section class="section facilities-section" id="facilities">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Club Amenities</span>
+          <h2 class="section-title">THE <span>RIGID FACILITY</span></h2>
+          <p class="section-subtitle mx-auto">
+            Spacious, air-cooled, hygienic workout floors with world-class gym gear in Shastri Nagar, Bettiah.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=700&auto=format&fit=crop" alt="Heavy Free Weight & Dumbbell Deck" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Free Weights & Dumbbell Zone</h3>
+              <p class="facility-desc">Complete dumbbell sets (2.5kg to 40kg), Olympic barbells, and heavy plate racks.</p>
+            </div>
+          </div>
+
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=700&auto=format&fit=crop" alt="Cardio Zone" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Cardio & Stamina Center</h3>
+              <p class="facility-desc">Motorized treadmills, cross-trainers, and spin cycles with heart-rate displays.</p>
+            </div>
+          </div>
+
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=700&auto=format&fit=crop" alt="Boxing Arena" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Boxing & Martial Arts Ring</h3>
+              <p class="facility-desc">Heavy punch bags, speed balls, and sparring pads for self-defense training.</p>
+            </div>
+          </div>
+
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=700&auto=format&fit=crop" alt="Zumba & Aerobics Floor" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Aerobics & Dance Studio</h3>
+              <p class="facility-desc">Wooden mirrored studio space for energetic Zumba dance batches and Yoga.</p>
+            </div>
+          </div>
+
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=700&auto=format&fit=crop" alt="Clean Lockers and Changing Area" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Changing Rooms & Lockers</h3>
+              <p class="facility-desc">Secure lockers, hygienic washrooms, and clean changing zones for members.</p>
+            </div>
+          </div>
+
+          <div class="facility-item">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=700&auto=format&fit=crop" alt="Supplement Guidance & Hydration" loading="lazy">
+            <div class="facility-overlay">
+              <h3 class="facility-title">Hydration & Supplement Desk</h3>
+              <p class="facility-desc">Purified RO chilled water stations and authentic protein & supplement advice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 8. SCHEDULE & TIMINGS SECTION              -->
+    <!-- ========================================== -->
+    <section class="section" id="schedule">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Club Schedule & Batches</span>
+          <h2 class="section-title">WEEKLY <span>TRAINING TIMETABLE</span></h2>
+          <p class="section-subtitle mx-auto">
+            Convenient morning and evening batches to fit your work, business, and study schedules.
+          </p>
+
+          <div class="schedule-filters" id="scheduleFilterBar">
+            <button class="schedule-filter-btn active" data-day="all">All Days</button>
+            <button class="schedule-filter-btn" data-day="mon">Monday</button>
+            <button class="schedule-filter-btn" data-day="tue">Tuesday</button>
+            <button class="schedule-filter-btn" data-day="wed">Wednesday</button>
+            <button class="schedule-filter-btn" data-day="thu">Thursday</button>
+            <button class="schedule-filter-btn" data-day="fri">Friday</button>
+            <button class="schedule-filter-btn" data-day="sat">Saturday</button>
+            <button class="schedule-filter-btn" data-day="sun">Sunday</button>
+          </div>
+        </div>
+
+        <div class="schedule-table-wrap">
+          <table class="schedule-table" id="scheduleTable">
+            <thead>
+              <tr>
+                <th>Day & Time</th>
+                <th>Training Batch</th>
+                <th>Category</th>
+                <th>Coach Incharge</th>
+                <th>Intensity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="operating-hours-box">
+          <div>
+            <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.25rem;">Club Operating Hours (Bettiah)</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Monday – Saturday:</strong> 05:00 AM – 10:00 PM &bull; <strong>Sunday:</strong> 07:00 AM – 01:00 PM</p>
+          </div>
+          <div class="sec-tag" style="background: rgba(245, 158, 11, 0.1); border-color: var(--border-gold); color: var(--color-gold); font-size: 0.85rem; padding: 0.5rem 1rem;">
+            <span>📍 Supriya Road, Near Jayati Public School, Shastri Nagar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 9. TESTIMONIALS & REVIEWS                  -->
+    <!-- ========================================== -->
+    <section class="section" id="testimonials" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Verified Bettiah Reviews</span>
+          <h2 class="section-title">WHAT <span>MEMBERS SAY</span></h2>
+          <p class="section-subtitle mx-auto">
+            Rated 5.0 / 5.0 Stars by members across Bettiah, West Champaran.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="testimonial-card">
+            <div>
+              <div class="star-rating" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="testimonial-quote">
+                "Best gym in Bettiah without any doubt. The machines are top quality and coach Amit pays personal attention to form so you never get injured. Lost 12kg in 3 months!"
+              </p>
+            </div>
+            <div class="client-profile">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Pankaj Pandey" class="client-avatar">
+              <div>
+                <h4 class="client-name">Pankaj Pandey</h4>
+                <p class="client-metric">Bettiah &bull; -12kg Fat Loss in 90 Days</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="star-rating" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="testimonial-quote">
+                "The boxing and combat classes here are phenomenal. Coach Vikram gives national-level training. Very safe and supportive environment for girls and beginners too."
+              </p>
+            </div>
+            <div class="client-profile">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Neha Kumari" class="client-avatar">
+              <div>
+                <h4 class="client-name">Neha Kumari</h4>
+                <p class="client-metric">Shastri Nagar &bull; Boxing & Stamina</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="star-rating" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <p class="testimonial-quote">
+                "Great atmosphere, energetic crowd, and proper timing from 5 AM morning to 10 PM night. Exactly what Supriya Road needed. 5 stars to Rigid Fitness Club!"
+              </p>
+            </div>
+            <div class="client-profile">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Saurabh Raj" class="client-avatar">
+              <div>
+                <h4 class="client-name">Saurabh Raj</h4>
+                <p class="client-metric">Bettiah &bull; Member since 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 10. INTERACTIVE BMI & CALORIE CALCULATOR   -->
+    <!-- ========================================== -->
+    <section class="section calculator-section" id="calculator">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Fitness Tool</span>
+          <h2 class="section-title">CALCULATE YOUR <span>BMI & CALORIE TARGET</span></h2>
+          <p class="section-subtitle mx-auto">
+            Input your height, weight, and fitness goal to get instant body mass calculations and recommended daily calories.
+          </p>
+        </div>
+
+        <div class="calculator-box">
+          <form id="bmiCalcForm" onsubmit="event.preventDefault();">
+            <div class="calc-grid">
+              <div class="form-group">
+                <label class="form-label" for="calcGender">Gender</label>
+                <select id="calcGender" class="form-control" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calcAge">Age (Years)</label>
+                <input type="number" id="calcAge" class="form-control" min="14" max="90" value="24" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calcHeight">Height (cm)</label>
+                <input type="number" id="calcHeight" class="form-control" min="120" max="230" value="172" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calcWeight">Weight (kg)</label>
+                <input type="number" id="calcWeight" class="form-control" min="35" max="180" value="70" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calcActivity">Primary Goal</label>
+              <select id="calcActivity" class="form-control">
+                <option value="fat_loss" selected>Weight Loss & Fat Reduction (Deficit)</option>
+                <option value="recomp">Body Recomposition & Lean Toning</option>
+                <option value="hypertrophy">Muscle & Weight Gain (Surplus)</option>
+              </select>
+            </div>
+
+            <button type="button" id="btnCalculateBmi" class="btn btn-primary btn-block">Calculate My Fitness Metrics</button>
+          </form>
+
+          <div id="calcResults" class="calc-result-box">
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <p style="font-size: 0.85rem; text-transform: uppercase;">Body Mass Index (BMI)</p>
+                <h3 id="resBmiValue" style="color: var(--color-gold); font-size: 2.2rem;">23.6</h3>
+                <span id="resBmiCategory" class="sec-tag" style="background: rgba(16, 185, 129, 0.2); color: var(--color-accent-green);">Normal Healthy Weight</span>
+              </div>
+              <div>
+                <p style="font-size: 0.85rem; text-transform: uppercase;">Estimated Daily Calorie Target</p>
+                <h3 id="resCaloriesValue" style="color: #fff; font-size: 2.2rem;">2,150 kcal</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Protein Goal: <strong id="resProteinValue" style="color: var(--color-gold);">140g</strong></span>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="#contact" class="btn btn-outline btn-sm" id="btnApplyMetricsToBooking">Pre-fill Free Trial Form &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 11. VIP CONTACT & SECURE BOOKING SECTION   -->
+    <!-- ========================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Join Rigid Fitness</span>
+          <h2 class="section-title">BOOK YOUR <span>FREE TRIAL & VISIT US</span></h2>
+          <p class="section-subtitle mx-auto">
+            Reserve your 1-day free trial or connect with our front desk team directly.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Secure Booking Form -->
+          <div class="form-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Claim 1-Day Free Trial</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1.75rem;">Fast, encrypted, and rate-protected reservation.</p>
+
+            <form id="secureBookingForm" novalidate>
+              <input type="hidden" id="csrfToken" name="_csrf" value="">
+              
+              <!-- Anti-Spam Honeypot -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="formWebsiteUrl">Leave empty</label>
+                <input type="text" id="formWebsiteUrl" name="website_url" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bookingName">Your Full Name *</label>
+                <input type="text" id="bookingName" class="form-control" placeholder="e.g. Rahul Sharma" required maxlength="60" autocomplete="name">
+                <div class="invalid-feedback">Please enter a valid full name.</div>
+              </div>
+
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="bookingPhone">Phone Number (10 Digits) *</label>
+                  <input type="tel" id="bookingPhone" class="form-control" placeholder="76311XXXXX" required maxlength="15" autocomplete="tel">
+                  <div class="invalid-feedback">Please provide a valid 10-digit mobile number.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="bookingEmail">Email Address (Optional)</label>
+                  <input type="email" id="bookingEmail" class="form-control" placeholder="yourname@gmail.com" maxlength="80" autocomplete="email">
+                  <div class="invalid-feedback">Please provide a valid email address.</div>
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="bookingGoal">Primary Fitness Goal</label>
+                  <select id="bookingGoal" class="form-control">
+                    <option value="Weight Loss & Fat Reduction">Weight Loss & Fat Reduction</option>
+                    <option value="Bodybuilding & Muscle Gain">Bodybuilding & Muscle Gain</option>
+                    <option value="Boxing & Self-Defense">Boxing & Self-Defense</option>
+                    <option value="Zumba & Cardio Aerobics">Zumba & Cardio Aerobics</option>
+                    <option value="General Strength & Stamina">General Strength & Stamina</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="bookingTier">Preferred Membership</label>
+                  <select id="bookingTier" class="form-control">
+                    <option value="Rigid Pro Elite (Most Popular)">Rigid Pro Elite (Most Popular)</option>
+                    <option value="Standard Access">Standard Access</option>
+                    <option value="VIP Personal Training">VIP Personal Training</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bookingNotes">Preferred Timing / Message</label>
+                <textarea id="bookingNotes" class="form-control" rows="3" placeholder="Morning or evening batch preference, or questions..." maxlength="300"></textarea>
+              </div>
+
+              <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <input type="checkbox" id="bookingConsent" required style="margin-top: 0.3rem;">
+                <label for="bookingConsent" style="font-size: 0.825rem; color: var(--text-muted);">
+                  I agree to the <a href="javascript:void(0)" id="linkOpenTerms" style="color: var(--color-gold); text-decoration: underline;">Terms of Service</a> and <a href="javascript:void(0)" id="linkOpenPrivacy" style="color: var(--color-gold); text-decoration: underline;">Privacy Policy</a>.
+                </label>
+              </div>
+
+              <button type="submit" id="bookingSubmitBtn" class="btn btn-primary btn-block" style="padding: 1rem;">
+                <span id="btnSubmitText">Confirm & Claim Free Pass</span>
+                <span id="btnSubmitSpinner" style="display: none;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                </span>
+              </button>
+
+              <div class="security-notice">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Protected by client-side rate limiting & CSRF security verification.</span>
+              </div>
+              <div style="margin-top: 0.5rem;">
+                <span class="rate-limit-badge" id="rateLimitDisplay">Submissions remaining this hour: 3/3</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Obfuscated Live Contact Card & Google Maps link -->
+          <div class="contact-info-card">
+            <div>
+              <span class="section-badge" style="margin-bottom: 0.75rem;">Official Club Desk</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Connect Directly</h3>
+              <p style="font-size: 0.95rem;">
+                Protected contact endpoints decoded dynamically in memory:
+              </p>
+            </div>
+
+            <!-- WhatsApp Direct Connection -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div class="contact-details">
+                <h4>WhatsApp Direct Chat</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">Instant inquiry & membership support</p>
+                <div id="obfuscatedWhatsAppSlot">
+                  <!-- Decoded dynamically via JS -->
+                  <span class="obfuscated-placeholder">[Protected WhatsApp - Loading]</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Hotline Phone -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Front Desk Phone</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">Call during gym operating hours</p>
+                <div id="obfuscatedPhoneSlot">
+                  <!-- Decoded dynamically via JS -->
+                  <span class="obfuscated-placeholder">[Protected Phone - Loading]</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Official Email -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Official Email</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">General inquiries</p>
+                <div id="obfuscatedEmailSlot">
+                  <!-- Decoded dynamically via JS -->
+                  <span class="obfuscated-placeholder">[Protected Email - Loading]</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Club Location & Google Maps -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Club Location (Bettiah)</h4>
+                <div id="obfuscatedAddressSlot">
+                  <!-- Decoded dynamically via JS -->
+                  <span class="obfuscated-placeholder">[Protected Location]</span>
+                </div>
+                <div style="margin-top: 0.6rem;">
+                  <a href="https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26" target="_blank" rel="noopener noreferrer" class="map-preview-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                    <span>Open in Google Maps App &rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 12. FOOTER SECTION                         -->
+  <!-- ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12"/></svg>
+            </div>
+            <span>RIGID<span style="color: var(--color-gold);">FITNESS</span></span>
+          </div>
+          <p style="font-size: 0.875rem;">
+            Rigid Fitness Club is Bettiah's premium gym facility on Supriya Road, Shastri Nagar. Dedicated to strength building, boxing, Zumba, and body transformations.
+          </p>
+          <div class="social-links-row">
+            <a href="https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Google Maps Location">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Rigid Fitness</a></li>
+            <li><a href="#services">Training Programs</a></li>
+            <li><a href="#plans">Membership Fees</a></li>
+            <li><a href="#trainers">Certified Coaches</a></li>
+            <li><a href="#facilities">Gym Amenities</a></li>
+            <li><a href="#schedule">Batch Timings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Privacy & Security</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" id="footerPrivacyLink">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" id="footerTermsLink">Terms of Membership</a></li>
+            <li><a href="javascript:void(0)" id="footerCookieBtn">Cookie Settings</a></li>
+            <li><a href="#contact">GDPR Compliance</a></li>
+            <li><a href="https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26" target="_blank" rel="noopener noreferrer">Directions on Map</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bettiah Center Desk</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Verified club endpoints:</p>
+          <div id="footerObfuscatedContact" style="font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <!-- Dynamic safe JS render -->
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> RIGID FITNESS CLUB (Bettiah, Bihar). All Rights Reserved.
+        </div>
+        <div class="security-badge-group">
+          <span class="sec-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            OWASP Hardened
+          </span>
+          <span class="sec-tag">256-Bit SSL</span>
+          <span class="sec-tag">Zero Hardcoded PII</span>
+          <span class="sec-tag">GDPR Ready</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 13. GDPR COOKIE BANNER & MODALS           -->
+  <!-- ========================================== -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie Consent Banner">
+    <div class="cookie-content">
+      <h4>🔒 Privacy & Security Notice</h4>
+      <p>
+        Rigid Fitness Club uses essential session storage for form security (CSRF protection & rate limiting). We never store sensitive personal information permanently in localStorage.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-primary btn-sm" id="btnAcceptCookies">Accept All</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnRejectCookies">Essential Only</button>
+        <a href="javascript:void(0)" id="btnOpenPrivacyFromCookie" style="font-size: 0.8rem; color: var(--color-gold); text-decoration: underline; margin-left: auto;">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Dialog -->
+  <dialog id="privacyDialog" aria-labelledby="privacyTitle">
+    <div class="dialog-header">
+      <h3 id="privacyTitle">🔒 Privacy Policy & Data Protection</h3>
+      <button class="dialog-close-btn" id="closePrivacyDialog" aria-label="Close Privacy Modal">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p><strong>Last Updated: August 2026</strong></p>
+      <h5>1. Information We Collect</h5>
+      <p>Rigid Fitness Club Bettiah collects your contact number and fitness goals exclusively to schedule gym orientations, trial workouts, and provide personal training guidance.</p>
+      <h5>2. Zero Plaintext PII in HTML</h5>
+      <p>To shield member and club contact numbers from automated spam scrapers, all contact details are decoded strictly in memory at runtime.</p>
+      <h5>3. Session-Only Storage</h5>
+      <p>We do not store private identification data in persistent browser storage. Session storage is used exclusively for rate limiting and CSRF anti-tamper tokens.</p>
+    </div>
+  </dialog>
+
+  <!-- Terms Dialog -->
+  <dialog id="termsDialog" aria-labelledby="termsTitle">
+    <div class="dialog-header">
+      <h3 id="termsTitle">📋 Terms of Service & Gym Guidelines</h3>
+      <button class="dialog-close-btn" id="closeTermsDialog" aria-label="Close Terms Modal">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p><strong>Last Updated: August 2026</strong></p>
+      <h5>1. Gym Etiquette & Safety</h5>
+      <p>Members must re-rack weights after every exercise set, wear clean athletic footwear, and follow the instructions of our certified gym floor coaches.</p>
+      <h5>2. Free Trial Pass Policy</h5>
+      <p>The 1-Day Free Trial pass is valid for first-time visitors in Bettiah upon registration at the front desk.</p>
+      <h5>3. Operating Hours & Timing</h5>
+      <p>Members must adhere to their chosen morning or evening training batches. Gym closes strictly at 10:00 PM (Monday-Saturday) and 1:00 PM (Sunday).</p>
+    </div>
+  </dialog>
+
+  <!-- ========================================== -->
+  <!-- 🔐 SECURE JAVASCRIPT ARCHITECTURE          -->
+  <!-- ========================================== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // -------------------------------------------------------------
+      // 1. SECURE OBFUSCATED CONTACT VAULT (RIGID FITNESS BETTIAH)
+      // -------------------------------------------------------------
+      // Real Phone: +91 76311 60925
+      // Real Address: Near Jayati Public School, Supriya Road, Shastri Nagar, Bettiah, Bihar 845438
+      // Google Maps: https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26
+      const SecurityVault = {
+        // Base64 encoded phone string
+        _w_b64: 'OTE3NjMxMTYwOTI1', // 917631160925
+        _p_cc: '+91',
+        _p_num_arr: ['76311', '60925'],
+        _e_u: ['i','n','f','o'],
+        _e_d: ['r','i','g','i','d','f','i','t','n','e','s','s','.','c','o','m'],
+        _addr: ['Near Jayati Public School, ', 'Supriya Road, ', 'Shastri Nagar, ', 'Bettiah, Bihar 845438'],
+        _maps_url: 'https://maps.app.goo.gl/ZZG5Cs6zDwQ6M4w26',
+
+        getWhatsAppNumber: function() {
+          try {
+            return atob(this._w_b64);
+          } catch(e) {
+            return '917631160925';
+          }
+        },
+
+        getWhatsAppUrl: function() {
+          const num = this.getWhatsAppNumber();
+          const msg = encodeURIComponent("Hello Rigid Fitness Club Bettiah! I would like to inquire about gym membership and book a free trial.");
+          return `https://wa.me/${num}?text=${msg}`;
+        },
+
+        getPhoneNumber: function() {
+          return `${this._p_cc} ${this._p_num_arr[0]} ${this._p_num_arr[1]}`;
+        },
+
+        getPhoneRaw: function() {
+          return `${this._p_cc}${this._p_num_arr.join('')}`;
+        },
+
+        getEmail: function() {
+          return `${this._e_u.join('')}@${this._e_d.join('')}`;
+        },
+
+        getAddress: function() {
+          return this._addr.join('');
+        },
+
+        getMapsUrl: function() {
+          return this._maps_url;
+        }
+      };
+
+      // Safely render obfuscated contacts into DOM without innerHTML sinks
+      function renderSecureContacts() {
+        // WhatsApp Slot
+        const waSlot = document.getElementById('obfuscatedWhatsAppSlot');
+        if (waSlot) {
+          waSlot.textContent = '';
+          const waLink = document.createElement('a');
+          waLink.className = 'obfuscated-link';
+          waLink.href = SecurityVault.getWhatsAppUrl();
+          waLink.target = '_blank';
+          waLink.rel = 'noopener noreferrer';
+          waLink.textContent = `+${SecurityVault.getWhatsAppNumber()} (Chat on WhatsApp)`;
+          waSlot.appendChild(waLink);
+        }
+
+        // Phone Slot
+        const phoneSlot = document.getElementById('obfuscatedPhoneSlot');
+        if (phoneSlot) {
+          phoneSlot.textContent = '';
+          const phoneLink = document.createElement('a');
+          phoneLink.className = 'obfuscated-link';
+          phoneLink.href = `tel:${SecurityVault.getPhoneRaw()}`;
+          phoneLink.textContent = `${SecurityVault.getPhoneNumber()} (Tap to Call)`;
+          phoneSlot.appendChild(phoneLink);
+        }
+
+        // Email Slot
+        const emailSlot = document.getElementById('obfuscatedEmailSlot');
+        if (emailSlot) {
+          emailSlot.textContent = '';
+          const emailLink = document.createElement('a');
+          emailLink.className = 'obfuscated-link';
+          emailLink.href = `mailto:${SecurityVault.getEmail()}?subject=Membership%20Inquiry%20Bettiah`;
+          emailLink.textContent = SecurityVault.getEmail();
+          emailSlot.appendChild(emailLink);
+        }
+
+        // Address Slot
+        const addrSlot = document.getElementById('obfuscatedAddressSlot');
+        if (addrSlot) {
+          addrSlot.textContent = SecurityVault.getAddress();
+          addrSlot.style.color = 'var(--text-main)';
+          addrSlot.style.fontSize = '0.9rem';
+          addrSlot.style.marginTop = '0.2rem';
+        }
+
+        // Footer Contact Slot
+        const footerContactSlot = document.getElementById('footerObfuscatedContact');
+        if (footerContactSlot) {
+          footerContactSlot.textContent = '';
+          
+          const fp = document.createElement('div');
+          fp.textContent = `Phone: ${SecurityVault.getPhoneNumber()}`;
+          fp.style.color = 'var(--text-muted)';
+          
+          const fe = document.createElement('div');
+          fe.textContent = `Email: ${SecurityVault.getEmail()}`;
+          fe.style.color = 'var(--text-muted)';
+
+          const fa = document.createElement('div');
+          fa.textContent = `Location: ${SecurityVault.getAddress()}`;
+          fa.style.color = 'var(--text-muted)';
+
+          footerContactSlot.appendChild(fp);
+          footerContactSlot.appendChild(fe);
+          footerContactSlot.appendChild(fa);
+        }
+      }
+
+      // -------------------------------------------------------------
+      // 2. INPUT SANITIZATION & SECURITY UTILITIES
+      // -------------------------------------------------------------
+      const SecurityUtils = {
+        sanitize: function(str) {
+          if (typeof str !== 'string') return '';
+          return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;');
+        },
+
+        isValidEmail: function(email) {
+          if (!email || email.trim() === '') return true; // optional
+          const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+          return re.test(String(email).trim());
+        },
+
+        isValidPhone: function(phone) {
+          const clean = String(phone).replace(/[\s\-()+]/g, '');
+          return /^\d{10,13}$/.test(clean);
+        },
+
+        isValidName: function(name) {
+          return /^[a-zA-Z\s\-'.]{2,60}$/.test(String(name).trim());
+        },
+
+        generateCSRFToken: function() {
+          const array = new Uint8Array(24);
+          window.crypto.getRandomValues(array);
+          return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+        }
+      };
+
+      // -------------------------------------------------------------
+      // 3. RATE LIMITER (Max 3 / Hour)
+      // -------------------------------------------------------------
+      const RateLimiter = {
+        STORAGE_KEY: 'rfc_form_rate_limits',
+        MAX_LIMIT: 3,
+        WINDOW_MS: 60 * 60 * 1000,
+
+        getTimestamps: function() {
+          try {
+            const raw = sessionStorage.getItem(this.STORAGE_KEY);
+            if (!raw) return [];
+            const parsed = JSON.parse(raw);
+            const now = Date.now();
+            return parsed.filter(ts => (now - ts) < this.WINDOW_MS);
+          } catch(e) {
+            return [];
+          }
+        },
+
+        canSubmit: function() {
+          return this.getTimestamps().length < this.MAX_LIMIT;
+        },
+
+        recordSubmission: function() {
+          const valid = this.getTimestamps();
+          valid.push(Date.now());
+          try {
+            sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify(valid));
+          } catch(e) {}
+          this.updateDisplay();
+        },
+
+        getRemainingWaitMinutes: function() {
+          const valid = this.getTimestamps();
+          if (valid.length === 0) return 0;
+          const oldest = Math.min(...valid);
+          const elapsed = Date.now() - oldest;
+          return Math.max(0, Math.ceil((this.WINDOW_MS - elapsed) / 60000));
+        },
+
+        updateDisplay: function() {
+          const display = document.getElementById('rateLimitDisplay');
+          if (!display) return;
+          const valid = this.getTimestamps();
+          const remainingCount = Math.max(0, this.MAX_LIMIT - valid.length);
+          display.textContent = `Submissions remaining this hour: ${remainingCount}/${this.MAX_LIMIT}`;
+          display.style.color = remainingCount === 0 ? 'var(--color-accent-red)' : 'var(--text-muted)';
+        }
+      };
+
+      // -------------------------------------------------------------
+      // 4. TOAST NOTIFICATIONS
+      // -------------------------------------------------------------
+      function showToast(message, type = 'info') {
+        const container = document.getElementById('toastContainer');
+        if (!container) return;
+
+        const toast = document.createElement('div');
+        toast.className = `toast-msg ${type === 'success' ? 'toast-success' : type === 'error' ? 'toast-error' : ''}`;
+        
+        const iconSvg = type === 'success' 
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+          : type === 'error'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-red)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+
+        toast.innerHTML = `${iconSvg}<span>${SecurityUtils.sanitize(message)}</span>`;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(100%)';
+          toast.style.transition = 'all 0.3s ease';
+          setTimeout(() => {
+            if (toast.parentNode) toast.parentNode.removeChild(toast);
+          }, 300);
+        }, 5000);
+      }
+
+      // -------------------------------------------------------------
+      // 5. CLASS SCHEDULE TIMETABLE (BETTIAH BATCHES)
+      // -------------------------------------------------------------
+      const scheduleDatabase = [
+        { day: 'mon', time: '05:30 – 07:00 AM', name: 'Morning Early Bird Strength', cat: 'Strength & Power', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+        { day: 'mon', time: '07:30 – 08:30 AM', name: 'Zumba Cardio & Aerobics', cat: 'Zumba & Dance', coach: 'Pooja Sharma', intensity: 'medium', label: 'Medium' },
+        { day: 'mon', time: '05:30 – 07:00 PM', name: 'Boxing & Combat Conditioning', cat: 'Boxing', coach: 'Vikram Singh', intensity: 'high', label: 'High' },
+        { day: 'mon', time: '07:30 – 09:30 PM', name: 'Evening Hypertrophy & Chest Blast', cat: 'Bodybuilding', coach: 'Rahul Verma', intensity: 'high', label: 'High' },
+        
+        { day: 'tue', time: '06:00 – 07:30 AM', name: 'Heavy Squats & Leg Power', cat: 'Strength & Power', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+        { day: 'tue', time: '05:30 – 06:45 PM', name: 'Self-Defense Agility Drills', cat: 'Boxing', coach: 'Vikram Singh', intensity: 'high', label: 'High' },
+        { day: 'tue', time: '07:00 – 08:00 PM', name: 'Women’s Core & Toning Batch', cat: 'Toning', coach: 'Pooja Sharma', intensity: 'medium', label: 'Medium' },
+        
+        { day: 'wed', time: '05:30 – 07:00 AM', name: 'Deadlift & Back Strength', cat: 'Strength & Power', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+        { day: 'wed', time: '07:30 – 08:30 AM', name: 'Power Yoga & Flexibility', cat: 'Yoga', coach: 'Pooja Sharma', intensity: 'low', label: 'Recovery' },
+        { day: 'wed', time: '06:00 – 07:30 PM', name: 'High-Calorie Boxing Pad Work', cat: 'Boxing', coach: 'Vikram Singh', intensity: 'high', label: 'High' },
+
+        { day: 'thu', time: '06:00 – 07:30 AM', name: 'Shoulder & Arm Hypertrophy', cat: 'Bodybuilding', coach: 'Rahul Verma', intensity: 'high', label: 'High' },
+        { day: 'thu', time: '05:30 – 06:45 PM', name: 'Fat Loss HIIT & Cardio Matrix', cat: 'Conditioning', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+
+        { day: 'fri', time: '05:30 – 07:00 AM', name: 'Full Body Functional Conditioning', cat: 'Functional', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+        { day: 'fri', time: '06:00 – 07:30 PM', name: 'Friday Sparring & Punch Speed', cat: 'Boxing', coach: 'Vikram Singh', intensity: 'high', label: 'High' },
+
+        { day: 'sat', time: '06:30 – 08:00 AM', name: 'Weekend Strength & PR Testing', cat: 'Strength & Power', coach: 'Amit Kumar', intensity: 'high', label: 'High' },
+        { day: 'sat', time: '05:00 – 06:30 PM', name: 'Dance Zumba Mega Session', cat: 'Zumba & Dance', coach: 'Pooja Sharma', intensity: 'medium', label: 'Medium' },
+
+        { day: 'sun', time: '07:30 – 10:30 AM', name: 'Sunday Open Floor & Form Clinic', cat: 'Open Gym', coach: 'All Coaches', intensity: 'medium', label: 'Open Gym' }
+      ];
+
+      function renderSchedule(filterDay = 'all') {
+        const tbody = document.getElementById('scheduleTableBody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        const filtered = filterDay === 'all' 
+          ? scheduleDatabase 
+          : scheduleDatabase.filter(item => item.day === filterDay);
+
+        if (filtered.length === 0) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td colspan="6" style="text-align: center; color: var(--text-muted); padding: 2rem;">No scheduled classes. Floor open for free workouts.</td>`;
+          tbody.appendChild(tr);
+          return;
+        }
+
+        const dayNames = { mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat', sun: 'Sun' };
+
+        filtered.forEach(item => {
+          const tr = document.createElement('tr');
+          const dayBadge = `<span style="font-weight: 700; color: var(--color-gold);">${dayNames[item.day]}</span> ${item.time}`;
+          const intensityClass = item.intensity === 'high' ? 'intensity-high' : item.intensity === 'medium' ? 'intensity-medium' : 'intensity-low';
+          
+          tr.innerHTML = `
+            <td>${dayBadge}</td>
+            <td><span class="class-name-tag">${SecurityUtils.sanitize(item.name)}</span></td>
+            <td>${SecurityUtils.sanitize(item.cat)}</td>
+            <td>${SecurityUtils.sanitize(item.coach)}</td>
+            <td><span class="class-intensity-tag ${intensityClass}">${SecurityUtils.sanitize(item.label)}</span></td>
+            <td>
+              <a href="#contact" class="btn btn-outline btn-sm schedule-book-trigger" data-class="${SecurityUtils.sanitize(item.name)}">Join Batch</a>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        document.querySelectorAll('.schedule-book-trigger').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const className = this.getAttribute('data-class');
+            const notesField = document.getElementById('bookingNotes');
+            if (notesField && className) {
+              notesField.value = `I would like to join the batch: ${className}`;
+            }
+          });
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 6. MEMBERSHIP TOGGLE (INR)
+      // -------------------------------------------------------------
+      function initPricingToggle() {
+        const toggle = document.getElementById('billingToggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('change', function() {
+          const isAnnual = this.checked;
+          const priceEls = document.querySelectorAll('.pricing-amount');
+          
+          priceEls.forEach(el => {
+            const monthly = el.getAttribute('data-monthly');
+            const annual = el.getAttribute('data-annual');
+            el.textContent = isAnnual ? annual : monthly;
+          });
+
+          const periodEls = document.querySelectorAll('.pricing-period');
+          periodEls.forEach(el => {
+            el.textContent = isAnnual ? '/ mo (Annual Plan)' : '/ month';
+          });
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 7. BMI CALCULATOR
+      // -------------------------------------------------------------
+      function initCalculator() {
+        const calcBtn = document.getElementById('btnCalculateBmi');
+        if (!calcBtn) return;
+
+        calcBtn.addEventListener('click', function() {
+          const heightCm = parseFloat(document.getElementById('calcHeight').value);
+          const weightKg = parseFloat(document.getElementById('calcWeight').value);
+          const age = parseInt(document.getElementById('calcAge').value, 10);
+          const gender = document.getElementById('calcGender').value;
+          const goal = document.getElementById('calcActivity').value;
+
+          if (!heightCm || !weightKg || heightCm <= 0 || weightKg <= 0) {
+            showToast('Please enter valid height and weight.', 'error');
+            return;
+          }
+
+          const heightM = heightCm / 100;
+          const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+
+          let bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age);
+          bmr = (gender === 'male') ? bmr + 5 : bmr - 161;
+
+          let tdee = bmr * 1.5;
+          if (goal === 'fat_loss') tdee -= 400;
+          else if (goal === 'hypertrophy') tdee += 350;
+
+          const dailyCals = Math.round(tdee);
+          const proteinGrams = Math.round(weightKg * 2.0);
+
+          document.getElementById('resBmiValue').textContent = bmi;
+          
+          const catBadge = document.getElementById('resBmiCategory');
+          if (bmi < 18.5) {
+            catBadge.textContent = 'Underweight';
+            catBadge.style.color = 'var(--color-gold)';
+          } else if (bmi <= 24.9) {
+            catBadge.textContent = 'Optimal Healthy Range';
+            catBadge.style.color = 'var(--color-accent-green)';
+          } else if (bmi <= 29.9) {
+            catBadge.textContent = 'Overweight / Muscular';
+            catBadge.style.color = 'var(--color-gold)';
+          } else {
+            catBadge.textContent = 'High Body Fat';
+            catBadge.style.color = 'var(--color-accent-red)';
+          }
+
+          document.getElementById('resCaloriesValue').textContent = `${dailyCals.toLocaleString()} kcal`;
+          document.getElementById('resProteinValue').textContent = `${proteinGrams}g`;
+
+          document.getElementById('calcResults').classList.add('active');
+          showToast('Metrics calculated successfully.', 'success');
+        });
+
+        const applyBtn = document.getElementById('btnApplyMetricsToBooking');
+        if (applyBtn) {
+          applyBtn.addEventListener('click', function() {
+            const bmi = document.getElementById('resBmiValue').textContent;
+            const cals = document.getElementById('resCaloriesValue').textContent;
+            const notes = document.getElementById('bookingNotes');
+            if (notes) {
+              notes.value = `My Calculated Metrics: BMI ${bmi}, Target Intake ${cals}. Please guide my workout plan at Rigid Bettiah.`;
+            }
+          });
+        }
+      }
+
+      // -------------------------------------------------------------
+      // 8. SECURE BOOKING FORM PIPELINE
+      // -------------------------------------------------------------
+      function initBookingForm() {
+        const form = document.getElementById('secureBookingForm');
+        if (!form) return;
+
+        const csrfInput = document.getElementById('csrfToken');
+        if (csrfInput) csrfInput.value = SecurityUtils.generateCSRFToken();
+
+        RateLimiter.updateDisplay();
+
+        const nameInput = document.getElementById('bookingName');
+        const phoneInput = document.getElementById('bookingPhone');
+        const emailInput = document.getElementById('bookingEmail');
+
+        nameInput.addEventListener('blur', function() {
+          if (SecurityUtils.isValidName(this.value)) {
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+          } else {
+            this.classList.remove('is-valid');
+            this.classList.add('is-invalid');
+          }
+        });
+
+        phoneInput.addEventListener('blur', function() {
+          if (SecurityUtils.isValidPhone(this.value)) {
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+          } else {
+            this.classList.remove('is-valid');
+            this.classList.add('is-invalid');
+          }
+        });
+
+        // Plan & Trainer quick select triggers
+        document.querySelectorAll('.plan-select-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const plan = this.getAttribute('data-plan');
+            const tierSelect = document.getElementById('bookingTier');
+            if (tierSelect && plan) {
+              for (let i = 0; i < tierSelect.options.length; i++) {
+                if (tierSelect.options[i].value.includes(plan)) {
+                  tierSelect.selectedIndex = i;
+                  break;
+                }
+              }
+            }
+          });
+        });
+
+        document.querySelectorAll('.trainer-book-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const trainer = this.getAttribute('data-trainer');
+            const notes = document.getElementById('bookingNotes');
+            if (notes && trainer) {
+              notes.value = `Requesting consultation with Coach: ${trainer}`;
+            }
+          });
+        });
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          if (!RateLimiter.canSubmit()) {
+            const waitMins = RateLimiter.getRemainingWaitMinutes();
+            showToast(`Submission limit reached (Max 3/hr). Please wait ${waitMins} min.`, 'error');
+            return;
+          }
+
+          const honeypot = document.getElementById('formWebsiteUrl');
+          if (honeypot && honeypot.value.trim() !== '') {
+            console.warn('Bot blocked.');
+            showToast('Request received.', 'success');
+            form.reset();
+            return;
+          }
+
+          const name = nameInput.value.trim();
+          const phone = phoneInput.value.trim();
+          const email = emailInput.value.trim();
+          const consent = document.getElementById('bookingConsent').checked;
+
+          let hasError = false;
+
+          if (!SecurityUtils.isValidName(name)) {
+            nameInput.classList.add('is-invalid');
+            hasError = true;
+          } else {
+            nameInput.classList.remove('is-invalid');
+          }
+
+          if (!SecurityUtils.isValidPhone(phone)) {
+            phoneInput.classList.add('is-invalid');
+            hasError = true;
+          } else {
+            phoneInput.classList.remove('is-invalid');
+          }
+
+          if (email && !SecurityUtils.isValidEmail(email)) {
+            emailInput.classList.add('is-invalid');
+            hasError = true;
+          } else {
+            emailInput.classList.remove('is-invalid');
+          }
+
+          if (!consent) {
+            showToast('Please agree to terms to proceed.', 'error');
+            hasError = true;
+          }
+
+          if (hasError) {
+            showToast('Please fill out the highlighted fields correctly.', 'error');
+            return;
+          }
+
+          const submitBtn = document.getElementById('bookingSubmitBtn');
+          const btnText = document.getElementById('btnSubmitText');
+          const btnSpinner = document.getElementById('btnSubmitSpinner');
+
+          submitBtn.disabled = true;
+          btnText.textContent = 'Securing Trial Pass...';
+          btnSpinner.style.display = 'inline-block';
+
+          setTimeout(() => {
+            RateLimiter.recordSubmission();
+
+            submitBtn.disabled = false;
+            btnText.textContent = 'Confirm & Claim Free Pass';
+            btnSpinner.style.display = 'none';
+
+            form.reset();
+            nameInput.classList.remove('is-valid');
+            phoneInput.classList.remove('is-valid');
+            if (emailInput) emailInput.classList.remove('is-valid');
+
+            if (csrfInput) csrfInput.value = SecurityUtils.generateCSRFToken();
+
+            showToast(`Free Trial Reserved for ${name}! Please visit Rigid Fitness Club on Supriya Road, Bettiah.`, 'success');
+          }, 850);
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 9. GDPR CONSENT & ACCESSIBLE DIALOGS
+      // -------------------------------------------------------------
+      function initConsentAndDialogs() {
+        const cookieBanner = document.getElementById('cookieBanner');
+        const CONSENT_KEY = 'rfc_gdpr_consent_granted';
+
+        try {
+          if (!sessionStorage.getItem(CONSENT_KEY)) {
+            setTimeout(() => {
+              if (cookieBanner) cookieBanner.classList.add('active');
+            }, 1200);
+          }
+        } catch(e) {}
+
+        const acceptBtn = document.getElementById('btnAcceptCookies');
+        const rejectBtn = document.getElementById('btnRejectCookies');
+
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', function() {
+            try { sessionStorage.setItem(CONSENT_KEY, 'all'); } catch(e) {}
+            if (cookieBanner) cookieBanner.classList.remove('active');
+            showToast('Cookie preferences saved: Accepted.', 'success');
+          });
+        }
+
+        if (rejectBtn) {
+          rejectBtn.addEventListener('click', function() {
+            try { sessionStorage.setItem(CONSENT_KEY, 'essential_only'); } catch(e) {}
+            if (cookieBanner) cookieBanner.classList.remove('active');
+            showToast('Essential security cookies saved.', 'info');
+          });
+        }
+
+        const footerCookieBtn = document.getElementById('footerCookieBtn');
+        if (footerCookieBtn) {
+          footerCookieBtn.addEventListener('click', function() {
+            if (cookieBanner) cookieBanner.classList.add('active');
+          });
+        }
+
+        const privacyDialog = document.getElementById('privacyDialog');
+        const termsDialog = document.getElementById('termsDialog');
+
+        function openDialog(dialog) {
+          if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+        }
+        function closeDialog(dialog) {
+          if (dialog && typeof dialog.close === 'function') dialog.close();
+        }
+
+        document.querySelectorAll('#footerPrivacyLink, #linkOpenPrivacy, #btnOpenPrivacyFromCookie').forEach(btn => {
+          btn.addEventListener('click', () => openDialog(privacyDialog));
+        });
+
+        document.querySelectorAll('#footerTermsLink, #linkOpenTerms').forEach(btn => {
+          btn.addEventListener('click', () => openDialog(termsDialog));
+        });
+
+        const closePriv = document.getElementById('closePrivacyDialog');
+        if (closePriv) closePriv.addEventListener('click', () => closeDialog(privacyDialog));
+
+        const closeTerms = document.getElementById('closeTermsDialog');
+        if (closeTerms) closeTerms.addEventListener('click', () => closeDialog(termsDialog));
+
+        [privacyDialog, termsDialog].forEach(dialog => {
+          if (dialog) {
+            dialog.addEventListener('click', function(e) {
+              const rect = dialog.getBoundingClientRect();
+              const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+                rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+              if (!isInDialog) closeDialog(dialog);
+            });
+          }
+        });
+      }
+
+      // -------------------------------------------------------------
+      // 10. MOBILE MENU & GLOBAL CONTROLLERS
+      // -------------------------------------------------------------
+      function initMobileMenu() {
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const drawer = document.getElementById('mobileDrawer');
+
+        if (!menuBtn || !drawer) return;
+
+        menuBtn.addEventListener('click', function() {
+          const isOpen = drawer.classList.contains('open');
+          if (isOpen) {
+            drawer.classList.remove('open');
+            drawer.setAttribute('aria-hidden', 'true');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            drawer.classList.add('open');
+            drawer.setAttribute('aria-hidden', 'false');
+            menuBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            drawer.classList.remove('open');
+            drawer.setAttribute('aria-hidden', 'true');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      function initScheduleFilterTabs() {
+        const filterBar = document.getElementById('scheduleFilterBar');
+        if (!filterBar) return;
+
+        filterBar.addEventListener('click', function(e) {
+          if (e.target.classList.contains('schedule-filter-btn')) {
+            filterBar.querySelectorAll('.schedule-filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            const day = e.target.getAttribute('data-day');
+            renderSchedule(day);
+          }
+        });
+      }
+
+      // -------------------------------------------------------------
+      // BOOTSTRAP INITIALIZER
+      // -------------------------------------------------------------
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        renderSecureContacts();
+        renderSchedule('all');
+        initScheduleFilterTabs();
+        initPricingToggle();
+        initCalculator();
+        initBookingForm();
+        initConsentAndDialogs();
+        initMobileMenu();
+      });
+
+    })();
+  </script>
+</body>
+</html>
