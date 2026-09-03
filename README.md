@@ -1,4 +1,5 @@
-Almas Neyamatullah · Cinematic Portfolio 🎬
+# Almas Neyamatullah · Cinematic Portfolio 🎬
+
 A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, and AI Enthusiast.
 
 https://img.shields.io/badge/License-MIT-yellow.svg
@@ -10,21 +11,47 @@ Features
 
 Technologies Used
 
-Project Structure
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Project Showcase](#-project-showcase)
+- [Project Structure](#-project-structure)
+- [Setup & Usage](#-setup--usage)
+- [Customization Guide](#-customization-guide)
+- [Responsive Breakpoints](#-responsive-breakpoints)
+- [Design Philosophy](#-design-philosophy)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 Setup & Usage
 
 Customization Guide
 
-Responsive Breakpoints
+### 🎨 Design & Experience
+- **Cinematic Dark Theme** — Deep black background (`#0a0a0a`) with subtle radial gradients and glass-morphism effects.
+- **Custom Cursor** — Interactive magnetic cursor with hover animations for cards, links, and buttons.
+- **Atmospheric Rain Animation** — Lightweight, high-performance HTML5 canvas rain effect.
+- **Japanese Typography & Aesthetics** — Elegant blend of *Noto Serif JP* and *Inter* fonts with philosophical accents (静寂, 魂のコード).
+- **Smooth Animations** — IntersectionObserver-powered scroll reveals, button glow effects, and transitions.
+- **Preloader Animation** — Elegant minimal loading screen with rotating dual rings.
 
-Design Philosophy
+### 📱 Core Functionality
+- **Responsive Design** — Pixel-perfect across mobile (<500px), tablet (500–900px), and desktop (>900px).
+- **Smart Navigation** — Sticky header that smoothly slides away on scroll down and reveals on scroll up.
+- **Interactive Project Modals** — Seamless modal overlays with full-screen iframe launchers, loading spinners, and keyboard (Escape) accessibility.
+- **On-Demand Iframe Loading** — Project iframes load asynchronously only when opened, preventing unnecessary bandwidth usage and avoiding unwanted redirects.
+- **Contact Form** — Production-ready form integrated with Web3Forms API.
 
-Contributing
+---
 
-License
+## 🛠️ Project Showcase
 
-Acknowledgments
+| Project | Icon | Description | Technologies |
+|---|:---:|---|---|
+| **Rigid Fitness Club** | 🏋️ | Premium gym & fitness center website in Bettiah featuring memberships, trainers, batch schedules, and interactive BMI/calorie calculator | HTML, CSS, JavaScript, Responsive |
+| **Dr. Mugdha Mohan** | 💎 | Skin Care Centre website for Bettiah's top dermatologist featuring patient testimonials, clinic timings, and appointment booking | Healthcare, SEO, Booking, HTML/CSS |
+| **Clock & Stopwatch** | ⏰ | Real-time digital clock with live date display and stopwatch with millisecond precision | JavaScript, CSS, HTML |
+| **To-Do List** | ✅ | Productive task manager with persistent local storage, CRUD operations, and category filters | LocalStorage, CRUD, Filters, JavaScript |
 
 Contact
 
@@ -32,11 +59,18 @@ Contact
 🎨 Design & Experience
 Cinematic Dark Theme — Deep black with subtle gradients and glass-morphism effects
 
-Custom Cursor — Interactive cursor with hover effects for enhanced user experience
+### Frontend
+- **HTML5** — Semantic, accessible markup
+- **CSS3** — Custom properties, Flexbox, CSS Grid, backdrop-filter glassmorphism, animations
+- **JavaScript (ES6+)** — Modular DOM manipulation, modal controls, canvas animation, responsive interactions
 
-Rain Animation — Atmospheric rain canvas effect in the background
+### Typography
+- **Noto Serif JP** — Japanese serif styling for headers and accents
+- **Inter** — Modern, clean sans-serif for UI elements and body text
 
-Japanese Typography — Beautiful blend of Noto Serif JP and Inter fonts
+### Integrations & Services
+- **Web3Forms API** — Serverless contact form submission
+- **GitHub Pages** — Automated continuous deployment
 
 Smooth Animations — Scroll reveals, hover effects, and smooth transitions
 
@@ -83,17 +117,16 @@ Web3Forms — Contact form handling and email delivery
 📂 Project Structure
 text
 Almas-Neyamatullah/
-├── index.html                          # Main portfolio file
-├── Neon Pulse.html                     # Neon Pulse interactive project
-├── Digital Clock & StopWatch.html      # Clock & Stopwatch tool
-├── Zen Flow.html                       # Zen Flow meditation app
-├── Todo List App.html                  # To-Do List task manager
-├── MD Elmas cv.pdf                     # Resume/CV (PDF)
-├── LICENSE                             # MIT License
-└── README.md                           # Documentation
-🔧 Setup & Usage
-Local Development
-Clone the repository
+├── index.html                           # Main portfolio landing page
+├── Rigid-Fitness-Club.html              # Rigid Fitness Club website project
+├── Dr. Mugdha Mohan.html                # Dr. Mugdha Mohan Skin Care Centre project
+├── Digital Clock & StopWatch.html       # Digital Clock & Stopwatch tool
+├── Todo List App.html                   # To-Do List productivity application
+├── dr-mugdha.jpg                        # Clinic image asset for Dr. Mugdha Mohan
+├── MD Elmas cv.pdf                      # Resume / CV document
+├── README.md                            # Comprehensive project documentation
+└── .github/                             # GitHub configuration & workflows
+```
 
 bash
 git clone https://github.com/Almasyash/Almas-Neyamatullah.git
@@ -105,96 +138,100 @@ Open the website
 
 Simply open index.html in your browser
 
-Or use a live server extension (VS Code: Live Server)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Almasyash/Almas-Neyamatullah.git
+   ```
 
-Deployment
-The portfolio is hosted on GitHub Pages:
+2. **Navigate to the project directory**
+   ```bash
+   cd Almas-Neyamatullah
+   ```
 
-Live URL: https://almasyash.github.io/Almas-Neyamatullah/
+3. **Run locally**
+   - Open `index.html` directly in any modern browser, or
+   - Use VS Code extension **Live Server** (`Go Live`) for hot reload.
 
-To deploy your own version:
+### Deployment
+
+The portfolio is deployed directly via **GitHub Pages**:
+- **Live URL**: [https://almasyash.github.io/Almas-Neyamatullah/](https://almasyash.github.io/Almas-Neyamatullah/)
+
+Any push to the `main` branch automatically triggers GitHub Pages to build and deploy the updated site.
 
 Fork this repository
 
 Enable GitHub Pages in repository settings
 
-Push changes to the main branch
+### Update Personal Details
 
-🎯 Customization Guide
-Update Personal Information
-Element	Location	How to Update
-Email	mailto:almasneyamt786@gmail.com	Change email address in contact links
-GitHub	https://github.com/Almasyash	Update GitHub username
-LinkedIn	# (placeholder)	Add your LinkedIn URL
-Portfolio	https://almasyash.github.io/Almas-Neyamatullah/	Update with your portfolio URL
-Resume	MD Elmas cv.pdf	Replace with your resume PDF
-Modify Projects
-Each project card in the #projects section can be customized:
+| Item | File | Location |
+|---|---|---|
+| **Full Name / Title** | `index.html` | Hero section (`#hero`) |
+| **About Bio & Skills** | `index.html` | About section (`#about`) |
+| **Social Links & Email** | `index.html` | Contact section (`#contact`) |
+| **Resume PDF** | Root | Replace `MD Elmas cv.pdf` |
 
-html
-<div class="project-card glass" id="yourProjectTrigger">
-    <span class="icon">🎯</span>                          <!-- Change emoji -->
-    <h3>Your Project Name</h3>                           <!-- Change title -->
-    <p>Your project description goes here.</p>           <!-- Change description -->
-    <div class="tech-tags">
-        <span>Tech1</span>                               <!-- Add/remove tags -->
-        <span>Tech2</span>
-    </div>
-    <p class="launch-hint">▶ Click to launch</p>
-</div>
-Update Contact Form
-The form uses Web3Forms API. To use your own endpoint:
+### Adding or Modifying a Project
 
-Create an account at Web3Forms
+1. Add a new `.html` project file into the repository root.
+2. Add a project card inside `<div class="projects-grid">` in `index.html`:
+   ```html
+   <div class="project-card glass" id="myProjectTrigger">
+       <span class="icon">🚀</span>
+       <h3>My New Project</h3>
+       <p>Description of what the project does.</p>
+       <div class="tech-tags">
+           <span>HTML</span>
+           <span>CSS</span>
+           <span>JavaScript</span>
+       </div>
+       <p class="launch-hint">▶ Click to launch</p>
+   </div>
+   ```
+3. Add the corresponding modal overlay with an iframe:
+   ```html
+   <div class="modal-overlay" id="myProjectModal">
+       <div class="modal-content">
+           <button class="modal-close" id="myProjectModalClose">✕</button>
+           <h2>🚀 My New Project</h2>
+           <div class="project-iframe-container">
+               <div class="iframe-loader" id="myProjectLoader"></div>
+               <iframe id="myProjectIframe" src="" data-src="My-Project.html" allow="autoplay; fullscreen"></iframe>
+           </div>
+           <div style="margin-top: 15px; display: flex; gap: 15px;">
+               <a href="My-Project.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
+               <button class="btn btn-outline" id="myProjectModalCloseBtn">Close</button>
+           </div>
+       </div>
+   </div>
+   ```
+4. Hook up open/close event listeners in the `<script>` section.
 
-Get your access key
+---
 
-Update the access_key value in the form:
+## 📱 Responsive Breakpoints
 
-html
-<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-Change Color Scheme
-Customize the theme by updating CSS variables in :root:
+| Device | Breakpoint | Layout Behavior |
+|---|---|---|
+| **Desktop** | `> 900px` | Multi-column grid, horizontal navigation bar, 70vh iframes |
+| **Tablet** | `500px - 900px` | Single-column about/contact grids, compact 50vh iframes |
+| **Mobile** | `< 500px` | Streamlined cards, 2-column stat counters, 40vh iframes |
 
-css
-:root {
-    --bg-primary: #0a0a0a;      /* Background color */
-    --bg-secondary: #141414;    /* Secondary background */
-    --text-primary: #f0ece4;    /* Main text color */
-    --text-secondary: #b8b0a4;  /* Secondary text color */
-    --accent: #cc2222;          /* Primary accent color */
-    --accent-glow: rgba(204, 34, 34, 0.5); /* Accent glow */
-}
-📱 Responsive Breakpoints
-Device	Breakpoint	Layout Changes
-Desktop	> 900px	Full layout, grid columns, visible navigation
-Tablet	500px - 900px	Single column grids, adjusted spacing
-Mobile	< 500px	Compact design, smaller text, hidden navigation
-🎨 Design Philosophy
-This portfolio draws inspiration from:
+---
 
-Japanese Minimalism — Clean, uncluttered design with intentional whitespace
+## 🎨 Design Philosophy
 
-Cinematic Aesthetics — Dark themes, dramatic lighting, atmospheric effects
-
-Glass-morphism — Frosted glass effects for depth and sophistication
-
-Atmospheric Elements — Rain animation for immersion and mood
-
-Typography — Blend of Japanese and Western typography for cultural fusion
-
-🤝 Contributing
-Contributions are welcome! If you have suggestions for improvements:
-
-Fork the repository
-
-Create your feature branch (git checkout -b feature/AmazingFeature)
+- **Japanese Minimalism (侘寂)** — Intentional whitespace, purposeful typography, and clean contrast.
+- **Cinematic Atmosphere** — Dark ambient canvas effects paired with crimson accent highlights (`#cc2222`).
+- **Glassmorphism** — Layered frosted glass panels with `backdrop-filter: blur(12px)`.
+- **Performance First** — Zero heavy external JavaScript frameworks; vanilla execution for instant load times.
 
 Commit your changes (git commit -m 'Add some AmazingFeature')
 
 Push to the branch (git push origin feature/AmazingFeature)
 
-Open a Pull Request
+This project is licensed under the **MIT License** — see below for details:
 
 Contribution Guidelines
 Follow the existing code style
@@ -235,82 +272,14 @@ Fonts: Google Fonts (Noto Serif JP, Inter)
 
 Form Handling: Web3Forms for contact form functionality
 
-Inspiration: Japanese aesthetics, cinematic design, and modern web trends
+## 📞 Contact
 
-Tools: GitHub Pages for hosting
-
-📞 Contact
-Almas Neyamatullah
-
-📧 Email: almasneyamt786@gmail.com
-🐙 GitHub: Almasyash
-🌐 Portfolio: almasyash.github.io/Almas-Neyamatullah
-
-📊 Project Status
-✅ Portfolio — Complete
+**Almas Neyamatullah**  
+- 📧 Email: [almasneyamt786@gmail.com](mailto:almasneyamt786@gmail.com)  
+- 🐙 GitHub: [@Almasyash](https://github.com/Almasyash)  
+- 🌐 Portfolio: [almasyash.github.io/Almas-Neyamatullah](https://almasyash.github.io/Almas-Neyamatullah/)
+- 📄 Resume: [Download CV](MD%20Elmas%20cv.pdf)
 
 ✅ Neon Pulse — Integrated
 
-✅ Clock & Stopwatch — Integrated
-
-✅ Zen Flow — Integrated
-
-✅ To-Do List — Integrated
-
-✅ Responsive Design — Complete
-
-✅ Contact Form — Complete
-
-🚀 Live Deployment — Active
-
-Built with ❤️ and caffeine.
-
-⭐ Star this repository if you found it useful!
-
-How to Add the README to Your Repository
-Option 1: GitHub Web Interface
-Go to your repository: https://github.com/Almasyash/Almas-Neyamatullah
-
-Click on "Add file" → "Create new file"
-
-Name the file README.md
-
-Copy the entire README content above
-
-Click "Commit new file"
-
-Option 2: Command Line
-bash
-# 1. Create the README.md file
-touch README.md
-
-# 2. Open in text editor and paste the content
-code README.md
-
-# 3. Save the file
-
-# 4. Add and commit to Git
-git add README.md
-git commit -m "Add comprehensive README with MIT license"
-git push origin main
-Option 3: Using echo (Quick Method)
-bash
-# Create and add content using echo (bash)
-echo "# Almas Neyamatullah · Cinematic Portfolio 🎬" > README.md
-echo " " >> README.md
-echo "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" >> README.md
-# ... (paste the rest of the content)
-✅ Quick Checklist
-☑ README.md created with comprehensive documentation
-☑ MIT License included in README
-☑ Badges added (License, GitHub Pages, Made with Love)
-☑ Table of Contents for easy navigation
-☑ Setup instructions for local development
-☑ Customization guide for users
-☑ Project structure explained
-☑ Technologies listed
-☑ Contributing guidelines
-☑ Contact information
-☑ Responsive breakpoints documented
-The README is now complete and ready to be added to your repository! 🎉
-
+⭐ *Star this repository if you like the cinematic theme!*
