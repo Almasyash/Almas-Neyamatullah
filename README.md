@@ -2,20 +2,21 @@
 
 A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, and AI Enthusiast.
 
-https://img.shields.io/badge/License-MIT-yellow.svg
-https://img.shields.io/badge/GitHub-Pages-blue
-https://img.shields.io/badge/Made%2520with-Love-red
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue)](https://almasyash.github.io/Almas-Neyamatullah/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/almas-neyamatullah)
+[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red)](https://github.com/Almasyash)
 
-📋 Table of Contents
-Features
+---
 
-Technologies Used
+## 📋 Table of Contents
 
 - [Features](#-features)
 - [Technologies Used](#-technologies-used)
 - [Project Showcase](#-project-showcase)
 - [Project Structure](#-project-structure)
 - [Setup & Usage](#-setup--usage)
+- [LinkedIn Profile & Social Media Integration](#-linkedin-profile--social-media-integration)
 - [Customization Guide](#-customization-guide)
 - [Responsive Breakpoints](#-responsive-breakpoints)
 - [Design Philosophy](#-design-philosophy)
@@ -23,9 +24,9 @@ Technologies Used
 - [License](#-license)
 - [Contact](#-contact)
 
-Setup & Usage
+---
 
-Customization Guide
+## ✨ Features
 
 ### 🎨 Design & Experience
 - **Cinematic Dark Theme** — Deep black background (`#0a0a0a`) with subtle radial gradients and glass-morphism effects.
@@ -53,11 +54,9 @@ Customization Guide
 | **Clock & Stopwatch** | ⏰ | Real-time digital clock with live date display and stopwatch with millisecond precision | JavaScript, CSS, HTML |
 | **To-Do List** | ✅ | Productive task manager with persistent local storage, CRUD operations, and category filters | LocalStorage, CRUD, Filters, JavaScript |
 
-Contact
+---
 
-✨ Features
-🎨 Design & Experience
-Cinematic Dark Theme — Deep black with subtle gradients and glass-morphism effects
+## 🚀 Technologies Used
 
 ### Frontend
 - **HTML5** — Semantic, accessible markup
@@ -71,51 +70,13 @@ Cinematic Dark Theme — Deep black with subtle gradients and glass-morphism eff
 ### Integrations & Services
 - **Web3Forms API** — Serverless contact form submission
 - **GitHub Pages** — Automated continuous deployment
+- **Playwright Automation** — Automated LinkedIn profile and portfolio synchronization
 
-Smooth Animations — Scroll reveals, hover effects, and smooth transitions
+---
 
-Preloader Animation — Elegant loading screen with spinning ring
+## 📂 Project Structure
 
-📱 Core Functionality
-Responsive Design — Fully responsive across all devices
-
-Smart Navigation — Auto-hiding header on scroll down
-
-Project Showcase — Interactive project cards with modal previews
-
-Contact Form — Integrated with Web3Forms API for email delivery
-
-🛠️ Projects Included
-Project	Icon	Description	Technologies
-Neon Pulse	⚡	Real-time WebGL particle system with audio reactivity	Three.js, WebGL, Audio
-Clock & Stopwatch	⏰	Digital clock with date & stopwatch with millisecond precision	JavaScript, CSS, HTML
-Zen Flow	🌊	Meditation app with dynamic ambient soundscapes	Web Audio, Ambient, Meditation
-To-Do List	✅	Productive task manager with local storage & smart filters	LocalStorage, CRUD, Filters
-📬 Contact & Social
-Integrated contact form with Web3Forms API
-
-Social links (GitHub, LinkedIn, Portfolio, Email)
-
-Resume download option (PDF)
-
-🚀 Technologies Used
-Frontend
-HTML5 — Semantic markup with accessibility features
-
-CSS3 — Custom properties, Flexbox, Grid, Keyframe animations
-
-JavaScript — Vanilla JS for interactivity, animations, and modals
-
-Fonts
-Noto Serif JP — Japanese typography with elegant serif styling
-
-Inter — Clean, modern sans-serif for body text
-
-External Services
-Web3Forms — Contact form handling and email delivery
-
-📂 Project Structure
-text
+```
 Almas-Neyamatullah/
 ├── index.html                           # Main portfolio landing page
 ├── Rigid-Fitness-Club.html              # Rigid Fitness Club website project
@@ -124,19 +85,48 @@ Almas-Neyamatullah/
 ├── Todo List App.html                   # To-Do List productivity application
 ├── dr-mugdha.jpg                        # Clinic image asset for Dr. Mugdha Mohan
 ├── MD Elmas cv.pdf                      # Resume / CV document
+├── linkedin-data.json                   # Structured portfolio metadata for LinkedIn
+├── automate_linkedin.py                 # Playwright automation script for LinkedIn profile
+├── requirements.txt                     # Python dependencies for automation
 ├── README.md                            # Comprehensive project documentation
 └── .github/                             # GitHub configuration & workflows
 ```
 
-bash
-git clone https://github.com/Almasyash/Almas-Neyamatullah.git
-Navigate to project directory
+---
 
-bash
-cd Almas-Neyamatullah
-Open the website
+## 🌐 LinkedIn Profile & Social Media Integration
 
-Simply open index.html in your browser
+This portfolio is connected to LinkedIn for professional showcase and recruiter discovery:
+
+- **LinkedIn Profile**: [https://linkedin.com/in/almas-neyamatullah](https://linkedin.com/in/almas-neyamatullah)
+- **Profile Headline**: `Full Stack Developer | UI/UX Designer | AI Enthusiast | Cinematic Portfolio Creator`
+- **Featured Section Link**: Points directly to [https://almasyash.github.io/Almas-Neyamatullah/](https://almasyash.github.io/Almas-Neyamatullah/)
+
+### Profile Automation
+To sync portfolio projects, headline, about section, and featured links directly to your LinkedIn profile:
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   playwright install chromium
+   ```
+
+2. **Preview profile data (Dry Run)**:
+   ```bash
+   python automate_linkedin.py --dry-run
+   ```
+
+3. **Run automated browser setup**:
+   ```bash
+   python automate_linkedin.py
+   ```
+   *The script opens a visible browser window, prompts you to sign in safely with your 2FA, and updates your headline, about summary, and featured portfolio links.*
+
+---
+
+## 🔧 Setup & Usage
+
+### Local Development
 
 1. **Clone the repository**
    ```bash
@@ -159,9 +149,9 @@ The portfolio is deployed directly via **GitHub Pages**:
 
 Any push to the `main` branch automatically triggers GitHub Pages to build and deploy the updated site.
 
-Fork this repository
+---
 
-Enable GitHub Pages in repository settings
+## 🎯 Customization Guide
 
 ### Update Personal Details
 
@@ -170,6 +160,7 @@ Enable GitHub Pages in repository settings
 | **Full Name / Title** | `index.html` | Hero section (`#hero`) |
 | **About Bio & Skills** | `index.html` | About section (`#about`) |
 | **Social Links & Email** | `index.html` | Contact section (`#contact`) |
+| **LinkedIn URL** | `index.html` & `linkedin-data.json` | Contact list & JSON |
 | **Resume PDF** | Root | Replace `MD Elmas cv.pdf` |
 
 ### Adding or Modifying a Project
@@ -227,25 +218,13 @@ Enable GitHub Pages in repository settings
 - **Glassmorphism** — Layered frosted glass panels with `backdrop-filter: blur(12px)`.
 - **Performance First** — Zero heavy external JavaScript frameworks; vanilla execution for instant load times.
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+---
 
-Push to the branch (git push origin feature/AmazingFeature)
+## 📄 License
 
 This project is licensed under the **MIT License** — see below for details:
 
-Contribution Guidelines
-Follow the existing code style
-
-Keep the design consistent
-
-Test on multiple devices
-
-Update documentation if needed
-
-📄 License
-This project is licensed under the MIT License — see the LICENSE file for details.
-
-text
+```
 MIT License
 
 Copyright (c) 2026 Almas Neyamatullah
@@ -267,19 +246,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-🙏 Acknowledgments
-Fonts: Google Fonts (Noto Serif JP, Inter)
+```
 
-Form Handling: Web3Forms for contact form functionality
+---
 
 ## 📞 Contact
 
 **Almas Neyamatullah**  
 - 📧 Email: [almasneyamt786@gmail.com](mailto:almasneyamt786@gmail.com)  
+- 💼 LinkedIn: [almas-neyamatullah](https://linkedin.com/in/almas-neyamatullah)  
 - 🐙 GitHub: [@Almasyash](https://github.com/Almasyash)  
-- 🌐 Portfolio: [almasyash.github.io/Almas-Neyamatullah](https://almasyash.github.io/Almas-Neyamatullah/)
-- 📄 Resume: [Download CV](MD%20Elmas%20cv.pdf)
+- 🌐 Portfolio: [almasyash.github.io/Almas-Neyamatullah](https://almasyash.github.io/Almas-Neyamatullah/)  
+- 📄 Resume: [Download CV (PDF)](MD%20Elmas%20cv.pdf)
 
-✅ Neon Pulse — Integrated
+---
 
 ⭐ *Star this repository if you like the cinematic theme!*
