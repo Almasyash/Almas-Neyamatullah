@@ -2,6 +2,16 @@
 
 A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, and AI Enthusiast.
 
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-181717?style=flat-square&logo=github&logoColor=white)](https://almasyash.github.io/Almas-Neyamatullah/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/almas-neyamatullah/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF6B6B?style=flat-square&logo=vercel&logoColor=white)](https://almasyash.github.io/Almas-Neyamatullah/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/almasyash)
+[![MIT License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=flat-square)](https://github.com/almasyash)
+
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue)](https://almasyash.github.io/Almas-Neyamatullah/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/almas-neyamatullah)
