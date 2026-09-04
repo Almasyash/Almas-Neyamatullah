@@ -4,7 +4,7 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue)](https://almasyash.github.io/Almas-Neyamatullah/)
-[![LinkedIn]](https://linkedin.com/in/almas-neyamatullah)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/almas-neyamatullah)
 [![Made with Love](https://img.shields.io/badge/Made%20with-Love-red)](https://github.com/Almasyash)
 
 ---
