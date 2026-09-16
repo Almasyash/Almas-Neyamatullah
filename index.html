@@ -266,10 +266,38 @@
                 radial-gradient(circle at 10% 90%, rgba(204, 34, 34, 0.03) 0%, transparent 30%);
             pointer-events: none;
         }
-        .hero-content {
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(36px, 5vw, 80px);
+            width: 100%;
             position: relative;
             z-index: 2;
-            max-width: 900px;
+        }
+        .hero-content {
+            flex: 1 1 58%;
+            max-width: 720px;
+        }
+        .hero-profile {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-profile img {
+            width: clamp(260px, 28vw, 420px);
+            height: clamp(260px, 28vw, 420px);
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 50px rgba(204, 34, 34, 0.22), 0 20px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .hero-profile img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 70px rgba(204, 34, 34, 0.38), 0 25px 50px rgba(0, 0, 0, 0.65);
         }
         .hero-content .jp-kicker {
             font-family: var(--font-jp);
@@ -281,7 +309,7 @@
         }
         .hero-content h1 {
             font-family: var(--font-jp);
-            font-size: clamp(3rem, 10vw, 7rem);
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
             font-weight: 900;
             line-height: 1.05;
             letter-spacing: -0.02em;
@@ -698,6 +726,24 @@
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+                padding-top: 10px;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-profile {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .hero-profile img {
+                width: clamp(220px, 50vw, 320px);
+                height: clamp(220px, 50vw, 320px);
+            }
             .about-grid,
             #contact .contact-wrap {
                 grid-template-columns: 1fr;
@@ -762,29 +808,34 @@
 
     <!-- HERO -->
     <section id="hero">
-        <div class="container hero-content">
-            <div class="jp-kicker">── 魂のコード</div>
-            <h1>
-                Almas<br />
-                <span class="highlight">Neyamatullah</span>
-            </h1>
-            <p class="subtitle">
-                <strong>Full Stack Developer</strong> &middot; UI/UX &middot; AI Enthusiast
-            </p>
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">View Work</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="jp-kicker">── 魂のコード</div>
+                <h1>
+                    Almas<br />
+                    <span class="highlight">Neyamatullah</span>
+                </h1>
+                <p class="subtitle">
+                    <strong>Full Stack Developer</strong> &middot; UI/UX &middot; AI Enthusiast
+                </p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <span class="emoji">🐙</span> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span class="emoji">🔗</span> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <span class="emoji">📸</span> Instagram
+                    </a>
+                </div>
             </div>
-            <div class="hero-socials">
-                <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <span class="emoji">🐙</span> GitHub
-                </a>
-                <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <span class="emoji">🔗</span> LinkedIn
-                </a>
-                <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <span class="emoji">📸</span> Instagram
-                </a>
+            <div class="hero-profile">
+                <img src="profile.png" alt="Almas Neyamatullah" />
             </div>
         </div>
     </section>
