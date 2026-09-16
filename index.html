@@ -792,32 +792,36 @@
             <div class="projects-grid">
                 
 
-                <!-- RIGID FITNESS CLUB CARD -->
-                <div class="project-card glass" id="rigidFitnessTrigger">
-                    <span class="icon">🏋️</span>
-                    <h3>Rigid Fitness Club</h3>
-                    <p>Premium gym & fitness center website in Bettiah with membership plans, trainers, and BMI calculator.</p>
+                <!-- PET'S HEAVEN CARD -->
+                <div class="project-card glass" id="petsHeavenTrigger">
+                    <span class="icon">🐾</span>
+                    <h3>Pet's Heaven</h3>
+                    <p>Pet's Heaven is a professional pet-care website designed to provide a modern, responsive and user-friendly online presence for pet-related services.</p>
                     <div class="tech-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <span>Pet Care</span>
+                        <span>Services</span>
                         <span>Responsive</span>
                     </div>
-                    <p class="launch-hint">▶ Click to launch</p>
+                    <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                        <p class="launch-hint" style="margin-top: 0;">▶ View Project</p>
+                        <a href="https://petsheaven.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.78rem; text-decoration: none;" onclick="event.stopPropagation();">Live Demo</a>
+                    </div>
                 </div>
 
-
-                <!-- DR. MUGDHA MOHAN CARD (replaces Zen Flow) -->
-                <div class="project-card glass" id="drMugdhaTrigger">
-                    <span class="icon">💎</span>
-                    <h3>Dr. Mugdha Mohan</h3>
-                    <p>Skin Care Centre — Best Dermatologist in Bettiah.</p>
+                <!-- EDITOR FS CARD -->
+                <div class="project-card glass" id="editorFsTrigger">
+                    <span class="icon">🎬</span>
+                    <h3>Editor FS</h3>
+                    <p>Editor FS is an Android video editing application designed to provide users with a practical interface for editing and managing video content.</p>
                     <div class="tech-tags">
-                        <span>Healthcare</span>
-                        <span>SEO</span>
-                        <span>Booking</span>
+                        <span>Android</span>
+                        <span>Video Editor</span>
+                        <span>Media</span>
                     </div>
-                    <p class="launch-hint">▶ Click to launch</p>
+                    <div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://github.com/FS-Groupz/Editor-FS/releases/download/v1.0.0/app-release.apk" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.78rem; text-decoration: none;" onclick="event.stopPropagation();">Download APK</a>
+                        <a href="https://github.com/FS-Groupz/Editor-FS" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.78rem; text-decoration: none;" onclick="event.stopPropagation();">GitHub</a>
+                    </div>
                 </div>
 
                 <!-- DIGITAL CLOCK & STOPWATCH CARD -->
@@ -849,50 +853,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    RIGID FITNESS CLUB MODAL
-    ============================================================ -->
-    <div class="modal-overlay" id="rigidFitnessModal">
-        <div class="modal-content">
-            <button class="modal-close" id="rigidFitnessModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">🏋️ Rigid Fitness Club <span class="accent">Gym Website</span></h2>
-            <div class="project-iframe-container">
-                <div class="iframe-loader" id="rigidFitnessLoader"></div>
-                <iframe 
-                    id="rigidFitnessIframe"
-                    src=""
-                    data-src="Rigid-Fitness-Club.html"
-                    allow="autoplay; fullscreen"
-                ></iframe>
-            </div>
-            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Rigid-Fitness-Club.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="rigidFitnessModalCloseBtn">Close</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- ============================================================
-    DR. MUGDHA MOHAN MODAL (replaces Zen Flow)
-    ============================================================ -->
-    <div class="modal-overlay" id="drMugdhaModal">
-        <div class="modal-content">
-            <button class="modal-close" id="drMugdhaModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">💎 Dr. Mugdha Mohan <span class="accent">Skin Care Centre</span></h2>
-            <div class="project-iframe-container">
-                <div class="iframe-loader" id="drMugdhaLoader"></div>
-                <iframe 
-                    id="drMugdhaIframe"
-                    src="Dr. Mugdha Mohan.html"
-                    allow="autoplay; fullscreen"
-                ></iframe>
-            </div>
-            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Dr. Mugdha Mohan.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="drMugdhaModalCloseBtn">Close</button>
-            </div>
-        </div>
-    </div>
 
     <!-- ============================================================
     CLOCK & STOPWATCH MODAL
@@ -1127,88 +1088,28 @@
         })();
 
         // ============================================================
-        // 6. RIGID FITNESS CLUB MODAL CONTROLS
+        // 6. PET'S HEAVEN CARD CONTROLS
         // ============================================================
-        const rigidFitnessModal = document.getElementById('rigidFitnessModal');
-        const rigidFitnessTrigger = document.getElementById('rigidFitnessTrigger');
-        const rigidFitnessClose = document.getElementById('rigidFitnessModalClose');
-        const rigidFitnessCloseBtn = document.getElementById('rigidFitnessModalCloseBtn');
-        const rigidFitnessIframe = document.getElementById('rigidFitnessIframe');
-        const rigidFitnessLoader = document.getElementById('rigidFitnessLoader');
-
-        function openRigidFitnessModal() {
-            rigidFitnessModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            rigidFitnessLoader.classList.remove('hidden');
-            const targetSrc = rigidFitnessIframe.getAttribute('data-src') || 'Rigid-Fitness-Club.html';
-            rigidFitnessIframe.src = targetSrc;
+        const petsHeavenTrigger = document.getElementById('petsHeavenTrigger');
+        if (petsHeavenTrigger) {
+            petsHeavenTrigger.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) {
+                    window.open('https://petsheaven.in/', '_blank', 'noopener,noreferrer');
+                }
+            });
         }
-
-        function closeRigidFitnessModal() {
-            rigidFitnessModal.classList.remove('active');
-            document.body.style.overflow = '';
-            rigidFitnessIframe.src = '';
-        }
-
-        rigidFitnessTrigger.addEventListener('click', openRigidFitnessModal);
-        rigidFitnessClose.addEventListener('click', closeRigidFitnessModal);
-        rigidFitnessCloseBtn.addEventListener('click', closeRigidFitnessModal);
-
-        rigidFitnessModal.addEventListener('click', (e) => {
-            if (e.target === rigidFitnessModal) closeRigidFitnessModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && rigidFitnessModal.classList.contains('active')) {
-                closeRigidFitnessModal();
-            }
-        });
-
-        rigidFitnessIframe.addEventListener('load', function() {
-            rigidFitnessLoader.classList.add('hidden');
-        });
 
         // ============================================================
-        // 7. DR. MUGDHA MOHAN MODAL CONTROLS (replaces Zen Flow)
+        // 7. EDITOR FS CARD CONTROLS
         // ============================================================
-        const drMugdhaModal = document.getElementById('drMugdhaModal');
-        const drMugdhaTrigger = document.getElementById('drMugdhaTrigger');
-        const drMugdhaClose = document.getElementById('drMugdhaModalClose');
-        const drMugdhaCloseBtn = document.getElementById('drMugdhaModalCloseBtn');
-        const drMugdhaIframe = document.getElementById('drMugdhaIframe');
-        const drMugdhaLoader = document.getElementById('drMugdhaLoader');
-
-        function openDrMugdhaModal() {
-            drMugdhaModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            drMugdhaLoader.classList.remove('hidden');
-            const src = drMugdhaIframe.src;
-            drMugdhaIframe.src = '';
-            setTimeout(() => { drMugdhaIframe.src = src; }, 100);
+        const editorFsTrigger = document.getElementById('editorFsTrigger');
+        if (editorFsTrigger) {
+            editorFsTrigger.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) {
+                    window.open('https://github.com/FS-Groupz/Editor-FS/releases/download/v1.0.0/app-release.apk', '_blank', 'noopener,noreferrer');
+                }
+            });
         }
-
-        function closeDrMugdhaModal() {
-            drMugdhaModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        drMugdhaTrigger.addEventListener('click', openDrMugdhaModal);
-        drMugdhaClose.addEventListener('click', closeDrMugdhaModal);
-        drMugdhaCloseBtn.addEventListener('click', closeDrMugdhaModal);
-
-        drMugdhaModal.addEventListener('click', (e) => {
-            if (e.target === drMugdhaModal) closeDrMugdhaModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && drMugdhaModal.classList.contains('active')) {
-                closeDrMugdhaModal();
-            }
-        });
-
-        drMugdhaIframe.addEventListener('load', function() {
-            drMugdhaLoader.classList.add('hidden');
-        });
 
         // ============================================================
         // 8. CLOCK & STOPWATCH MODAL CONTROLS
@@ -1295,8 +1196,8 @@
         });
 
         console.log('🔥 Portfolio · All projects loaded!');
-        console.log('🏋️ Rigid Fitness Club · Gym Website');
-        console.log('💎 Dr. Mugdha Mohan · Skin Care Centre');
+        console.log('🐾 Pet\'s Heaven · Professional Pet-Care Website');
+        console.log('🎬 Editor FS · Android Video Editor');
         console.log('⏰ Clock & Stopwatch · Digital time tools');
         console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');

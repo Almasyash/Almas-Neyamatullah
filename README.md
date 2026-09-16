@@ -50,8 +50,8 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 
 | Project | Icon | Description | Technologies |
 |---|:---:|---|---|
-| **Rigid Fitness Club** | 🏋️ | Premium gym & fitness center website in Bettiah featuring memberships, trainers, batch schedules, and interactive BMI/calorie calculator | HTML, CSS, JavaScript, Responsive |
-| **Dr. Mugdha Mohan** | 💎 | Skin Care Centre website for Bettiah's top dermatologist featuring patient testimonials, clinic timings, and appointment booking | Healthcare, SEO, Booking, HTML/CSS |
+| **Pet's Heaven** | 🐾 | Professional pet-care website providing a modern, responsive and user-friendly online presence for pet-related services | Pet Care, Services, Responsive, UI/UX |
+| **Editor FS** | 🎬 | Android video editing application designed to provide users with a practical interface for editing and managing video content | Android, Video Editor, Media, Mobile |
 | **Clock & Stopwatch** | ⏰ | Real-time digital clock with live date display and stopwatch with millisecond precision | JavaScript, CSS, HTML |
 | **To-Do List** | ✅ | Productive task manager with persistent local storage, CRUD operations, and category filters | LocalStorage, CRUD, Filters, JavaScript |
 
@@ -59,10 +59,11 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 
 ## 🚀 Technologies Used
 
-### Frontend
+### Frontend & Mobile
 - **HTML5** — Semantic, accessible markup
 - **CSS3** — Custom properties, Flexbox, CSS Grid, backdrop-filter glassmorphism, animations
 - **JavaScript (ES6+)** — Modular DOM manipulation, modal controls, canvas animation, responsive interactions
+- **Android / Mobile** — Native Android application packaging (Editor FS APK)
 
 ### Typography
 - **Noto Serif JP** — Japanese serif styling for headers and accents
@@ -80,12 +81,9 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 ```
 Almas-Neyamatullah/
 ├── index.html                           # Main portfolio landing page
-├── Rigid-Fitness-Club.html              # Rigid Fitness Club website project
-├── Dr. Mugdha Mohan.html                # Dr. Mugdha Mohan Skin Care Centre project
 ├── Digital Clock & StopWatch.html       # Digital Clock & Stopwatch tool
 ├── Todo List App.html                   # To-Do List productivity application
-├── dr-mugdha.jpg                        # Clinic image asset for Dr. Mugdha Mohan
-├── MD Elmas cv.pdf                      # Resume / CV document
+├── Almas_Neyamatullah_CV.pdf            # Resume / CV document
 ├── linkedin-data.json                   # Structured portfolio metadata for LinkedIn
 ├── automate_linkedin.py                 # Playwright automation script for LinkedIn profile
 ├── requirements.txt                     # Python dependencies for automation
