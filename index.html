@@ -520,6 +520,22 @@
             margin-bottom: 12px;
             display: block;
         }
+        .project-card .project-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .project-card .project-logo.petsheaven-logo {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .project-card .project-logo.editor-fs-logo {
+            background: #000000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
         .project-card h3 {
             font-size: 1.2rem;
             font-weight: 600;
@@ -964,7 +980,7 @@
 
                 <!-- PET'S HEAVEN CARD -->
                 <div class="project-card glass" id="petsHeavenTrigger">
-                    <span class="icon">🐾</span>
+                    <img src="petsheaven-logo.png" alt="Pet's Heaven Logo" class="project-logo petsheaven-logo" />
                     <h3>Pet's Heaven</h3>
                     <p>Pet's Heaven is a professional pet-care website designed to provide a modern, responsive and user-friendly online presence for pet-related services.</p>
                     <div class="tech-tags">
@@ -980,7 +996,7 @@
 
                 <!-- EDITOR FS CARD -->
                 <div class="project-card glass" id="editorFsTrigger">
-                    <span class="icon">🎬</span>
+                    <img src="editor-fs-logo.png" alt="Editor FS Logo" class="project-logo editor-fs-logo" />
                     <h3>Editor FS</h3>
                     <p>Editor FS is an Android video editing application designed to provide users with a practical interface for editing and managing video content.</p>
                     <div class="tech-tags">
@@ -1380,8 +1396,8 @@
         });
 
         console.log('🔥 Portfolio · All projects loaded!');
-        console.log('🐾 Pet\'s Heaven · Professional Pet-Care Website');
-        console.log('🎬 Editor FS · Android Video Editor');
+        console.log('Pet\'s Heaven · Professional Pet-Care Website');
+        console.log('Editor FS · Android Video Editor');
         console.log('⏰ Clock & Stopwatch · Digital time tools');
         console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');
