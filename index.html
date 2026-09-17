@@ -1803,9 +1803,65 @@
         })();
 
         // ============================================================
-        // 11. AUTO REFRESH ON RETURN (Page Visibility API & BFCache)
+        // 11. AUTO REFRESH ON RETURN (Scroll-to-Top Reset on Return)
         // ============================================================
         (function initAutoRefreshOnReturn() {
+            const REFRESH_FLAG = 'auto_refresh_to_top';
+
+            // Check if this reload was initiated by auto-refresh
+            try {
+                if (sessionStorage.getItem(REFRESH_FLAG) === 'true') {
+                    sessionStorage.removeItem(REFRESH_FLAG);
+
+                    // Prevent browser from restoring the previous scroll position
+                    if ('scrollRestoration' in history) {
+                        history.scrollRestoration = 'manual';
+                    }
+
+                    // Strip any anchor hash from URL to avoid anchor scrolling
+                    if (window.location.hash) {
+                        history.replaceState(null, '', window.location.pathname + window.location.search);
+                    }
+
+                    // Reset to the very top (Home / Hero)
+                    window.scrollTo(0, 0);
+
+                    // Re-enforce on next frame and after load
+                    requestAnimationFrame(() => {
+                        window.scrollTo(0, 0);
+                    });
+
+                    window.addEventListener('load', () => {
+                        window.scrollTo(0, 0);
+                        setTimeout(() => {
+                            // Restore normal scroll restoration for subsequent user actions
+                            if ('scrollRestoration' in history) {
+                                history.scrollRestoration = 'auto';
+                            }
+                        }, 120);
+                    });
+                }
+            } catch (e) {
+                // Ignore storage errors if disabled
+            }
+
+            function triggerRefreshToTop() {
+                try {
+                    sessionStorage.setItem(REFRESH_FLAG, 'true');
+                } catch (e) {}
+
+                if ('scrollRestoration' in history) {
+                    history.scrollRestoration = 'manual';
+                }
+
+                if (window.location.hash) {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+
+                window.scrollTo(0, 0);
+                window.location.reload();
+            }
+
             let wasPageHidden = false;
 
             document.addEventListener('visibilitychange', () => {
@@ -1813,13 +1869,13 @@
                     wasPageHidden = true;
                 } else if (document.visibilityState === 'visible' && wasPageHidden) {
                     wasPageHidden = false;
-                    window.location.reload();
+                    triggerRefreshToTop();
                 }
             });
 
             window.addEventListener('pageshow', (event) => {
                 if (event.persisted) {
-                    window.location.reload();
+                    triggerRefreshToTop();
                 }
             });
         })();
