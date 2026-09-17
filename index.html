@@ -871,6 +871,56 @@
             transform: translate(2px, -2px);
         }
 
+        /* ---------- BACK TO TOP ---------- */
+        .back-to-top {
+            position: fixed;
+            bottom: max(24px, calc(16px + env(safe-area-inset-bottom, 0px)));
+            right: max(24px, calc(16px + env(safe-area-inset-right, 0px)));
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            padding: 0;
+            outline: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 6px 24px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+        .back-to-top:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+        .back-to-top svg {
+            transition: transform 0.2s ease;
+            pointer-events: none;
+        }
+        .back-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
         /* ---------- FOOTER ---------- */
         footer {
             padding: 40px 0;
@@ -1041,6 +1091,16 @@
                 width: 100%;
                 justify-content: center;
             }
+            .back-to-top {
+                bottom: max(18px, calc(12px + env(safe-area-inset-bottom, 0px)));
+                right: max(18px, calc(12px + env(safe-area-inset-right, 0px)));
+                width: 42px;
+                height: 42px;
+            }
+            .back-to-top svg {
+                width: 18px;
+                height: 18px;
+            }
         }
         @media (max-width: 360px) {
             .btn-group {
@@ -1060,6 +1120,16 @@
             }
             .credential-reg-no {
                 font-size: 0.84rem;
+            }
+            .back-to-top {
+                bottom: max(14px, calc(10px + env(safe-area-inset-bottom, 0px)));
+                right: max(14px, calc(10px + env(safe-area-inset-right, 0px)));
+                width: 38px;
+                height: 38px;
+            }
+            .back-to-top svg {
+                width: 16px;
+                height: 16px;
             }
         }
         @media (min-width: 2000px) {
@@ -1449,6 +1519,13 @@
         </div>
     </footer>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
     <!-- SCRIPTS -->
     <script>
         // 1. PRELOADER
@@ -1692,6 +1769,60 @@
         todoListIframe.addEventListener('load', function() {
             todoListLoader.classList.add('hidden');
         });
+
+        // ============================================================
+        // 10. BACK TO TOP CONTROLS
+        // ============================================================
+        (function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (!backToTopBtn) return;
+
+            let isTicking = false;
+            function updateBackToTop() {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+                isTicking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!isTicking) {
+                    window.requestAnimationFrame(updateBackToTop);
+                    isTicking = true;
+                }
+            }, { passive: true });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+
+        // ============================================================
+        // 11. AUTO REFRESH ON RETURN (Page Visibility API & BFCache)
+        // ============================================================
+        (function initAutoRefreshOnReturn() {
+            let wasPageHidden = false;
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    wasPageHidden = true;
+                } else if (document.visibilityState === 'visible' && wasPageHidden) {
+                    wasPageHidden = false;
+                    window.location.reload();
+                }
+            });
+
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted) {
+                    window.location.reload();
+                }
+            });
+        })();
 
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('Pet\'s Heaven · Professional Pet-Care Website');
