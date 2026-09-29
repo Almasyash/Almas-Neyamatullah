@@ -29,11 +29,11 @@
       "url": "https://github.com/FS-Groupz/Editor-FS"
     },
     {
-      "name": "Digital Clock & Stopwatch",
-      "role": "Frontend Developer",
-      "description": "Precision digital timekeeping utility with real-time date synchronization and millisecond-accurate stopwatch tracking.",
-      "tech": ["JavaScript", "CSS3", "HTML5"],
-      "url": "https://almasyash.github.io/Almas-Neyamatullah/"
+      "name": "E-Commerce Website",
+      "role": "Full-Stack Developer",
+      "description": "A modern full-stack e-commerce platform with customer shopping experience and admin management features.",
+      "tech": ["React", "TypeScript", "Node.js", "Express.js", "Database", "REST API"],
+      "url": "https://almasyash.github.io/E-COMMERCE-WEBSITE/"
     },
     {
       "name": "To-Do List Task Manager",

@@ -562,6 +562,18 @@
             background: #000000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
+        .project-card .project-logo.ecommerce-logo {
+            background: #0f172a;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+        .project-card .project-category {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
         .project-card h3 {
             font-size: 1.2rem;
             font-weight: 600;
@@ -1070,6 +1082,10 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
             .stat-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1319,17 +1335,24 @@
                     </div>
                 </div>
 
-                <!-- DIGITAL CLOCK & STOPWATCH CARD -->
-                <div class="project-card glass" id="clockStopwatchTrigger">
-                    <span class="icon">⏰</span>
-                    <h3>Clock & Stopwatch</h3>
-                    <p>Digital clock with date &amp; stopwatch with millisecond precision.</p>
+                <!-- E-COMMERCE WEBSITE CARD -->
+                <div class="project-card glass" id="ecommerceTrigger">
+                    <img src="ecommerce-logo.svg" alt="E-Commerce Website Logo" class="project-logo ecommerce-logo" />
+                    <div class="project-category">Full-Stack E-Commerce</div>
+                    <h3>E-Commerce Website</h3>
+                    <p>A modern full-stack e-commerce platform with customer shopping experience and admin management features.</p>
                     <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                        <span>HTML</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>Database</span>
+                        <span>REST API</span>
                     </div>
-                    <p class="launch-hint">▶ Click to launch</p>
+                    <div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://almasyash.github.io/E-COMMERCE-WEBSITE/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.78rem; text-decoration: none;" onclick="event.stopPropagation();">Live Demo</a>
+                        <a href="https://github.com/Almasyash/E-COMMERCE-WEBSITE" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 6px 16px; font-size: 0.78rem; text-decoration: none;" onclick="event.stopPropagation();">GitHub</a>
+                    </div>
                 </div>
 
                 <!-- TO-DO LIST CARD -->
@@ -1347,30 +1370,6 @@
             </div>
         </div>
     </section>
-
-
-
-    <!-- ============================================================
-    CLOCK & STOPWATCH MODAL
-    ============================================================ -->
-    <div class="modal-overlay" id="clockStopwatchModal">
-        <div class="modal-content">
-            <button class="modal-close" id="clockStopwatchModalClose">✕</button>
-            <h2 style="margin-bottom: 15px;">⏰ Digital <span class="accent">Clock &amp; Stopwatch</span></h2>
-            <div class="project-iframe-container">
-                <div class="iframe-loader" id="clockStopwatchLoader"></div>
-                <iframe 
-                    id="clockStopwatchIframe"
-                    src="Digital Clock & StopWatch.html"
-                    allow="autoplay; fullscreen"
-                ></iframe>
-            </div>
-            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="Digital Clock & StopWatch.html" target="_blank" class="btn btn-primary">Open Full Screen</a>
-                <button class="btn btn-outline" id="clockStopwatchModalCloseBtn">Close</button>
-            </div>
-        </div>
-    </div>
 
     <!-- ============================================================
     TO-DO LIST MODAL
@@ -1679,46 +1678,16 @@
         }
 
         // ============================================================
-        // 8. CLOCK & STOPWATCH MODAL CONTROLS
+        // 8. E-COMMERCE WEBSITE CARD CONTROLS
         // ============================================================
-        const clockStopwatchModal = document.getElementById('clockStopwatchModal');
-        const clockStopwatchTrigger = document.getElementById('clockStopwatchTrigger');
-        const clockStopwatchClose = document.getElementById('clockStopwatchModalClose');
-        const clockStopwatchCloseBtn = document.getElementById('clockStopwatchModalCloseBtn');
-        const clockStopwatchIframe = document.getElementById('clockStopwatchIframe');
-        const clockStopwatchLoader = document.getElementById('clockStopwatchLoader');
-
-        function openClockStopwatchModal() {
-            clockStopwatchModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            clockStopwatchLoader.classList.remove('hidden');
-            const src = clockStopwatchIframe.src;
-            clockStopwatchIframe.src = '';
-            setTimeout(() => { clockStopwatchIframe.src = src; }, 100);
+        const ecommerceTrigger = document.getElementById('ecommerceTrigger');
+        if (ecommerceTrigger) {
+            ecommerceTrigger.addEventListener('click', (e) => {
+                if (!e.target.closest('a')) {
+                    window.open('https://almasyash.github.io/E-COMMERCE-WEBSITE/', '_blank', 'noopener,noreferrer');
+                }
+            });
         }
-
-        function closeClockStopwatchModal() {
-            clockStopwatchModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        clockStopwatchTrigger.addEventListener('click', openClockStopwatchModal);
-        clockStopwatchClose.addEventListener('click', closeClockStopwatchModal);
-        clockStopwatchCloseBtn.addEventListener('click', closeClockStopwatchModal);
-
-        clockStopwatchModal.addEventListener('click', (e) => {
-            if (e.target === clockStopwatchModal) closeClockStopwatchModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && clockStopwatchModal.classList.contains('active')) {
-                closeClockStopwatchModal();
-            }
-        });
-
-        clockStopwatchIframe.addEventListener('load', function() {
-            clockStopwatchLoader.classList.add('hidden');
-        });
 
         // ============================================================
         // 9. TO-DO LIST MODAL CONTROLS
@@ -1875,7 +1844,7 @@
         console.log('🔥 Portfolio · All projects loaded!');
         console.log('Pet\'s Heaven · Professional Pet-Care Website');
         console.log('Editor FS · Android Video Editor');
-        console.log('⏰ Clock & Stopwatch · Digital time tools');
+        console.log('🛒 E-Commerce Website · Full-Stack E-Commerce Platform');
         console.log('✅ To-Do List · Productive task manager');
         console.log('✨ Portfolio ready for deployment!');
     </script>

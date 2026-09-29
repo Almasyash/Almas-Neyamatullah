@@ -52,7 +52,7 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 |---|:---:|---|---|
 | **Pet's Heaven** | 🐾 | Professional pet-care website providing a modern, responsive and user-friendly online presence for pet-related services | Pet Care, Services, Responsive, UI/UX |
 | **Editor FS** | 🎬 | Android video editing application designed to provide users with a practical interface for editing and managing video content | Android, Video Editor, Media, Mobile |
-| **Clock & Stopwatch** | ⏰ | Real-time digital clock with live date display and stopwatch with millisecond precision | JavaScript, CSS, HTML |
+| **E-Commerce Website** | 🛒 | A modern full-stack e-commerce platform with customer shopping experience and admin management features | React, TypeScript, Node.js, Express.js, Database, REST API |
 | **To-Do List** | ✅ | Productive task manager with persistent local storage, CRUD operations, and category filters | LocalStorage, CRUD, Filters, JavaScript |
 
 ---
@@ -81,6 +81,7 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 ```
 Almas-Neyamatullah/
 ├── index.html                           # Main portfolio landing page
+├── ecommerce-logo.svg                   # E-Commerce Website brand logo
 ├── Digital Clock & StopWatch.html       # Digital Clock & Stopwatch tool
 ├── Todo List App.html                   # To-Do List productivity application
 ├── Almas_Neyamatullah_CV.pdf            # Resume / CV document
