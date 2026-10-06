@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Almas Neyamatullah · Cinematic Portfolio</title>
+    <title>Almas Neyamatullah · Full Stack Developer &amp; Product Packaging Designer · Cinematic Portfolio</title>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -420,8 +420,9 @@
             color: var(--text-primary);
             transform: translateY(-2px);
         }
-        .hero-socials a .emoji {
-            font-size: 1.15rem;
+        .hero-socials a .social-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
         }
 
         /* ---------- RAIN CANVAS ---------- */
@@ -707,8 +708,80 @@
             color: var(--text-primary);
             transform: translateX(6px);
         }
-        .contact-links a .emoji {
-            font-size: 1.2rem;
+        .social-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .social-icon {
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform 0.25s ease, filter 0.25s ease, color 0.25s ease;
+        }
+        .hero-socials a .social-icon,
+        .footer-socials a .social-icon {
+            width: 17px;
+            height: 17px;
+        }
+        .contact-links a .social-icon-wrapper {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+        .contact-links a .social-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .contact-links a:hover .social-icon-wrapper {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Brand-specific hover colors & glows */
+        .hero-socials a:hover .icon-github,
+        .contact-links a:hover .icon-github,
+        .footer-socials a:hover .icon-github {
+            color: #ffffff;
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+            transform: scale(1.1);
+        }
+        .hero-socials a:hover .icon-linkedin,
+        .contact-links a:hover .icon-linkedin,
+        .footer-socials a:hover .icon-linkedin {
+            color: #0077b5;
+            filter: drop-shadow(0 0 6px rgba(0, 119, 181, 0.6));
+            transform: scale(1.1);
+        }
+        .hero-socials a:hover .icon-instagram,
+        .contact-links a:hover .icon-instagram,
+        .footer-socials a:hover .icon-instagram {
+            color: #e1306c;
+            filter: drop-shadow(0 0 6px rgba(225, 48, 108, 0.6));
+            transform: scale(1.1);
+        }
+        .contact-links a:hover .icon-gmail {
+            filter: drop-shadow(0 0 6px rgba(234, 67, 53, 0.6));
+            transform: scale(1.1);
+        }
+        .contact-links a:hover .icon-globe {
+            color: #38bdf8;
+            filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+            transform: scale(1.1);
+        }
+        .contact-links a:hover .icon-resume {
+            color: #ef4444;
+            filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.6));
+            transform: scale(1.1);
         }
 
         .contact-form {
@@ -737,6 +810,321 @@
             min-height: 130px;
             resize: vertical;
         }
+
+        /* ---------- GRAPHIC DESIGN & PACKAGING ---------- */
+        #packaging {
+            position: relative;
+            z-index: 1;
+        }
+        .packaging-card-container {
+            margin-top: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
+        .project-card.packaging-compact-card {
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .project-card.packaging-compact-card.expanded-active {
+            cursor: default;
+            transform: none !important;
+            border-color: rgba(204, 34, 34, 0.35);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+        }
+        .project-card .project-logo.packaging-card-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            object-position: center 20%;
+            border-radius: 10px;
+            background: #000000;
+            box-shadow: 0 4px 12px rgba(204, 34, 34, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .packaging-action-row {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .packaging-expand-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .packaging-btn-arrow {
+            display: inline-block;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 0.82rem;
+            line-height: 1;
+        }
+        .packaging-expand-btn[aria-expanded="true"] .packaging-btn-arrow,
+        .packaging-compact-card.expanded-active .packaging-btn-arrow {
+            transform: rotate(180deg);
+        }
+        .packaging-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(204, 34, 34, 0.3), rgba(255, 255, 255, 0.06), transparent);
+            margin: 24px 0;
+        }
+        .packaging-expandable-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+            transition: max-height 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .packaging-expandable-content.expanded {
+            max-height: 3500px;
+            opacity: 1;
+            overflow: visible;
+            visibility: visible;
+        }
+        .packaging-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: clamp(24px, 4vw, 44px);
+            align-items: start;
+        }
+        .packaging-visual-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .packaging-img-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #000;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+        }
+        .packaging-img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .packaging-img-wrapper:hover .packaging-img {
+            transform: scale(1.03);
+        }
+        .packaging-img-overlay {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            z-index: 2;
+        }
+        .badge-pill {
+            background: rgba(10, 10, 10, 0.78);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: #f0ece4;
+            letter-spacing: 0.04em;
+        }
+        .packaging-meta-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .spec-chip {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+        }
+        .spec-chip:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(204, 34, 34, 0.3);
+            transform: translateY(-2px);
+        }
+        .spec-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+        }
+        .spec-value {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.25;
+        }
+        .packaging-info-col {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .project-tag-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .project-tag {
+            display: inline-block;
+            background: rgba(204, 34, 34, 0.15);
+            border: 1px solid rgba(204, 34, 34, 0.35);
+            color: var(--accent);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        .project-tag-sub {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .packaging-expanded-subtitle {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin: -2px 0 0 0;
+        }
+        .packaging-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .packaging-block-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .accent-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 6px var(--accent-glow);
+        }
+        .packaging-block-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            font-weight: 300;
+        }
+        .packaging-block-text strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlights-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 2px;
+        }
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.86rem;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+        .highlight-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(204, 34, 34, 0.25);
+            transform: translateX(4px);
+        }
+        .highlight-icon {
+            font-size: 1.05rem;
+            line-height: 1.2;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .highlight-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        .highlight-item span {
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+        .tools-tags-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 2px;
+        }
+        .tool-badge {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 9px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .tool-badge:hover {
+            background: rgba(204, 34, 34, 0.08);
+            border-color: rgba(204, 34, 34, 0.35);
+            transform: translateY(-2px);
+        }
+        .tool-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            box-shadow: 0 0 6px var(--accent-glow);
+        }
+        .tool-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-info strong {
+            font-size: 0.82rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        .tool-info small {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+
         /* ---------- BUSINESS CREDENTIAL ---------- */
         #business-credential {
             position: relative;
@@ -963,8 +1351,9 @@
             color: var(--text-primary);
             transform: translateY(-2px);
         }
-        .footer-socials a .emoji {
-            font-size: 1.1rem;
+        .footer-socials a .social-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
         }
         footer .jp {
             font-family: var(--font-jp);
@@ -1098,6 +1487,15 @@
             .credential-grid {
                 grid-template-columns: 1fr;
             }
+            .packaging-grid {
+                grid-template-columns: 1fr;
+            }
+            .packaging-meta-specs {
+                grid-template-columns: 1fr;
+            }
+            .tools-tags-container {
+                grid-template-columns: 1fr;
+            }
             .credential-footer {
                 flex-direction: column;
                 align-items: stretch;
@@ -1206,7 +1604,8 @@
             <a href="#" class="logo">闇<span>·</span>Almas</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Web &amp; App Development</a></li>
+                <li><a href="#packaging">Graphic Design &amp; Packaging</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1222,7 +1621,7 @@
                     <span class="highlight">Neyamatullah</span>
                 </h1>
                 <p class="subtitle">
-                    <strong>Full Stack Developer</strong> &middot; UI/UX &middot; AI Enthusiast
+                    <strong>Full Stack Developer</strong> &middot; UI/UX &middot; AI Enthusiast &middot; <strong>Product Packaging &amp; Label Designer</strong>
                 </p>
                 <div class="btn-group">
                     <a href="#projects" class="btn btn-primary">View Work</a>
@@ -1230,13 +1629,28 @@
                 </div>
                 <div class="hero-socials">
                     <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <span class="emoji">🐙</span> GitHub
+                        <span class="social-icon-wrapper" aria-hidden="true">
+                            <svg class="social-icon icon-github" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </span>
+                        <span>GitHub</span>
                     </a>
                     <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <span class="emoji">🔗</span> LinkedIn
+                        <span class="social-icon-wrapper" aria-hidden="true">
+                            <svg class="social-icon icon-linkedin" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </span>
+                        <span>LinkedIn</span>
                     </a>
                     <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <span class="emoji">📸</span> Instagram
+                        <span class="social-icon-wrapper" aria-hidden="true">
+                            <svg class="social-icon icon-instagram" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </span>
+                        <span>Instagram</span>
                     </a>
                 </div>
             </div>
@@ -1268,6 +1682,9 @@
                         <span class="skill-tag">Dart</span>
                         <span class="skill-tag">Kotlin</span>
                         <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Packaging Design</span>
+                        <span class="skill-tag">Label Design</span>
+                        <span class="skill-tag">Print Production</span>
                     </div>
                 </div>
                 <div class="stat-grid">
@@ -1292,13 +1709,12 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- FULL STACK WEB & APP DEVELOPMENT -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Projects<span class="accent">.</span></h2>
+            <h2 class="section-title">Full Stack Web &amp; App Development<span class="accent">.</span></h2>
             <p class="section-sub">
-                A selection of work that reflects my philosophy — clean, immersive,
-                and built with purpose.
+                A selection of full-stack web platforms and native mobile applications — clean, immersive, and built with purpose.
             </p>
             <div class="projects-grid">
                 
@@ -1393,6 +1809,181 @@
         </div>
     </div>
 
+    <!-- ============================================================
+    GRAPHIC DESIGN & PACKAGING
+    ============================================================ -->
+    <section id="packaging">
+        <div class="container">
+            <h2 class="section-title">Graphic Design &amp; Packaging<span class="accent">.</span></h2>
+            <p class="section-sub">
+                Bespoke brand identities, shelf-dominant FMCG packaging, and high-precision print production systems.
+            </p>
+
+            <div class="packaging-card-container">
+                <!-- COMPACT PROJECT CARD (Matching Web & App Projects) -->
+                <div class="project-card glass packaging-compact-card" id="packagingCardCompact">
+                    <img src="fs-chips-packaging.jpg" alt="FS GROUPZ Premium Chips Packaging Logo" class="project-logo packaging-card-logo" />
+                    <div class="project-category">FMCG &middot; Packaging &amp; Label Design</div>
+                    <h3>FS GROUPZ Premium Chips Packaging Design</h3>
+                    <p>Commercial-grade gourmet snack packaging engineered for high shelf-impact, featuring metallic gold foil accents, vibrant flavor storytelling, and print-ready dielines.</p>
+                    <div class="tech-tags">
+                        <span>Packaging</span>
+                        <span>Label Design</span>
+                        <span>Illustrator</span>
+                        <span>Photoshop</span>
+                        <span>3D Mockup</span>
+                        <span>CMYK Print</span>
+                    </div>
+                    <div class="packaging-action-row">
+                        <button type="button" class="btn btn-primary packaging-expand-btn" id="packagingToggleBtn" aria-expanded="false" aria-controls="packagingExpandedDetails">
+                            <span id="packagingBtnLabel">View Project</span>
+                            <span id="packagingBtnArrow" class="packaging-btn-arrow">▾</span>
+                        </button>
+                        <span class="launch-hint" style="margin: 0; font-size: 0.76rem;">▶ Click card or button to expand</span>
+                    </div>
+
+                    <!-- EXPANDABLE FULL DESIGN DETAILS & HIGHLIGHTS -->
+                    <div class="packaging-expandable-content" id="packagingExpandedDetails" aria-hidden="true">
+                        <div class="packaging-divider"></div>
+                        <div class="packaging-grid">
+                            <!-- Visual Mockup Showcase -->
+                            <div class="packaging-visual-col">
+                                <div class="packaging-img-wrapper">
+                                    <img src="fs-chips-packaging.jpg" alt="FS GROUPZ Premium Chips Packaging Design Mockup" class="packaging-img" />
+                                    <div class="packaging-img-overlay">
+                                        <span class="badge-pill">FMCG Retail Mockup</span>
+                                        <span class="badge-pill">Stand-Up Pouch Dieline</span>
+                                    </div>
+                                </div>
+                                <div class="packaging-meta-specs">
+                                    <div class="spec-chip">
+                                        <span class="spec-label">Category</span>
+                                        <span class="spec-value">Snack Packaging &amp; Label</span>
+                                    </div>
+                                    <div class="spec-chip">
+                                        <span class="spec-label">Print Finish</span>
+                                        <span class="spec-value">Soft-Touch Matte + Gold Foil</span>
+                                    </div>
+                                    <div class="spec-chip">
+                                        <span class="spec-label">Compliance</span>
+                                        <span class="spec-value">FSSAI &amp; Nutritional Dieline</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details & Narrative -->
+                            <div class="packaging-info-col">
+                                <div class="project-tag-row">
+                                    <span class="project-tag">Featured Project</span>
+                                    <span class="project-tag-sub">FS GROUPZ Brand Identity</span>
+                                </div>
+                                
+                                <h4 class="packaging-expanded-subtitle">Full Project Breakdown</h4>
+                                
+                                <!-- Overview -->
+                                <div class="packaging-block">
+                                    <h5 class="packaging-block-title">
+                                        <span class="accent-dot"></span> In-Depth Overview
+                                    </h5>
+                                    <p class="packaging-block-text">
+                                        A high-end, commercial-grade snack packaging design created for <strong>FS GROUPZ Gourmet Chips</strong> (Fiery Spice &amp; Gourmet Herb). Crafted to maximize retail shelf impact, the design unites moody matte black aesthetics with fiery color gradients, metallic foil accents, and appetizing ingredient dynamics. From initial concept sketch and dieline precision to barcode compliance and print-ready CMYK separation, every detail was calibrated for commercial food packaging excellence.
+                                    </p>
+                                </div>
+
+                                <!-- Visual Highlights -->
+                                <div class="packaging-block">
+                                    <h5 class="packaging-block-title">
+                                        <span class="accent-dot"></span> Visual Highlights
+                                    </h5>
+                                    <div class="highlights-grid">
+                                        <div class="highlight-item">
+                                            <span class="highlight-icon">✨</span>
+                                            <div>
+                                                <strong>Shelf-Dominant Visual Hierarchy:</strong>
+                                                <span>Deep matte black canvas contrasting against vibrant fiery crimson and gold foil typography to captivate shoppers instantly.</span>
+                                            </div>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <span class="highlight-icon">🔥</span>
+                                            <div>
+                                                <strong>Appetizing Flavor Narrative:</strong>
+                                                <span>Dynamic splash render of golden ridged crisps seasoned with cracked peppercorns, herbs, and Himalayan pink salt crystals.</span>
+                                            </div>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <span class="highlight-icon">🎯</span>
+                                            <div>
+                                                <strong>Dual-Texture Material Finish:</strong>
+                                                <span>Engineered with tactile soft-touch matte film, spot UV gloss highlights on flavor imagery, and hot-stamped metallic gold branding.</span>
+                                            </div>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <span class="highlight-icon">📋</span>
+                                            <div>
+                                                <strong>Certified Label Architecture:</strong>
+                                                <span>Standardized nutritional fact panels, allergen warnings, FSSAI compliance seals, batch barcodes, and net-weight metrics.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tools Used -->
+                                <div class="packaging-block">
+                                    <h5 class="packaging-block-title">
+                                        <span class="accent-dot"></span> Tools &amp; Technologies Used
+                                    </h5>
+                                    <div class="tools-tags-container">
+                                        <div class="tool-badge">
+                                            <span class="tool-dot"></span>
+                                            <div class="tool-info">
+                                                <strong>Adobe Illustrator</strong>
+                                                <small>Vector Artwork, Dieline &amp; Print Layout</small>
+                                            </div>
+                                        </div>
+                                        <div class="tool-badge">
+                                            <span class="tool-dot"></span>
+                                            <div class="tool-info">
+                                                <strong>Adobe Photoshop</strong>
+                                                <small>Photorealistic Textures &amp; Mockup Compositing</small>
+                                            </div>
+                                        </div>
+                                        <div class="tool-badge">
+                                            <span class="tool-dot"></span>
+                                            <div class="tool-info">
+                                                <strong>Blender / 3D Studio</strong>
+                                                <small>3D Pouch Modeling &amp; Studio Lighting</small>
+                                            </div>
+                                        </div>
+                                        <div class="tool-badge">
+                                            <span class="tool-dot"></span>
+                                            <div class="tool-info">
+                                                <strong>Adobe InDesign</strong>
+                                                <small>Nutritional Table &amp; Regulatory Grid Layout</small>
+                                            </div>
+                                        </div>
+                                        <div class="tool-badge">
+                                            <span class="tool-dot"></span>
+                                            <div class="tool-info">
+                                                <strong>CMYK Print Separation</strong>
+                                                <small>Color Profiling, Bleed &amp; Dieline Export</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top: 14px;">
+                                    <button type="button" class="btn btn-outline" id="packagingCollapseBottomBtn" style="padding: 6px 18px; font-size: 0.78rem;">
+                                        Collapse Details ▴
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BUSINESS CREDENTIAL -->
     <section id="business-credential">
         <div class="container">
@@ -1459,22 +2050,57 @@
                     </p>
                     <div class="contact-links">
                         <a href="mailto:almasneyamt786@gmail.com" aria-label="Email">
-                            <span class="emoji">📧</span> almasneyamt786@gmail.com
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-gmail" viewBox="52 42 88 66" width="20" height="20" aria-hidden="true">
+                                    <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                                    <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                                    <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                                    <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/>
+                                    <path fill="#c5221f" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                                </svg>
+                            </span>
+                            <span>almasneyamt786@gmail.com</span>
                         </a>
                         <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <span class="emoji">🐙</span> github.com/Almasyash
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-github" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                            </span>
+                            <span>github.com/Almasyash</span>
                         </a>
                         <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <span class="emoji">🔗</span> www.linkedin.com/in/almas-neyamatullah
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-linkedin" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </span>
+                            <span>www.linkedin.com/in/almas-neyamatullah</span>
                         </a>
                         <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <span class="emoji">📸</span> @almas_neyamat6244
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-instagram" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </span>
+                            <span>@almas_neyamat6244</span>
                         </a>
                         <a href="https://almasyash.github.io/Almas-Neyamatullah/" target="_blank" rel="noopener noreferrer" aria-label="Website">
-                            <span class="emoji">🌐</span> almasyash.github.io/Almas-Neyamatullah
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-globe" viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                                </svg>
+                            </span>
+                            <span>almasyash.github.io/Almas-Neyamatullah</span>
                         </a>
                         <a href="Almas_Neyamatullah_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
-                            <span class="emoji">📄</span> Resume (PDF)
+                            <span class="social-icon-wrapper" aria-hidden="true">
+                                <svg class="social-icon icon-resume" viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                    <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                                    <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                                </svg>
+                            </span>
+                            <span>Resume (PDF)</span>
                         </a>
                     </div>
                 </div>
@@ -1494,13 +2120,28 @@
         <div class="container">
             <div class="footer-socials">
                 <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <span class="emoji">🐙</span> GitHub
+                    <span class="social-icon-wrapper" aria-hidden="true">
+                        <svg class="social-icon icon-github" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </span>
+                    <span>GitHub</span>
                 </a>
                 <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <span class="emoji">🔗</span> LinkedIn
+                    <span class="social-icon-wrapper" aria-hidden="true">
+                        <svg class="social-icon icon-linkedin" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </span>
+                    <span>LinkedIn</span>
                 </a>
                 <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <span class="emoji">📸</span> @almas_neyamat6244
+                    <span class="social-icon-wrapper" aria-hidden="true">
+                        <svg class="social-icon icon-instagram" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </span>
+                    <span>@almas_neyamat6244</span>
                 </a>
             </div>
             <p>
@@ -1544,7 +2185,7 @@
                 cursor.style.display = 'none';
             });
 
-            document.querySelectorAll('a, .btn, .project-card, .skill-tag, .stat-card').forEach((el) => {
+            document.querySelectorAll('a, .btn, .project-card, .skill-tag, .stat-card, .packaging-card, .tool-badge, .highlight-item, .spec-chip').forEach((el) => {
                 el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
                 el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
             });
@@ -1732,6 +2373,57 @@
         });
 
         // ============================================================
+        // 9.1. PACKAGING CARD EXPAND/COLLAPSE CONTROLS
+        // ============================================================
+        (function initPackagingToggle() {
+            const card = document.getElementById('packagingCardCompact');
+            const toggleBtn = document.getElementById('packagingToggleBtn');
+            const collapseBottomBtn = document.getElementById('packagingCollapseBottomBtn');
+            const content = document.getElementById('packagingExpandedDetails');
+            const btnLabel = document.getElementById('packagingBtnLabel');
+
+            if (!card || !toggleBtn || !content) return;
+
+            function toggleDetails() {
+                const isExpanded = content.classList.contains('expanded');
+
+                if (isExpanded) {
+                    content.classList.remove('expanded');
+                    card.classList.remove('expanded-active');
+                    content.setAttribute('aria-hidden', 'true');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                    if (btnLabel) btnLabel.textContent = 'View Project';
+                } else {
+                    content.classList.add('expanded');
+                    card.classList.add('expanded-active');
+                    content.setAttribute('aria-hidden', 'false');
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                    if (btnLabel) btnLabel.textContent = 'Hide Details';
+                }
+            }
+
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleDetails();
+            });
+
+            if (collapseBottomBtn) {
+                collapseBottomBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleDetails();
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            }
+
+            card.addEventListener('click', (e) => {
+                // If collapsed, clicking card expands it
+                if (!content.classList.contains('expanded') && !e.target.closest('button') && !e.target.closest('a')) {
+                    toggleDetails();
+                }
+            });
+        })();
+
+        // ============================================================
         // 10. BACK TO TOP CONTROLS
         // ============================================================
         (function initBackToTop() {
@@ -1846,6 +2538,7 @@
         console.log('Editor FS · Android Video Editor');
         console.log('🛒 E-Commerce Website · Full-Stack E-Commerce Platform');
         console.log('✅ To-Do List · Productive task manager');
+        console.log('🎨 FS GROUPZ · Premium Chips Packaging Design');
         console.log('✨ Portfolio ready for deployment!');
     </script>
 </body>

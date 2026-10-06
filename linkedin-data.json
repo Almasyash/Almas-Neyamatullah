@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Almas Neyamatullah",
-    "headline": "Full Stack Developer | UI/UX Designer | AI Enthusiast | Cinematic Portfolio Creator",
+    "headline": "Full Stack Developer | UI/UX Designer | Product Packaging & Label Designer | AI Enthusiast",
     "location": "India",
-    "about": "Full Stack Developer & UI/UX Designer crafting cinematic, high-performance web applications. Blending modern engineering (React, Node.js, Python) with aesthetic precision and interactive WebGL/audio experiences. Explore my live interactive portfolio: https://almasyash.github.io/Almas-Neyamatullah/",
+    "about": "Full Stack Developer, UI/UX Designer & Product Packaging Specialist crafting cinematic, high-performance web applications and shelf-dominant FMCG brand packaging. Explore my live portfolio: https://almasyash.github.io/Almas-Neyamatullah/",
     "portfolio": "https://almasyash.github.io/Almas-Neyamatullah/"
   },
   "featured": [
@@ -14,6 +14,13 @@
     }
   ],
   "projects": [
+    {
+      "name": "FS GROUPZ Premium Chips Packaging Design",
+      "role": "Lead Packaging & Brand Designer",
+      "description": "Commercial-grade gourmet snack packaging with dieline precision, 3D renders, and regulatory compliance.",
+      "tech": ["Packaging Design", "Label Design", "Adobe Illustrator", "Photoshop", "Blender", "CMYK Print"],
+      "url": "https://almasyash.github.io/Almas-Neyamatullah/#packaging"
+    },
     {
       "name": "Pet's Heaven",
       "role": "Lead Frontend Developer",
@@ -52,6 +59,9 @@
     "Python",
     "Android",
     "UI/UX Design",
+    "Product Packaging Design",
+    "Label Design",
+    "Print Production",
     "Responsive Web Design",
     "LocalStorage",
     "Git",
