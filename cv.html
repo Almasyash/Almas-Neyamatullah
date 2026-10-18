@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae · Almas Neyamatullah | Founder, MAHMAS GROUP</title>
+    <meta name="description" content="Official Curriculum Vitae of Almas Neyamatullah — Founder of MAHMAS GROUP, Full Stack Developer, Mobile App Engineer &amp; UI/UX Specialist." />
+
+    <!-- FAVICON (Option 1 Cyber Prism M) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #cc2222;
+            --primary-dark: #a81919;
+            --text-dark: #1a1a1e;
+            --text-muted: #5a5a62;
+            --text-light: #888890;
+            --border: #e2e2e6;
+            --bg-page: #0d0d10;
+            --bg-paper: #ffffff;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-jp: 'Noto Serif JP', serif;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 30px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ---------- TOP ACTION BAR ---------- */
+        .action-bar {
+            width: 100%;
+            max-width: 850px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .action-bar a, .action-bar button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: var(--font-main);
+        }
+        .btn-back {
+            background: rgba(255, 255, 255, 0.08);
+            color: #f0ece4;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+        .btn-print {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 18px rgba(204, 34, 34, 0.35);
+        }
+        .btn-print:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        .btn-download {
+            background: #ffffff;
+            color: #111;
+            border: 1px solid #ddd;
+        }
+        .btn-download:hover {
+            background: #f4f4f4;
+        }
+
+        /* ---------- CV PAPER CONTAINER (A4 DIMENSIONS) ---------- */
+        .cv-paper {
+            width: 100%;
+            max-width: 850px;
+            background: var(--bg-paper);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+            padding: 48px 54px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Red Top Accent Bar */
+        .cv-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), #ff6b6b);
+        }
+
+        /* ---------- HEADER ---------- */
+        .cv-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 24px;
+        }
+        .cv-name {
+            font-family: var(--font-jp);
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 0.04em;
+            color: #111114;
+            margin-bottom: 4px;
+        }
+        .cv-headline {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+        .cv-contacts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .cv-contacts a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .cv-contacts a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* ---------- SECTION HEADINGS ---------- */
+        .cv-section {
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #111114;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* ---------- SUMMARY ---------- */
+        .summary-text {
+            font-size: 0.92rem;
+            color: #333338;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ---------- WORK / EXPERIENCE ITEMS ---------- */
+        .item-block {
+            margin-bottom: 16px;
+        }
+        .item-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .item-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #18181c;
+        }
+        .item-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .item-date {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .item-subtitle {
+            font-size: 0.82rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .item-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .item-list li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 0.88rem;
+            color: #33333a;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+        .item-list li::before {
+            content: '•';
+            position: absolute;
+            left: 2px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        /* ---------- PROJECTS GRID ---------- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            background: #fafafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-card h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 4px;
+        }
+        .project-card .p-meta {
+            font-size: 0.78rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .project-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+        .project-card .tags {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ---------- SKILLS TABLE ---------- */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        .skills-table tr {
+            border-bottom: 1px solid #f0f0f3;
+        }
+        .skills-table tr:last-child {
+            border-bottom: none;
+        }
+        .skills-table td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+        .skills-table td.cat {
+            width: 160px;
+            font-weight: 700;
+            color: #222;
+        }
+        .skills-table td.vals {
+            color: #444;
+        }
+
+        /* ---------- CERTIFICATION BOX ---------- */
+        .cert-card {
+            background: #fbfbfd;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.88rem;
+        }
+        .cert-num {
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+        }
+
+        /* ---------- PRINT STYLING (PERFECT ATS / PDF PRINT) ---------- */
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+            }
+            .action-bar {
+                display: none !important;
+            }
+            .cv-paper {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                padding: 24px 30px !important;
+            }
+            .cv-paper::before {
+                height: 4px !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 12mm 10mm;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-paper {
+                padding: 32px 20px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-table td.cat {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ACTION CONTROLS (HIDDEN WHEN PRINTING) -->
+    <div class="action-bar">
+        <a href="index.html" class="btn-back" style="display: inline-flex; align-items: center; gap: 8px;">
+            <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="20" height="20" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.6));" />
+            <span>&larr;</span> Back to MAHMAS GROUP
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="Almas_Neyamatullah_CV.pdf" download class="btn-download" title="Download ATS PDF file">
+                📥 Download PDF
+            </a>
+            <button onclick="window.print()" class="btn-print" title="Print or save as PDF">
+                🖨️ Print / Save as PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CV PAPER -->
+    <article class="cv-paper">
+
+        <!-- HEADER -->
+        <header class="cv-header">
+            <h1 class="cv-name">ALMAS NEYAMATULLAH</h1>
+            <div class="cv-headline">Founder, MAHMAS GROUP &middot; Full Stack Developer &middot; Mobile App Engineer &middot; UI/UX Specialist</div>
+            <div class="cv-contacts">
+                <span>📍 Bettiah, West Champaran, Bihar, India</span>
+                <span>📞 +91 7033761519</span>
+                <span>✉️ <a href="mailto:almasneyamt786@gmail.com">almasneyamt786@gmail.com</a></span>
+                <span>🌐 <a href="https://almasyash.github.io/Almas-Neyamatullah/" target="_blank">Portfolio Website</a></span>
+                <span>💻 <a href="https://github.com/Almasyash" target="_blank">github.com/Almasyash</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank">LinkedIn Profile</a></span>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <section class="cv-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary-text">
+                Dynamic <strong>Full Stack Software Developer</strong> and <strong>Mobile Application Engineer</strong> based in Bettiah, Bihar. Founder of <strong>MAHMAS GROUP</strong>, an official Government of India MSME-registered enterprise (UDYAM-BR-38-0075911). Experienced in engineering high-performance responsive web platforms, native Android applications, offline counter billing software, and user-centric UI/UX design systems.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE & ENTREPRENEURSHIP -->
+        <section class="cv-section">
+            <h2 class="section-title">Experience &amp; Entrepreneurship</h2>
+
+            <!-- Job 1 -->
+            <div class="item-block">
+                <div class="item-head">
+                    <div class="item-title">Founder &amp; Lead Developer &middot; <span class="item-company">MAHMAS GROUP</span></div>
+                    <div class="item-date">Bettiah, Bihar &middot; 2023 – Present</div>
+                </div>
+                <div class="item-subtitle">Government Registered Micro Enterprise (UDYAM-BR-38-0075911 &middot; NIC 6201 Web &amp; Software Development)</div>
+                <ul class="item-list">
+                    <li>Architected and delivered custom single-page and multi-page commercial showcase websites for regional shops, clinics, coaching centres, and hotels with integrated 1-tap WhatsApp ordering.</li>
+                    <li>Engineered custom offline-first billing &amp; stock management software for retail shop counters with GST/non-GST bill printing and daily sales reporting.</li>
+                    <li>Verified and optimized Google Business profile listings on Google Maps for local commercial establishments, boosting search impressions and customer walk-ins.</li>
+                    <li>Directed client operations at <em>MAHMAS Digital Cafe</em> and authored programming tutorials on educational YouTube channel <em>Code With MAHMAS</em>.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="item-block">
+                <div class="item-head">
+                    <div class="item-title">Full-Stack Web &amp; Mobile Developer &middot; <span class="item-company">Freelance</span></div>
+                    <div class="item-date">Remote / India &middot; 2021 – Present</div>
+                </div>
+                <ul class="item-list">
+                    <li>Designed responsive, modern UI/UX design systems in Figma and implemented them with clean semantic HTML5, CSS3, JavaScript, and React.</li>
+                    <li>Built native Android APK applications with media processing pipelines and smooth real-time playback engines.</li>
+                    <li>Designed intuitive UI/UX prototypes and wireframes in Figma, translating concepts into pixel-perfect responsive web components.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KEY FEATURED PROJECTS -->
+        <section class="cv-section">
+            <h2 class="section-title">Key Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <h4>Pet's Heaven &middot; Web Platform &amp; Android App</h4>
+                        <div class="p-meta">Live Website: petsheaven.in</div>
+                        <p>Complete pet-care web platform with responsive booking interfaces and companion native Android APK.</p>
+                    </div>
+                    <div class="tags">HTML5, CSS3, JavaScript, Android SDK, UI/UX</div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <h4>E-Commerce Platform &amp; Admin Suite</h4>
+                        <div class="p-meta">almasyash.github.io/E-COMMERCE-WEBSITE</div>
+                        <p>High-conversion storefront for retail customers paired with an owner admin dashboard. Engineered with cart state management.</p>
+                    </div>
+                    <div class="tags">React.js, TypeScript, Node.js, Express.js, REST APIs</div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div>
+                        <h4>Editor FS &middot; Android Video Editor</h4>
+                        <div class="p-meta">GitHub Releases &middot; Android APK</div>
+                        <p>Practical Android video editing application featuring real-time playback, audio mixing, and export pipelines.</p>
+                    </div>
+                    <div class="tags">Android SDK, Java, Kotlin, Media Pipelines</div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div>
+                        <h4>To-Do List &middot; Task Manager &amp; Workflow Tool</h4>
+                        <div class="p-meta">almasyash.github.io/Almas-Neyamatullah</div>
+                        <p>Fast, responsive personal productivity web application with persistent offline storage, task categorization, and smart priority filters.</p>
+                    </div>
+                    <div class="tags">JavaScript (ES6+), LocalStorage, HTML5, CSS3, CRUD Engine</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL & DESIGN SKILLS -->
+        <section class="cv-section">
+            <h2 class="section-title">Technical &amp; Design Skills</h2>
+            <table class="skills-table">
+                <tr>
+                    <td class="cat">Web &amp; Frontend:</td>
+                    <td class="vals">JavaScript (ES6+), React.js, TypeScript, HTML5, CSS3, Responsive Design, State Management</td>
+                </tr>
+                <tr>
+                    <td class="cat">Backend &amp; Database:</td>
+                    <td class="vals">Node.js, Express.js, Python, REST APIs, JSON, LocalStorage, Database Architecture</td>
+                </tr>
+                <tr>
+                    <td class="cat">Mobile Development:</td>
+                    <td class="vals">Android Development, APK Building, Java, Kotlin, Flutter / Dart</td>
+                </tr>
+                <tr>
+                    <td class="cat">UI/UX &amp; Design:</td>
+                    <td class="vals">UI/UX Design, Figma, Wireframing, Responsive Layouts, User Flow, Adobe Photoshop, Illustrator, Visual Design</td>
+                </tr>
+                <tr>
+                    <td class="cat">Tools &amp; Workflow:</td>
+                    <td class="vals">Git, GitHub, Playwright Automation, Linux, Windows, Dev Servers</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- GOVERNMENT MSME REGISTRATION -->
+        <section class="cv-section" style="margin-bottom: 0;">
+            <h2 class="section-title">Official Government Registration</h2>
+            <div class="cert-card">
+                <div>
+                    <strong>Ministry:</strong> Ministry of MSME, Government of India<br />
+                    <strong>Enterprise:</strong> MAHMAS (MAHMAS GROUP) &middot; Micro Enterprise (Services - NIC 6201)
+                </div>
+                <div>
+                    <strong>Udyam Reg. No.:</strong> <span class="cert-num">UDYAM-BR-38-0075911</span>
+                </div>
+            </div>
+        </section>
+
+    </article>
+
+</body>
+</html>

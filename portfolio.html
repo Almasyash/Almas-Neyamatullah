@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Almas Neyamatullah · Full Stack Developer &amp; UI/UX Designer</title>
+    <meta name="description" content="Founder of MAHMAS GROUP, Full Stack Developer, Mobile App Engineer &amp; UI/UX Designer based in Bettiah, Bihar." />
+
+    <!-- FAVICON (Option 1 Cyber Prism M) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ---------- RESET / BASE ---------- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121216;
+            --bg-card: rgba(20, 20, 25, 0.75);
+            --text-primary: #f0ece4;
+            --text-secondary: #b8b0a4;
+            --text-muted: #827c73;
+            --accent: #cc2222;
+            --accent-glow: rgba(204, 34, 34, 0.45);
+            --accent-gold: #d4af37;
+            --line: rgba(255, 255, 255, 0.08);
+            --font-jp: 'Noto Serif JP', serif;
+            --font-en: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --radius-full: 9999px;
+            --radius-card: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-en);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---------- PRELOADER ---------- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #preloader .ring {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        #preloader .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.1rem;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ---------- CUSTOM CURSOR ---------- */
+        #cursor {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s ease-out, width 0.25s, height 0.25s, background-color 0.25s;
+            mix-blend-mode: screen;
+            box-shadow: 0 0 15px var(--accent);
+        }
+        #cursor.grow {
+            width: 40px;
+            height: 40px;
+            background: rgba(204, 34, 34, 0.3);
+            border: 1px solid var(--accent);
+            margin-top: -14px;
+            margin-left: -14px;
+        }
+        @media (pointer: coarse) {
+            #cursor { display: none !important; }
+        }
+
+        /* ---------- RAIN CANVAS BACKGROUND ---------- */
+        #rain-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+        }
+
+        /* ---------- UTILITIES & CONTAINERS ---------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(16px, 4vw, 32px);
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--line);
+            padding: 16px 0;
+            width: 100%;
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .logo {
+            font-family: var(--font-jp);
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-primary);
+        }
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* ---------- BUTTONS ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-weight: 500;
+            font-size: 0.92rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            font-family: var(--font-en);
+            white-space: nowrap;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(204, 34, 34, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(204, 34, 34, 0.55);
+            color: #ffffff;
+        }
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.14);
+            color: var(--text-primary);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(204, 34, 34, 0.1);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* ---------- HERO / PROFILE CARD SECTION ---------- */
+        #hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(50px, 8vh, 90px) 0 clamp(40px, 6vh, 70px);
+            position: relative;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(204, 34, 34, 0.14) 0%, transparent 55%),
+                radial-gradient(circle at 15% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(30px, 5vw, 60px);
+            width: 100%;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 680px;
+        }
+
+        .jp-kicker {
+            font-family: var(--font-jp);
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-jp);
+            font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            margin-bottom: 28px;
+            max-width: 580px;
+            line-height: 1.6;
+        }
+        .hero-content .subtitle strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        /* ---------- SOCIAL MEDIA PILLS ---------- */
+        .hero-socials {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 18px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            color: #ffffff;
+            border-color: var(--accent);
+            background: rgba(204, 34, 34, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(204, 34, 34, 0.25);
+        }
+        .social-link svg {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* ---------- HERO PHOTO ---------- */
+        .hero-profile {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-profile img {
+            width: clamp(230px, 24vw, 360px);
+            height: clamp(230px, 24vw, 360px);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 0 50px rgba(204, 34, 34, 0.28), 
+                0 20px 45px rgba(0, 0, 0, 0.65);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .hero-profile img:hover {
+            transform: scale(1.03);
+            box-shadow: 
+                0 0 75px rgba(204, 34, 34, 0.45), 
+                0 25px 55px rgba(0, 0, 0, 0.75);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 24px 0;
+            background: #08080a;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .motto-jp {
+            font-family: var(--font-jp);
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+        }
+
+        /* ---------- MOBILE RESPONSIVE ---------- */
+        @media (max-width: 820px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            .hero-profile {
+                order: -1;
+                margin-bottom: 8px;
+            }
+            .hero-profile img {
+                width: clamp(160px, 42vw, 220px);
+                height: clamp(160px, 42vw, 220px);
+            }
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .jp-kicker {
+                justify-content: center;
+            }
+            .hero-content .subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn-group {
+                justify-content: center;
+                width: 100%;
+            }
+            .btn-group .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+            .hero-socials {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-socials {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+                gap: 8px;
+            }
+            .social-link {
+                justify-content: center;
+                padding: 8px 12px;
+                font-size: 0.82rem;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="jp-text">静寂</div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor"></div>
+
+    <!-- RAIN CANVAS -->
+    <canvas id="rain-canvas"></canvas>
+
+    <!-- HEADER -->
+    <header role="banner">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo" title="MAHMAS GROUP · Almas Neyamatullah">
+                <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="28" height="28" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6));" />
+                <span>Almas</span><span style="color: #00f2fe;">.</span>
+            </a>
+            <a href="index.html" class="btn btn-outline" style="padding: 7px 18px; font-size: 0.82rem;">
+                &larr; MAHMAS GROUP
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN PROFILE / HERO SECTION -->
+    <main id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="jp-kicker">── 魂のコード · SOUL OF CODE</div>
+                <h1>
+                    Almas<br />
+                    <span class="highlight">Neyamatullah</span>
+                </h1>
+                <p class="subtitle">
+                    <strong>Full Stack Developer</strong> &middot; UI/UX Designer &middot; Mobile App Engineer &middot; <strong>Founder, MAHMAS GROUP</strong>
+                </p>
+
+                <div class="btn-group">
+                    <a href="index.html" class="btn btn-primary">
+                        Visit MAHMAS GROUP &rarr;
+                    </a>
+                    <a href="cv.html" class="btn btn-outline">
+                        📄 View CV / Resume
+                    </a>
+                </div>
+
+                <!-- SOCIAL MEDIA LINKS -->
+                <div class="hero-socials">
+                    <a href="https://github.com/Almasyash" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+
+                    <a href="https://linkedin.com/in/almas-neyamatullah" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/almas_neyamat6244/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+
+
+                </div>
+            </div>
+
+            <!-- PHOTO -->
+            <div class="hero-profile">
+                <img src="profile.png" alt="Almas Neyamatullah" />
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <p style="margin: 0;">
+                &copy; 2026 Almas Neyamatullah &middot;
+                <span class="motto-jp">闇の先に光あり</span>
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                Founder of <a href="index.html" style="color: var(--accent); text-decoration: underline;">MAHMAS GROUP</a> &middot; Bettiah
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC -->
+    <script>
+        // 1. PRELOADER
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) preloader.classList.add('hidden');
+        });
+
+        // 2. CUSTOM CURSOR
+        (function initCursor() {
+            const cursor = document.getElementById('cursor');
+            if (!cursor) return;
+            let pos = { x: 0, y: 0 };
+            let target = { x: 0, y: 0 };
+
+            document.addEventListener('mousemove', (e) => {
+                target.x = e.clientX;
+                target.y = e.clientY;
+                if (cursor.style.display === 'none') {
+                    cursor.style.display = 'block';
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+
+            document.querySelectorAll('a, .btn, .social-link').forEach((el) => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+            });
+
+            function animateCursor() {
+                pos.x += (target.x - pos.x) * 0.12;
+                pos.y += (target.y - pos.y) * 0.12;
+                cursor.style.transform = `translate(${pos.x - 6}px, ${pos.y - 6}px)`;
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+        })();
+
+        // 3. ATMOSPHERIC RAIN CANVAS
+        (function initRain() {
+            const canvas = document.getElementById('rain-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let W, H;
+            const drops = [];
+            const COUNT = 160;
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Drop {
+                constructor() {
+                    this.reset(true);
+                }
+                reset(initial = false) {
+                    this.x = Math.random() * W;
+                    this.y = initial ? Math.random() * H : -20;
+                    this.len = 10 + Math.random() * 20;
+                    this.speed = 10 + Math.random() * 16;
+                    this.opacity = 0.08 + Math.random() * 0.22;
+                    this.wind = -0.5;
+                }
+                update() {
+                    this.y += this.speed;
+                    this.x += this.wind;
+                    if (this.y > H + 20) {
+                        this.reset();
+                    }
+                }
+                draw() {
+                    ctx.strokeStyle = `rgba(204, 34, 34, ${this.opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x + this.wind * 2, this.y + this.len);
+                    ctx.stroke();
+                }
+            }
+
+            for (let i = 0; i < COUNT; i++) {
+                drops.push(new Drop());
+            }
+
+            function drawRain() {
+                ctx.clearRect(0, 0, W, H);
+                for (const d of drops) {
+                    d.update();
+                    d.draw();
+                }
+                requestAnimationFrame(drawRain);
+            }
+            drawRain();
+        })();
+    </script>
+</body>
+</html>

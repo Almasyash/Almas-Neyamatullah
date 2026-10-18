@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Almas Neyamatullah",
-    "headline": "Full Stack Developer | UI/UX Designer | Product Packaging & Label Designer | AI Enthusiast",
+    "headline": "Full Stack Developer | Mobile App Engineer | UI/UX Designer | Founder, MAHMAS GROUP",
     "location": "India",
-    "about": "Full Stack Developer, UI/UX Designer & Product Packaging Specialist crafting cinematic, high-performance web applications and shelf-dominant FMCG brand packaging. Explore my live portfolio: https://almasyash.github.io/Almas-Neyamatullah/",
+    "about": "Full Stack Developer, UI/UX Designer & Mobile App Engineer crafting modern, high-performance web applications, Android tools, and digital solutions. Founder of MAHMAS GROUP — empowering businesses and enterprises with cutting-edge technology. Explore my live portfolio: https://almasyash.github.io/Almas-Neyamatullah/",
     "portfolio": "https://almasyash.github.io/Almas-Neyamatullah/"
   },
   "featured": [
@@ -15,11 +15,11 @@
   ],
   "projects": [
     {
-      "name": "FS GROUPZ Premium Chips Packaging Design",
-      "role": "Lead Packaging & Brand Designer",
-      "description": "Commercial-grade gourmet snack packaging with dieline precision, 3D renders, and regulatory compliance.",
-      "tech": ["Packaging Design", "Label Design", "Adobe Illustrator", "Photoshop", "Blender", "CMYK Print"],
-      "url": "https://almasyash.github.io/Almas-Neyamatullah/#packaging"
+      "name": "MAHMAS GROUP Web Platform",
+      "role": "Founder & Lead Developer",
+      "description": "Flagship digital studio platform showcasing modern responsive software, local business tech transformation, and client solutions.",
+      "tech": ["HTML5", "CSS3 Glassmorphism", "JavaScript ES6+", "Responsive Web", "SEO"],
+      "url": "https://almasyash.github.io/Almas-Neyamatullah/"
     },
     {
       "name": "Pet's Heaven",
@@ -32,7 +32,7 @@
       "name": "Editor FS",
       "role": "Android Developer",
       "description": "Editor FS is an Android video editing application designed to provide users with a practical interface for editing and managing video content.",
-      "tech": ["Android", "Video Editor", "Media", "Mobile", "APK"],
+      "tech": ["Android SDK", "Video Editor", "Media", "Mobile", "APK"],
       "url": "https://github.com/FS-Groupz/Editor-FS"
     },
     {
@@ -46,7 +46,7 @@
       "name": "To-Do List Task Manager",
       "role": "Frontend Developer",
       "description": "Lightweight task management app with persistent LocalStorage, full CRUD capabilities, and smart status filters.",
-      "tech": ["LocalStorage", "CRUD", "JavaScript", "CSS3"],
+      "tech": ["LocalStorage", "CRUD", "JavaScript ES6+", "CSS3"],
       "url": "https://almasyash.github.io/Almas-Neyamatullah/"
     }
   ],
@@ -57,11 +57,10 @@
     "React",
     "Node.js",
     "Python",
-    "Android",
+    "Android SDK",
     "UI/UX Design",
-    "Product Packaging Design",
-    "Label Design",
-    "Print Production",
+    "Wireframing & Prototyping",
+    "Figma",
     "Responsive Web Design",
     "LocalStorage",
     "Git",

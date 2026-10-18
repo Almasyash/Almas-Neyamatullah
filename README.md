@@ -1,6 +1,6 @@
 # Almas Neyamatullah · Cinematic Portfolio 🎬
 
-A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, Product Packaging & Label Designer, and AI Enthusiast.
+A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, Mobile App Engineer, and Founder of MAHMAS GROUP.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/almas-neyamatullah/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/almasyash)
@@ -54,7 +54,7 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 | **Editor FS** | 🎬 | Android video editing application designed to provide users with a practical interface for editing and managing video content | Android, Video Editor, Media, Mobile |
 | **E-Commerce Website** | 🛒 | A modern full-stack e-commerce platform with customer shopping experience and admin management features | React, TypeScript, Node.js, Express.js, Database, REST API |
 | **To-Do List** | ✅ | Productive task manager with persistent local storage, CRUD operations, and category filters | LocalStorage, CRUD, Filters, JavaScript |
-| **FS GROUPZ Chips Packaging** | 🍟 | High-impact gourmet snack packaging with dieline precision, 3D renders, and regulatory compliance | Illustrator, Photoshop, Blender, Dielines, CMYK |
+| **MAHMAS GROUP Platform** | 🏢 | High-performance digital presence and software platform for businesses and enterprises | HTML5, CSS3 Glassmorphism, JavaScript, SEO |
 
 ---
 
@@ -64,7 +64,7 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 - **HTML5** — Semantic, accessible markup
 - **CSS3** — Custom properties, Flexbox, CSS Grid, backdrop-filter glassmorphism, animations
 - **JavaScript (ES6+)** — Modular DOM manipulation, modal controls, canvas animation, responsive interactions
-- **Android / Mobile** — Native Android application packaging (Editor FS APK)
+- **Android / Mobile** — Native Android application engineering & APK distribution (Editor FS APK)
 
 ### Typography
 - **Noto Serif JP** — Japanese serif styling for headers and accents
@@ -81,8 +81,10 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 
 ```
 Almas-Neyamatullah/
-├── index.html                           # Main portfolio landing page
-├── fs-chips-packaging.jpg               # FS GROUPZ Premium Chips Packaging 3D Mockup
+├── index.html                           # Main landing page (MAHMAS GROUP · Website & Software for Bettiah Businesses)
+├── portfolio.html                       # Founder cinematic developer portfolio (Almas Neyamatullah)
+├── mahmas.html                          # MAHMAS GROUP landing page (alias)
+├── cv.html                              # Interactive ATS-friendly Web CV / Resume
 ├── ecommerce-logo.svg                   # E-Commerce Website brand logo
 ├── Digital Clock & StopWatch.html       # Digital Clock & Stopwatch tool
 ├── Todo List App.html                   # To-Do List productivity application
@@ -163,7 +165,7 @@ Any push to the `main` branch automatically triggers GitHub Pages to build and d
 | **About Bio & Skills** | `index.html` | About section (`#about`) |
 | **Social Links & Email** | `index.html` | Contact section (`#contact`) |
 | **LinkedIn URL** | `index.html` & `linkedin-data.json` | Contact list & JSON |
-| **Resume PDF** | Root | Replace `MD Elmas cv.pdf` |
+| **Resume PDF** | Root | `Almas_Neyamatullah_CV.pdf` |
 
 ### Adding or Modifying a Project
 
@@ -259,7 +261,7 @@ SOFTWARE.
 - 💼 LinkedIn: [almas-neyamatullah](https://linkedin.com/in/almas-neyamatullah)  
 - 🐙 GitHub: [@Almasyash](https://github.com/Almasyash)  
 - 🌐 Portfolio: [almasyash.github.io/Almas-Neyamatullah](https://almasyash.github.io/Almas-Neyamatullah/)  
-- 📄 Resume: [Download CV (PDF)](MD%20Elmas%20cv.pdf)
+- 📄 Resume: [Download CV (PDF)](Almas_Neyamatullah_CV.pdf)
 
 ---
 
