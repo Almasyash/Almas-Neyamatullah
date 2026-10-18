@@ -385,7 +385,29 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
+            margin-left: auto;
+            max-width: 100%;
+        }
+        .header-actions .btn {
+            padding: 8px 16px;
+            font-size: 0.82rem;
+            white-space: nowrap;
+            width: auto;
+            flex-shrink: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .header-actions .btn-whatsapp {
+            background: #25d366;
+            color: #07070b;
+            font-weight: 700;
+            border-color: #25d366;
+            width: auto;
+            flex-shrink: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
 
         /* ---------- HERO SECTION ---------- */
@@ -957,16 +979,33 @@
                 display: none;
             }
             .header-actions {
+                display: flex;
+                align-items: center;
                 gap: 6px;
                 flex-shrink: 0;
                 margin: 0;
                 padding: 0;
+                max-width: fit-content;
             }
             .header-actions .btn {
-                padding: 6px 12px !important;
-                font-size: 0.78rem !important;
+                padding: 6px 11px !important;
+                font-size: 0.76rem !important;
                 margin: 0 !important;
-                box-sizing: border-box;
+                width: auto !important;
+                max-width: fit-content !important;
+                flex: 0 0 auto !important;
+                box-sizing: border-box !important;
+                white-space: nowrap !important;
+            }
+            .header-actions .btn-whatsapp {
+                width: auto !important;
+                max-width: fit-content !important;
+                padding: 6px 12px !important;
+                font-size: 0.76rem !important;
+                margin: 0 !important;
+                flex: 0 0 auto !important;
+                box-sizing: border-box !important;
+                white-space: nowrap !important;
             }
             .btn-group {
                 flex-direction: column;
@@ -986,7 +1025,8 @@
                 text-align: center;
                 white-space: normal;
             }
-            .btn-whatsapp {
+            .btn-group .btn-whatsapp,
+            .contact-form .btn-whatsapp {
                 margin: 0;
                 padding: 12px 18px;
                 width: 100%;
@@ -1005,11 +1045,66 @@
         }
         @media (max-width: 480px) {
             .wrap {
-                padding: 0 12px;
+                padding: 0 10px;
+            }
+            header {
+                padding: 10px 0;
+            }
+            header .nav-wrap {
+                padding: 0;
+                gap: 6px;
+            }
+            .brand-link {
+                gap: 6px;
+                min-width: 0;
+                flex-shrink: 1;
+            }
+            .brand-link .brand-logo-img {
+                width: 26px;
+                height: 26px;
+            }
+            .brand-link .brand-title {
+                font-size: 1.05rem;
+            }
+            .header-actions {
+                gap: 5px;
+                flex-shrink: 0;
+                margin: 0;
             }
             .header-actions .btn {
-                padding: 6px 9px !important;
+                padding: 5px 8px !important;
                 font-size: 0.72rem !important;
+                width: auto !important;
+                margin: 0 !important;
+            }
+            .header-actions .btn-whatsapp {
+                padding: 5px 10px !important;
+                font-size: 0.72rem !important;
+                width: auto !important;
+                max-width: fit-content !important;
+                margin: 0 !important;
+            }
+        }
+        @media (max-width: 360px) {
+            .wrap {
+                padding: 0 6px;
+            }
+            header .nav-wrap {
+                gap: 4px;
+            }
+            .brand-link .brand-title {
+                font-size: 0.92rem;
+            }
+            .header-actions {
+                gap: 3px;
+            }
+            .header-actions .btn {
+                padding: 4px 6px !important;
+                font-size: 0.66rem !important;
+            }
+            .header-actions .btn-whatsapp {
+                padding: 4px 7px !important;
+                font-size: 0.66rem !important;
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1049,10 +1144,10 @@
             </nav>
 
             <div class="header-actions">
-                <a href="portfolio.html" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.82rem;" title="Founder Portfolio">
+                <a href="portfolio.html" class="btn btn-outline" title="Founder Portfolio">
                     <span>&larr;</span> Portfolio
                 </a>
-                <a href="https://wa.me/917033761519?text=Hello%20MAHMAS%20GROUP%2C%20I%20want%20to%20discuss%20a%20website%20or%20software" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 8px 18px; font-size: 0.82rem;">
+                <a href="https://wa.me/917033761519?text=Hello%20MAHMAS%20GROUP%2C%20I%20want%20to%20discuss%20a%20website%20or%20software" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" title="Chat on WhatsApp">
                     WhatsApp
                 </a>
             </div>
