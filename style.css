@@ -1504,6 +1504,29 @@
         .accent-link:hover {
             color: #00f2fe;
         }
+        .map-card-actions {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 12px;
+            width: 100%;
+        }
+        .map-card-actions .btn {
+            padding: 11px 20px;
+            font-size: 0.86rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none !important;
+            color: #ffffff !important;
+        }
+        .map-card-actions .btn:hover {
+            color: #ffffff !important;
+        }
+        .map-card-actions .btn:focus-visible {
+            outline: 2px solid #ffffff !important;
+            outline-offset: 3px !important;
+        }
         @media (max-width: 900px) {
             .find-us-grid {
                 grid-template-columns: 1fr;
@@ -1520,7 +1543,8 @@
             .gbp-actions {
                 flex-direction: column;
             }
-            .gbp-actions .btn {
+            .gbp-actions .btn,
+            .map-card-actions .btn {
                 width: 100%;
             }
         }
