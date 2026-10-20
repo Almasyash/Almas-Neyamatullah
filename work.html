@@ -3,8 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Our Work &amp; Portfolio · Real Projects | MAHMAS GROUP Bettiah</title>
-    <meta name="description" content="View live projects, websites, billing software, and mobile apps engineered by MAHMAS GROUP in Bettiah, Bihar. Founded by Almas Neyamatullah." />
+    <title>Our Work | Live Web &amp; App Projects in Bettiah | MAHMAS</title>
+    <meta name="description" content="Proven client websites, billing software, and Android applications engineered in Bettiah, Bihar by Mahmas Group. Check live demos." />
+    <link rel="canonical" href="https://mahmasgroup.online/work/" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mahmasgroup.online/work/" />
+    <meta property="og:title" content="Our Work | Live Web &amp; App Projects in Bettiah | MAHMAS" />
+    <meta property="og:description" content="Proven client websites, billing software, and Android applications engineered in Bettiah, Bihar by Mahmas Group." />
+    <meta property="og:image" content="https://mahmasgroup.online/mahmas_hero_logo.webp" />
+    <meta property="og:site_name" content="Mahmas Group" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Work | Live Web &amp; App Projects in Bettiah | MAHMAS" />
+    <meta name="twitter:description" content="Proven client websites, billing software, and Android applications engineered in Bettiah, Bihar." />
+    <meta name="twitter:image" content="https://mahmasgroup.online/mahmas_hero_logo.webp" />
 
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -16,6 +32,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- STRUCTURED DATA: BREADCRUMBS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mahmasgroup.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our Work",
+          "item": "https://mahmasgroup.online/work/"
+        }
+      ]
+    }
+    </script>
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
@@ -32,7 +70,10 @@
     <header id="header">
         <div class="wrap nav-wrap">
             <a class="brand-link" href="index.html" title="MAHMAS GROUP Bettiah">
-                <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP Logo" class="brand-logo-img" width="34" height="34" />
+                <picture>
+                    <source srcset="mahmas_emblem_transparent.webp" type="image/webp" />
+                    <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP Logo" class="brand-logo-img" width="34" height="34" />
+                </picture>
                 <span class="brand-title">MAHMAS GROUP<span class="brand-dot"> .</span></span>
                 <span class="location-tag">Bettiah · MSME</span>
             </a>
@@ -134,7 +175,10 @@
                     <!-- Project 1: Pet's Heaven -->
                     <div class="glass-card work-card" style="padding: 30px;">
                         <div class="work-card-header">
-                            <img src="petsheaven-logo.png" alt="Pet's Heaven Logo" class="work-logo" />
+                            <picture>
+                                <source srcset="petsheaven-logo.webp" type="image/webp" />
+                                <img src="petsheaven-logo.png" alt="Pet's Heaven Logo" class="work-logo" width="44" height="44" loading="lazy" />
+                            </picture>
                             <div>
                                 <span class="tag" style="color: #00f2fe; border-color: rgba(0, 242, 254, 0.3);">Website &amp; Android App</span>
                                 <h3>Pet&rsquo;s Heaven</h3>
@@ -155,7 +199,7 @@
                     <!-- Project 2: E-Commerce Storefront -->
                     <div class="glass-card work-card" style="padding: 30px;">
                         <div class="work-card-header">
-                            <img src="ecommerce-logo.svg" alt="E-Commerce Logo" class="work-logo" style="background: #0f172a; padding: 6px;" />
+                            <img src="ecommerce-logo.svg" alt="E-Commerce Logo" class="work-logo" width="44" height="44" loading="lazy" style="background: #0f172a; padding: 6px;" />
                             <div>
                                 <span class="tag" style="color: #fbbf24; border-color: rgba(212, 175, 55, 0.3);">Full-Stack Web Store</span>
                                 <h3>E-Commerce Platform</h3>
@@ -176,7 +220,10 @@
                     <!-- Project 3: Editor FS Android -->
                     <div class="glass-card work-card" style="padding: 30px;">
                         <div class="work-card-header">
-                            <img src="editor-fs-logo.png" alt="Editor FS Logo" class="work-logo" />
+                            <picture>
+                                <source srcset="editor-fs-logo.webp" type="image/webp" />
+                                <img src="editor-fs-logo.png" alt="Editor FS Logo" class="work-logo" width="44" height="44" loading="lazy" />
+                            </picture>
                             <div>
                                 <span class="tag" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.3);">Android Application</span>
                                 <h3>Editor FS</h3>
@@ -294,7 +341,10 @@
             <div class="footer-top">
                 <div>
                     <div class="footer-brand" style="display: flex; align-items: center; gap: 10px;">
-                        <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="24" height="24" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.5));" />
+                        <picture>
+                            <source srcset="mahmas_emblem_transparent.webp" type="image/webp" />
+                            <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="24" height="24" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.5));" />
+                        </picture>
                         <span style="font-family: var(--font-jp); font-weight: 900; color: var(--accent); font-size: 1.25rem;">MAHMAS GROUP<span style="color: #00f2fe;"> .</span></span>
                     </div>
                     <div style="margin-top: 4px; font-size: 0.85rem; color: var(--text-secondary);">
@@ -309,6 +359,9 @@
                     <a href="pricing.html">Pricing</a>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
+                    <a href="updates/">Updates</a>
+                    <a href="privacy-policy/">Privacy</a>
+                    <a href="terms/">Terms</a>
                     <a href="portfolio.html">Founder Portfolio</a>
                 </div>
             </div>
@@ -321,6 +374,6 @@
     </footer>
 
     <!-- SHARED INTERACTION SCRIPT -->
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>

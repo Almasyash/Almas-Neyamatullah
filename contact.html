@@ -3,8 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Contact Us · Free Consultation &amp; Quotes | MAHMAS GROUP Bettiah</title>
-    <meta name="description" content="Get in touch with MAHMAS GROUP in Bettiah, Bihar. Call +91 7033761519 or email support@mahmasgroup.online for websites, billing software, and Google Business listings." />
+    <title>Contact Us | MAHMAS GROUP Software Studio Bettiah</title>
+    <meta name="description" content="Get in touch with Mahmas Group in Bettiah, Bihar. Phone: +91 7033761519, Email: support@mahmasgroup.online. Visit us at Chawanni, Bettiah." />
+    <link rel="canonical" href="https://mahmasgroup.online/contact/" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mahmasgroup.online/contact/" />
+    <meta property="og:title" content="Contact Us | MAHMAS GROUP Software Studio Bettiah" />
+    <meta property="og:description" content="Get in touch with Mahmas Group in Bettiah, Bihar. Phone: +91 7033761519, Email: support@mahmasgroup.online. Visit us at Chawanni, Bettiah." />
+    <meta property="og:image" content="https://mahmasgroup.online/mahmas_hero_logo.webp" />
+    <meta property="og:site_name" content="Mahmas Group" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | MAHMAS GROUP Software Studio Bettiah" />
+    <meta name="twitter:description" content="Get in touch with Mahmas Group in Bettiah, Bihar. Phone: +91 7033761519, Email: support@mahmasgroup.online." />
+    <meta name="twitter:image" content="https://mahmasgroup.online/mahmas_hero_logo.webp" />
 
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -17,8 +33,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+    <!-- STRUCTURED DATA: BREADCRUMBS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mahmasgroup.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://mahmasgroup.online/contact/"
+        }
+      ]
+    }
+    </script>
+
     <!-- EMAILJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
@@ -35,7 +73,10 @@
     <header id="header">
         <div class="wrap nav-wrap">
             <a class="brand-link" href="index.html" title="MAHMAS GROUP Bettiah">
-                <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP Logo" class="brand-logo-img" width="34" height="34" />
+                <picture>
+                    <source srcset="mahmas_emblem_transparent.webp" type="image/webp" />
+                    <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP Logo" class="brand-logo-img" width="34" height="34" />
+                </picture>
                 <span class="brand-title">MAHMAS GROUP<span class="brand-dot"> .</span></span>
                 <span class="location-tag">Bettiah · MSME</span>
             </a>
@@ -275,7 +316,10 @@
             <div class="footer-top">
                 <div>
                     <div class="footer-brand" style="display: flex; align-items: center; gap: 10px;">
-                        <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="24" height="24" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.5));" />
+                        <picture>
+                            <source srcset="mahmas_emblem_transparent.webp" type="image/webp" />
+                            <img src="mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="24" height="24" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.5));" />
+                        </picture>
                         <span style="font-family: var(--font-jp); font-weight: 900; color: var(--accent); font-size: 1.25rem;">MAHMAS GROUP<span style="color: #00f2fe;"> .</span></span>
                     </div>
                     <div style="margin-top: 4px; font-size: 0.85rem; color: var(--text-secondary);">
@@ -290,6 +334,9 @@
                     <a href="pricing.html">Pricing</a>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
+                    <a href="updates/">Updates</a>
+                    <a href="privacy-policy/">Privacy</a>
+                    <a href="terms/">Terms</a>
                     <a href="portfolio.html">Founder Portfolio</a>
                 </div>
             </div>
@@ -302,6 +349,6 @@
     </footer>
 
     <!-- SHARED INTERACTION SCRIPT -->
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
