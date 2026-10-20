@@ -1316,3 +1316,211 @@
             gap: 24px;
             flex-wrap: wrap;
         }
+
+        /* ---------- GOOGLE BUSINESS PROFILE & FIND US SECTION ---------- */
+        .find-us-section {
+            position: relative;
+            border-top: 1px solid var(--line);
+        }
+        .find-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 32px;
+            align-items: stretch;
+            margin-top: 24px;
+        }
+        .find-us-card {
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gbp-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            margin-bottom: 22px;
+        }
+        .gbp-badge-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .gbp-badge-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .gbp-badge-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            line-height: 1.3;
+        }
+        .gbp-badge-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: block;
+        }
+        .gbp-badge-link {
+            font-size: 0.78rem;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 12px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 20px;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .gbp-badge-link:hover {
+            background: rgba(56, 189, 248, 0.22);
+            border-color: #38bdf8;
+            color: #00f2fe;
+        }
+        .gbp-biz-header {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+        .gbp-biz-name {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin: 0 0 6px 0;
+            font-family: var(--font-jp);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .gbp-biz-cat {
+            display: inline-block;
+            font-size: 0.82rem;
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.25);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .gbp-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+            display: grid;
+            gap: 16px;
+        }
+        .gbp-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .gbp-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .gbp-info-list strong {
+            color: var(--text-primary);
+            display: block;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 2px;
+        }
+        .gbp-coords {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            margin-top: 4px;
+        }
+        .hours-row {
+            font-size: 0.88rem;
+            margin-top: 2px;
+        }
+        .gbp-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+        }
+        .gbp-actions .btn {
+            flex: 1 1 auto;
+            text-align: center;
+            justify-content: center;
+            padding: 11px 16px;
+            font-size: 0.86rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .map-card {
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-color: rgba(255, 255, 255, 0.1);
+            min-height: 480px;
+        }
+        .map-frame-wrapper {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+        }
+        .map-frame-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .map-card-footer {
+            padding: 14px 20px;
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .accent-link {
+            font-size: 0.82rem;
+            color: #38bdf8;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .accent-link:hover {
+            color: #00f2fe;
+        }
+        @media (max-width: 900px) {
+            .find-us-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .map-card {
+                min-height: 380px;
+            }
+            .map-frame-wrapper {
+                min-height: 320px;
+            }
+        }
+        @media (max-width: 540px) {
+            .gbp-actions {
+                flex-direction: column;
+            }
+            .gbp-actions .btn {
+                width: 100%;
+            }
+        }
