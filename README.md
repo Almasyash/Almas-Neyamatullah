@@ -1,4 +1,4 @@
-# Almas Neyamatullah · Cinematic Portfolio 🎬
+# Almas Neyamatullah · 
 
 A visually stunning, cinematic portfolio website showcasing the work of Almas Neyamatullah — a Full Stack Developer, UI/UX Designer, Mobile App Engineer, and Founder of MAHMAS GROUP.
 
