@@ -81,17 +81,23 @@ A visually stunning, cinematic portfolio website showcasing the work of Almas Ne
 
 ```
 Almas-Neyamatullah/
-├── index.html                           # Main landing page (MAHMAS GROUP · Website & Software for Bettiah Businesses)
-├── portfolio.html                       # Founder cinematic developer portfolio (Almas Neyamatullah)
-├── mahmas.html                          # MAHMAS GROUP landing page (alias)
-├── cv.html                              # Interactive ATS-friendly Web CV / Resume
-├── ecommerce-logo.svg                   # E-Commerce Website brand logo
-├── Digital Clock & StopWatch.html       # Digital Clock & Stopwatch tool
-├── Todo List App.html                   # To-Do List productivity application
-├── Almas_Neyamatullah_CV.pdf            # Resume / CV document
-├── linkedin-data.json                   # Structured portfolio metadata for LinkedIn
-├── automate_linkedin.py                 # Playwright automation script for LinkedIn profile
-├── requirements.txt                     # Python dependencies for automation
+├── index.html                           # Main business website (MAHMAS GROUP · Bettiah)
+├── about.html                           # About MAHMAS GROUP
+├── services.html                        # Services overview
+├── pricing.html                         # Pricing & plans
+├── work.html                            # Projects & portfolio showcase
+├── contact.html                         # Contact & enquiry
+├── mahmas.html                          # Landing page
+├── style.css                            # Core website styles
+├── main.js                              # Site interactions & forms
+├── assets/
+│   ├── images/                          # Brand logos, emblem, project logos
+│   └── documents/                       # Official documents (e.g. Udyam MSME)
+├── personal/
+│   ├── portfolio.html                   # Founder cinematic developer portfolio (Almas Neyamatullah)
+│   ├── cv.html                          # Interactive ATS-friendly Web CV / Resume
+│   └── Almas_Neyamatullah_CV.pdf        # Founder resume / CV PDF document
+├── services/                            # Individual service landing pages
 ├── README.md                            # Comprehensive project documentation
 └── .github/                             # GitHub configuration & workflows
 ```
@@ -164,8 +170,8 @@ Any push to the `main` branch automatically triggers GitHub Pages to build and d
 | **Full Name / Title** | `index.html` | Hero section (`#hero`) |
 | **About Bio & Skills** | `index.html` | About section (`#about`) |
 | **Social Links & Email** | `index.html` | Contact section (`#contact`) |
-| **LinkedIn URL** | `index.html` & `linkedin-data.json` | Contact list & JSON |
-| **Resume PDF** | Root | `Almas_Neyamatullah_CV.pdf` |
+| **LinkedIn URL** | `index.html` | Contact list |
+| **Resume PDF** | `personal/` | `Almas_Neyamatullah_CV.pdf` |
 
 ### Adding or Modifying a Project
 
@@ -261,7 +267,7 @@ SOFTWARE.
 - 💼 LinkedIn: [almas-neyamatullah](https://linkedin.com/in/almas-neyamatullah)  
 - 🐙 GitHub: [@Almasyash](https://github.com/Almasyash)  
 - 🌐 Portfolio: [almasyash.github.io/Almas-Neyamatullah](https://almasyash.github.io/Almas-Neyamatullah/)  
-- 📄 Resume: [Download CV (PDF)](Almas_Neyamatullah_CV.pdf)
+- 📄 Resume: [Download CV (PDF)](personal/Almas_Neyamatullah_CV.pdf)
 
 ---
 
