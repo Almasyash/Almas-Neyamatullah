@@ -1644,3 +1644,66 @@
                 text-align: center !important;
             }
         }
+
+        /* ---------- MAP CARD: OPEN IN GOOGLE MAPS APP BUTTON ---------- */
+        .map-card-actions {
+            margin-top: 12px !important;
+            display: flex !important;
+            justify-content: flex-start !important;
+        }
+
+        .map-card .btn-open-map,
+        .map-card-actions a.btn-open-map,
+        .map-card-footer a.btn-open-map,
+        a.btn-open-map {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            min-height: 44px !important;
+            padding: 10px 22px !important;
+            border-radius: 999px !important;
+            background: rgba(255, 255, 255, 0.04) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            font-family: var(--font-en, 'Inter', system-ui, sans-serif) !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease !important;
+            box-sizing: border-box !important;
+        }
+
+        .map-card .btn-open-map:hover,
+        .map-card-actions a.btn-open-map:hover,
+        .map-card-footer a.btn-open-map:hover,
+        a.btn-open-map:hover {
+            transform: translateY(-2px) !important;
+            background: rgba(204, 34, 34, 0.1) !important;
+            border-color: #cc2222 !important;
+            box-shadow: 0 0 18px rgba(204, 34, 34, 0.35) !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .map-card .btn-open-map:focus-visible,
+        .map-card-actions a.btn-open-map:focus-visible,
+        .map-card-footer a.btn-open-map:focus-visible,
+        a.btn-open-map:focus-visible {
+            outline: 2px solid #ffffff !important;
+            outline-offset: 3px !important;
+        }
+
+        @media (max-width: 600px) {
+            .map-card-actions {
+                width: 100% !important;
+            }
+            .map-card .btn-open-map,
+            .map-card-actions a.btn-open-map,
+            .map-card-footer a.btn-open-map,
+            a.btn-open-map {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
