@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
+  <!-- Core Homepage -->
   <url>
     <loc>https://mahmasgroup.online/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main Section Pages -->
   <url>
     <loc>https://mahmasgroup.online/services/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/work/</loc>
@@ -28,22 +30,22 @@
   <url>
     <loc>https://mahmasgroup.online/about/</loc>
     <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/contact/</loc>
     <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Service Subpages (Clean URLs) -->
+  <!-- Service Detail Pages -->
   <url>
     <loc>https://mahmasgroup.online/services/website-design/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/services/web-design/</loc>
@@ -55,25 +57,25 @@
     <loc>https://mahmasgroup.online/services/billing-software/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/services/google-business-listing/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/services/mobile-app-development/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/services/ecommerce-solutions/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/services/website-maintenance/</loc>
@@ -82,7 +84,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Content & Legal Pages -->
+  <!-- Policy & Update Pages -->
   <url>
     <loc>https://mahmasgroup.online/updates/</loc>
     <lastmod>2026-10-20</lastmod>
@@ -92,19 +94,13 @@
   <url>
     <loc>https://mahmasgroup.online/privacy-policy/</loc>
     <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mahmasgroup.online/terms/</loc>
     <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://mahmasgroup.online/personal/portfolio.html</loc>
-    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>
