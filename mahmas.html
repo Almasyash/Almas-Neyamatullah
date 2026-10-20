@@ -1107,12 +1107,146 @@
                 font-size: 0.66rem !important;
             }
         }
+        /* ---------- HORIZONTAL SERVICES SCROLLING MARQUEE BANNER ---------- */
+        .marquee-strip {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(14, 14, 18, 0.96) 0%, rgba(8, 8, 12, 0.98) 100%);
+            border-top: 1px solid rgba(0, 242, 254, 0.12);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            z-index: 70;
+            user-select: none;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 48px, rgba(0, 0, 0, 1) calc(100% - 48px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 48px, rgba(0, 0, 0, 1) calc(100% - 48px), transparent 100%);
+        }
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: marqueeScroll 34s linear infinite;
+            will-change: transform;
+        }
+        .marquee-strip:hover .marquee-track {
+            animation-play-state: paused;
+        }
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 12px;
+            flex-shrink: 0;
+        }
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 14px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-full);
+            font-family: var(--font-en);
+            font-size: 0.81rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .marquee-item:hover {
+            color: #ffffff;
+            background: rgba(0, 242, 254, 0.08);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 0 16px rgba(0, 242, 254, 0.22);
+            transform: translateY(-1px);
+        }
+        .marquee-item .m-icon {
+            font-size: 0.95rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .marquee-item.accent-cyan {
+            border-color: rgba(0, 242, 254, 0.25);
+            color: #38bdf8;
+            background: rgba(0, 242, 254, 0.04);
+        }
+        .marquee-item.accent-cyan strong {
+            color: #00f2fe;
+            font-weight: 600;
+        }
+        .marquee-item.accent-gold {
+            border-color: rgba(212, 175, 55, 0.25);
+            color: #fbbf24;
+            background: rgba(212, 175, 55, 0.04);
+        }
+        .marquee-item.accent-gold strong {
+            color: #fde047;
+            font-weight: 600;
+        }
+        .marquee-item.accent-green {
+            border-color: rgba(37, 211, 102, 0.28);
+            color: #4ade80;
+            background: rgba(37, 211, 102, 0.04);
+        }
+        .marquee-item.accent-green strong {
+            color: #86efac;
+            font-weight: 600;
+        }
+        .marquee-item.accent-red {
+            border-color: rgba(204, 34, 34, 0.3);
+            color: #f87171;
+            background: rgba(204, 34, 34, 0.04);
+        }
+        .marquee-item.accent-red strong {
+            color: #fca5a5;
+            font-weight: 600;
+        }
+        .marquee-sep {
+            color: rgba(255, 255, 255, 0.16);
+            font-size: 0.55rem;
+            user-select: none;
+            padding: 0 1px;
+        }
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        @media (max-width: 600px) {
+            .marquee-strip {
+                padding: 6px 0;
+            }
+            .marquee-content {
+                gap: 8px;
+                padding-right: 8px;
+            }
+            .marquee-item {
+                font-size: 0.72rem;
+                padding: 4px 10px;
+                gap: 6px;
+            }
+            .marquee-track {
+                animation-duration: 26s;
+            }
+        }
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
             }
             #rain-canvas {
                 display: none;
+            }
+            .marquee-track {
+                animation: none;
+                overflow-x: auto;
             }
         }
     </style>
@@ -1155,6 +1289,52 @@
 
     <!-- MAIN CONTENT -->
     <main id="top">
+
+        <!-- HORIZONTAL SERVICES SCROLLING MARQUEE BANNER -->
+        <div class="marquee-strip" role="region" aria-label="Services offered by MAHMAS GROUP">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item accent-cyan"><span class="m-icon">⚡</span><strong>High-performance websites</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-gold"><span class="m-icon">💼</span><strong>Custom billing software</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-green"><span class="m-icon">📍</span><strong>Google Business Listings</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item"><span class="m-icon">📱</span><span>Mobile &amp; Android Apps</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-cyan"><span class="m-icon">🚀</span><span>Local SEO &amp; Google Maps</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-gold"><span class="m-icon">🏪</span><span>Shop &amp; Clinic POS Solutions</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-red"><span class="m-icon">🛡️</span><span>99.9% Uptime Cloud Hosting</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-green"><span class="m-icon">💬</span><span>WhatsApp CRM &amp; Orders</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item"><span class="m-icon">⏱️</span><span>Ultra-Fast 95+ PageSpeed</span></span>
+                    <span class="marquee-sep">✦</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-item accent-cyan"><span class="m-icon">⚡</span><strong>High-performance websites</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-gold"><span class="m-icon">💼</span><strong>Custom billing software</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-green"><span class="m-icon">📍</span><strong>Google Business Listings</strong></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item"><span class="m-icon">📱</span><span>Mobile &amp; Android Apps</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-cyan"><span class="m-icon">🚀</span><span>Local SEO &amp; Google Maps</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-gold"><span class="m-icon">🏪</span><span>Shop &amp; Clinic POS Solutions</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-red"><span class="m-icon">🛡️</span><span>99.9% Uptime Cloud Hosting</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item accent-green"><span class="m-icon">💬</span><span>WhatsApp CRM &amp; Orders</span></span>
+                    <span class="marquee-sep">✦</span>
+                    <span class="marquee-item"><span class="m-icon">⏱️</span><span>Ultra-Fast 95+ PageSpeed</span></span>
+                    <span class="marquee-sep">✦</span>
+                </div>
+            </div>
+        </div>
 
         <!-- HERO SECTION -->
         <div class="hero">
