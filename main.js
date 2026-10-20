@@ -97,7 +97,7 @@
                 const needs = document.getElementById('bizNeeds').value.trim();
 
                 if (submitBtn) submitBtn.disabled = true;
-                if (btnText) btnText.textContent = 'Sending to Gmail...';
+                if (btnText) btnText.textContent = 'Sending Message...';
                 if (btnIcon) btnIcon.textContent = '⏳';
 
                 function showSuccess() {
@@ -106,14 +106,14 @@
                         statusDiv.style.background = 'rgba(37, 211, 102, 0.15)';
                         statusDiv.style.color = '#4ade80';
                         statusDiv.style.border = '1px solid rgba(74, 222, 128, 0.3)';
-                        statusDiv.innerHTML = '<strong>✓ Message sent successfully!</strong> It has been delivered directly to Gmail (almasneyamt786@gmail.com). We will reach out shortly.';
+                        statusDiv.innerHTML = '<strong>✓ Message sent successfully!</strong> It has been delivered directly to support@mahmasgroup.online. We will reach out shortly.';
                     }
                     contactForm.reset();
                     if (submitBtn) submitBtn.disabled = false;
                     if (btnText) btnText.textContent = 'Message Sent!';
                     if (btnIcon) btnIcon.textContent = '✓';
                     setTimeout(() => {
-                        if (btnText) btnText.textContent = 'Send Message to Gmail';
+                        if (btnText) btnText.textContent = 'Send Message';
                         if (btnIcon) btnIcon.textContent = '✉️';
                     }, 5000);
                 }
@@ -124,15 +124,15 @@
                         statusDiv.style.background = 'rgba(239, 68, 68, 0.15)';
                         statusDiv.style.color = '#f87171';
                         statusDiv.style.border = '1px solid rgba(239, 68, 68, 0.3)';
-                        statusDiv.innerHTML = '<strong>Note:</strong> ' + (errMsg || 'Direct transmission completed.') + '<br>You can also reach directly at <a href="mailto:almasneyamt786@gmail.com" style="color: #fff; text-decoration: underline;">almasneyamt786@gmail.com</a>';
+                        statusDiv.innerHTML = '<strong>Note:</strong> ' + (errMsg || 'Direct transmission completed.') + '<br>You can also reach directly at <a href="mailto:support@mahmasgroup.online" style="color: #fff; text-decoration: underline;">support@mahmasgroup.online</a>';
                     }
                     if (submitBtn) submitBtn.disabled = false;
-                    if (btnText) btnText.textContent = 'Send Message to Gmail';
+                    if (btnText) btnText.textContent = 'Send Message';
                     if (btnIcon) btnIcon.textContent = '✉️';
                 }
 
                 function sendViaDirectService() {
-                    // Direct API delivery to Gmail almasneyamt786@gmail.com
+                    // Direct API delivery to support@mahmasgroup.online
                     fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -145,7 +145,7 @@
                             business: business,
                             category: type,
                             message: needs,
-                            to: 'almasneyamt786@gmail.com'
+                            to: 'support@mahmasgroup.online'
                         })
                     })
                     .then(res => res.json())
@@ -157,12 +157,12 @@
                         }
                     })
                     .catch(() => {
-                        window.location.href = 'mailto:almasneyamt786@gmail.com?subject=' + encodeURIComponent('MAHMAS GROUP Enquiry from ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nBusiness: ' + business + ' (' + type + ')\nRequirements: ' + needs);
+                        window.location.href = 'mailto:support@mahmasgroup.online?subject=' + encodeURIComponent('MAHMAS GROUP Enquiry from ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nBusiness: ' + business + ' (' + type + ')\nRequirements: ' + needs);
                         showSuccess();
                     });
                 }
 
-                // If user configured EmailJS, use it; otherwise deliver directly to Gmail
+                // If user configured EmailJS, use it; otherwise deliver directly to support@mahmasgroup.online
                 if (window.emailjs && window.EMAILJS_PUBLIC_KEY && window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
                     emailjs.send(window.EMAILJS_SERVICE_ID, window.EMAILJS_TEMPLATE_ID, {
                         user_name: name,
@@ -171,7 +171,7 @@
                         business_name: business,
                         business_type: type,
                         message: needs,
-                        to_email: 'almasneyamt786@gmail.com'
+                        to_email: 'support@mahmasgroup.online'
                     }).then(() => {
                         showSuccess();
                     }).catch(err => {
