@@ -120,11 +120,12 @@
 
                 function showError(errMsg) {
                     if (statusDiv) {
+                        const cleanMsg = (typeof errMsg === 'string') ? errMsg.replace(/</g, '&lt;').replace(/>/g, '&gt;') : 'Direct transmission completed.';
                         statusDiv.style.display = 'block';
                         statusDiv.style.background = 'rgba(239, 68, 68, 0.15)';
                         statusDiv.style.color = '#f87171';
                         statusDiv.style.border = '1px solid rgba(239, 68, 68, 0.3)';
-                        statusDiv.innerHTML = '<strong>Note:</strong> ' + (errMsg || 'Direct transmission completed.') + '<br>You can also reach directly at <a href="mailto:support@mahmasgroup.online" style="color: #fff; text-decoration: underline;">support@mahmasgroup.online</a>';
+                        statusDiv.innerHTML = '<strong>Note:</strong> ' + cleanMsg + '<br>You can also reach directly at <a href="mailto:support@mahmasgroup.online" style="color: #fff; text-decoration: underline;">support@mahmasgroup.online</a>';
                     }
                     if (submitBtn) submitBtn.disabled = false;
                     if (btnText) btnText.textContent = 'Send Message';
