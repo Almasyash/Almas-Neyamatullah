@@ -26,7 +26,7 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="../favicon.png" />
     <link rel="shortcut icon" href="../favicon.ico" />
-    <link rel="apple-touch-icon" href="../favicon.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,7 +56,31 @@
     </script>
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../style.css?v=2.5" />
+    
+    <!-- CRITICAL BULLETPROOF SLIDE-OUT MENU CSS -->
+    <style>
+    #site-menu{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(86vw,360px);transform:translateX(100%);visibility:hidden;z-index:1000;overflow-y:auto;overflow-x:hidden;background:rgba(14,14,18,0.98);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-left:1px solid rgba(255,255,255,0.09);box-shadow:-15px 0 50px rgba(0,0,0,0.9),-4px 0 25px rgba(204,34,34,0.18);transition:transform .3s cubic-bezier(.16,1,.3,1),visibility .3s ease;display:flex;flex-direction:column;box-sizing:border-box;}
+    #site-menu.open{transform:translateX(0)!important;visibility:visible!important;}
+    .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease;z-index:999;}
+    .menu-overlay.open{opacity:1!important;visibility:visible!important;pointer-events:auto!important;}
+    body.menu-open{overflow:hidden!important;touch-action:none;}
+    .menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;background:rgba(255,255,255,0.05)!important;border:1px solid rgba(255,255,255,0.2)!important;border-radius:8px!important;color:#ffffff!important;cursor:pointer!important;position:relative!important;z-index:101!important;pointer-events:auto!important;flex-shrink:0!important;box-sizing:border-box!important;transition:all .25s ease!important;}
+    .menu-toggle:hover{background:rgba(204,34,34,0.16)!important;border-color:#cc2222!important;box-shadow:0 0 16px rgba(204,34,34,0.4)!important;}
+    .menu-icon{width:22px!important;height:22px!important;display:block!important;stroke:#ffffff!important;pointer-events:none!important;flex-shrink:0!important;}
+    .menu-icon line{stroke:#ffffff!important;stroke-width:2.2px!important;transform-origin:12px 12px!important;transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .22s ease,stroke .25s ease!important;}
+    .menu-toggle.open .line-1{transform:translateY(6px) rotate(45deg)!important;stroke:#cc2222!important;}
+    .menu-toggle.open .line-2{opacity:0!important;}
+    .menu-toggle.open .line-3{transform:translateY(-6px) rotate(-45deg)!important;stroke:#cc2222!important;}
+    .menu-nav{display:flex!important;flex-direction:column!important;gap:8px!important;width:100%!important;box-sizing:border-box!important;}
+    .menu-nav-link{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;box-sizing:border-box!important;min-height:58px!important;height:58px!important;padding:0 16px!important;background:rgba(255,255,255,0.025)!important;border:1px solid rgba(255,255,255,0.07)!important;border-radius:8px!important;color:#ffffff!important;text-decoration:none!important;transition:transform .22s ease,background .22s ease,border-color .22s ease,color .22s ease,box-shadow .22s ease!important;gap:12px!important;}
+    .menu-nav-link:hover,.menu-nav-link.active{background:rgba(204,34,34,0.14)!important;border-color:rgba(204,34,34,0.45)!important;color:#ffffff!important;transform:translateX(4px)!important;box-shadow:0 4px 18px rgba(204,34,34,0.25)!important;}
+    .menu-num{font-family:Inter,sans-serif!important;font-size:0.82rem!important;font-weight:700!important;color:#cc2222!important;letter-spacing:0.05em!important;min-width:26px!important;text-align:left!important;flex-shrink:0!important;}
+    .menu-name{font-family:Inter,sans-serif!important;font-size:0.94rem!important;font-weight:700!important;letter-spacing:0.05em!important;text-transform:uppercase!important;flex-grow:1!important;text-align:left!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#ffffff!important;}
+    .menu-arrow{color:rgba(255,255,255,0.35)!important;font-size:1.15rem!important;transition:transform .2s ease,color .2s ease!important;flex-shrink:0!important;margin-left:auto!important;}
+    .menu-nav-link:hover .menu-arrow,.menu-nav-link.active .menu-arrow{transform:translateX(3px)!important;color:#cc2222!important;}
+    @media(max-width:480px){.menu-toggle{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;}.menu-icon{width:20px!important;height:20px!important;}.menu-nav-link{min-height:52px!important;height:52px!important;padding:0 14px!important;}.menu-name{font-size:0.88rem!important;}.menu-num{font-size:0.78rem!important;}}
+    </style>
 </head>
 <body>
 
@@ -71,8 +95,8 @@
         <div class="wrap nav-wrap">
             <a class="brand-link" href="../index.html" title="MAHMAS GROUP Bettiah">
                 <picture>
-                    <source srcset="../assets/images/mahmas_emblem_transparent.webp" type="image/webp" />
-                    <img src="../assets/images/mahmas_emblem_transparent.png" alt="MAHMAS GROUP Logo" class="brand-logo-img" width="34" height="34" />
+                    <source srcset="../assets/images/mg_monogram_badge.webp" type="image/webp" />
+                    <img src="../assets/images/mg_monogram_badge.png" alt="MAHMAS GROUP Official Blue & Gold MG Logo" class="brand-logo-img" width="34" height="34" />
                 </picture>
                 <span class="brand-title">MAHMAS GROUP<span class="brand-dot"> .</span></span>
                 <span class="location-tag">Bettiah · MSME</span>
@@ -81,68 +105,133 @@
             <nav aria-label="Main Navigation">
                 <a href="../index.html">Home</a>
                 <a href="../services.html" class="active">Services</a>
-                <a href="../work.html">Work</a>
                 <a href="../pricing.html">Pricing</a>
                 <a href="../about.html">About</a>
                 <a href="../contact.html">Contact</a>
+                <a href="../updates/">Updates</a>
             </nav>
 
             <div class="header-actions">
-                <a href="../personal/portfolio.html" class="btn btn-outline" title="Founder Portfolio">
-                    <span>&larr;</span> Portfolio
+                <a href="../work.html" class="btn btn-outline" title="Founder Profile">
+                    Founder Profile
                 </a>
-                <a href="https://wa.me/917033761519?text=Hello%20MAHMAS%20GROUP%2C%20I%20want%20to%20discuss%20services" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" title="Chat on WhatsApp">
-                    WhatsApp
-                </a>
+                <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-menu">
+                    <svg class="menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line class="line-1" x1="3" y1="6" x2="21" y2="6"></line>
+                        <line class="line-2" x1="3" y1="12" x2="21" y2="12"></line>
+                        <line class="line-3" x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- HORIZONTAL SERVICES SCROLLING MARQUEE BANNER -->
-    <div class="marquee-strip" role="region" aria-label="Services offered by MAHMAS GROUP">
-        <div class="marquee-track">
-            <div class="marquee-content">
-                <span class="marquee-item accent-cyan"><span class="m-icon">⚡</span><strong>High-performance websites</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-gold"><span class="m-icon">💼</span><strong>Custom billing software</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-green"><span class="m-icon">📍</span><strong>Google Business Listings</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item"><span class="m-icon">📱</span><span>Mobile &amp; Android Apps</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-cyan"><span class="m-icon">🚀</span><span>Local SEO &amp; Google Maps</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-gold"><span class="m-icon">🏪</span><span>Shop &amp; Clinic POS Solutions</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-red"><span class="m-icon">🛡️</span><span>99.9% Uptime Cloud Hosting</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-green"><span class="m-icon">💬</span><span>WhatsApp CRM &amp; Orders</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item"><span class="m-icon">⏱️</span><span>Ultra-Fast 95+ PageSpeed</span></span>
-                <span class="marquee-sep">✦</span>
+    <!-- SLIDE-OUT NAVIGATION MENU & OVERLAY -->
+    <div id="menuOverlay" class="menu-overlay" aria-hidden="true"></div>
+    <aside id="site-menu" aria-label="Site Navigation" aria-hidden="true">
+        <div class="menu-header">
+            <div class="menu-brand">
+                <picture>
+                    <source srcset="../assets/images/mg_monogram_badge.webp" type="image/webp" />
+                    <img src="../assets/images/mg_monogram_badge.png" alt="MAHMAS GROUP Official Blue & Gold MG Logo" width="28" height="28" style="border-radius: 50%;" />
+                </picture>
+                <div class="menu-brand-text">
+                    <span class="menu-brand-title">MAHMAS GROUP<span class="brand-dot"> .</span></span>
+                    <span class="menu-brand-sub">Bettiah &middot; MSME</span>
+                </div>
             </div>
-            <div class="marquee-content" aria-hidden="true">
-                <span class="marquee-item accent-cyan"><span class="m-icon">⚡</span><strong>High-performance websites</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-gold"><span class="m-icon">💼</span><strong>Custom billing software</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-green"><span class="m-icon">📍</span><strong>Google Business Listings</strong></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item"><span class="m-icon">📱</span><span>Mobile &amp; Android Apps</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-cyan"><span class="m-icon">🚀</span><span>Local SEO &amp; Google Maps</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-gold"><span class="m-icon">🏪</span><span>Shop &amp; Clinic POS Solutions</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-red"><span class="m-icon">🛡️</span><span>99.9% Uptime Cloud Hosting</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item accent-green"><span class="m-icon">💬</span><span>WhatsApp CRM &amp; Orders</span></span>
-                <span class="marquee-sep">✦</span>
-                <span class="marquee-item"><span class="m-icon">⏱️</span><span>Ultra-Fast 95+ PageSpeed</span></span>
-                <span class="marquee-sep">✦</span>
+            <button id="menuClose" class="menu-close-btn" aria-label="Close navigation menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="menu-scroll">
+            <!-- SECTION 1: MAIN PAGES -->
+            <div class="menu-section">
+                <div class="menu-kicker">
+                    <span class="kanji">主要</span>
+                    <span>MAIN PAGES</span>
+                </div>
+                <nav class="menu-nav">
+                    <a href="../index.html" class="menu-nav-link">
+                        <span class="menu-num">01</span>
+                        <span class="menu-name">HOME</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                    <a href="../services.html" class="menu-nav-link active">
+                        <span class="menu-num">02</span>
+                        <span class="menu-name">SERVICES</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                    <a href="../pricing.html" class="menu-nav-link">
+                        <span class="menu-num">03</span>
+                        <span class="menu-name">PRICING PLANS</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                    <a href="../about.html" class="menu-nav-link">
+                        <span class="menu-num">04</span>
+                        <span class="menu-name">ABOUT &amp; MSME</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                    <a href="../contact.html" class="menu-nav-link">
+                        <span class="menu-num">05</span>
+                        <span class="menu-name">CONTACT &amp; STUDIO</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                    <a href="../updates/" class="menu-nav-link">
+                        <span class="menu-num">06</span>
+                        <span class="menu-name">UPDATES</span>
+                        <span class="menu-arrow">&rarr;</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- SECTION 2: SERVICES & SOLUTIONS (6 SUB-LINKS) -->
+            <div class="menu-section">
+                <div class="menu-kicker">
+                    <span class="kanji">業務</span>
+                    <span>SERVICES &amp; SOLUTIONS</span>
+                </div>
+                <div class="menu-sublinks">
+                    <a href="../services/website-design/" class="menu-sublink-item">⚡ Website Design</a>
+                    <a href="../services/billing-software/" class="menu-sublink-item">💼 Billing &amp; POS Software</a>
+                    <a href="../services/google-business-listing/" class="menu-sublink-item">📍 Google Business Listing</a>
+                    <a href="../services/mobile-app-development/" class="menu-sublink-item">📱 Mobile App Development</a>
+                    <a href="../services/ecommerce-solutions/" class="menu-sublink-item">🛍️ E-Commerce Solutions</a>
+                    <a href="../services/website-maintenance/" class="menu-sublink-item">🛡️ Website Maintenance &amp; Care</a>
+                </div>
+            </div>
+
+            <!-- SECTION 3: LEGAL & COMPLIANCE -->
+            <div class="menu-section">
+                <div class="menu-kicker">
+                    <span class="kanji">規約</span>
+                    <span>LEGAL &amp; COMPLIANCE</span>
+                </div>
+                <div class="menu-policy-list">
+                    <a href="../privacy-policy/" class="menu-policy-link">Privacy Policy</a>
+                    <span class="menu-sep">&middot;</span>
+                    <a href="../terms/" class="menu-policy-link">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+            <!-- FOOTER CONTACT CTA -->
+            <div class="menu-footer">
+                <a href="https://wa.me/917033761519?text=Hello%20MAHMAS%20GROUP%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp menu-whatsapp-btn" title="Chat on WhatsApp">
+                    <span>💬</span> Chat on WhatsApp
+                </a>
+                <div class="menu-contact-info">
+                    <div><strong>Direct Call:</strong> <a href="tel:+917033761519">+91 7033761519</a> &middot; <a href="tel:+916254465166">+91 6254465166</a></div>
+                    <div><strong>Studio:</strong> Nahid Azam Manzil, Chhawani Bridge, Bettiah</div>
+                </div>
             </div>
         </div>
-    </div>
+    </aside>
+
+
 
     <!-- MAIN CONTENT -->
     <main id="top">
@@ -324,8 +413,8 @@
                 <div>
                     <div class="footer-brand" style="display: flex; align-items: center; gap: 10px;">
                         <picture>
-                            <source srcset="../assets/images/mahmas_emblem_transparent.webp" type="image/webp" />
-                            <img src="../assets/images/mahmas_emblem_transparent.png" alt="MAHMAS GROUP" width="24" height="24" style="vertical-align: middle; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.5));" />
+                            <source srcset="../assets/images/mg_monogram_badge.webp" type="image/webp" />
+                            <img src="../assets/images/mg_monogram_badge.png" alt="MAHMAS GROUP Official Blue & Gold MG Logo" width="24" height="24" style="vertical-align: middle; object-fit: contain; border-radius: 50%; filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));" />
                         </picture>
                         <span style="font-family: var(--font-jp); font-weight: 900; color: var(--accent); font-size: 1.25rem;">MAHMAS GROUP<span style="color: #00f2fe;"> .</span></span>
                     </div>
@@ -344,14 +433,12 @@
                 <div class="footer-links">
                     <a href="../index.html">Home</a>
                     <a href="../services.html">Services</a>
-                    <a href="../work.html">Work</a>
                     <a href="../pricing.html">Pricing</a>
                     <a href="../about.html">About</a>
                     <a href="../contact.html">Contact</a>
                     <a href="../updates/">Updates</a>
                     <a href="../privacy-policy/">Privacy</a>
                     <a href="../terms/">Terms</a>
-                    <a href="../personal/portfolio.html">Founder Portfolio</a>
                 </div>
             </div>
 
@@ -363,6 +450,7 @@
     </footer>
 
     <!-- SHARED INTERACTION SCRIPT -->
-    <script src="../main.js" defer></script>
-</body>
+    <script src="../assets/js/menu.js?v=2.5" defer></script>
+    <script src="../main.js?v=2.3" defer></script>
+    </body>
 </html>

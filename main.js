@@ -183,3 +183,37 @@
                 }
             });
         }
+
+        // 4. RESPONSIVE SLIDE-OUT SITE MENU (#site-menu & #menuToggle)
+        (function initSiteMenu() {
+            if (typeof window.toggleSiteMenu !== 'function') {
+                window.toggleSiteMenu = function(forceOpen) {
+                    const menu = document.getElementById('site-menu');
+                    const overlay = document.getElementById('menuOverlay');
+                    const toggleBtn = document.getElementById('menuToggle');
+                    if (!menu || !overlay) return;
+
+                    const isOpen = (typeof forceOpen === 'boolean') ? forceOpen : !menu.classList.contains('open');
+
+                    if (isOpen) {
+                        menu.classList.add('open');
+                        overlay.classList.add('open');
+                        if (toggleBtn) {
+                            toggleBtn.classList.add('open');
+                            toggleBtn.setAttribute('aria-expanded', 'true');
+                        }
+                        menu.setAttribute('aria-hidden', 'false');
+                        document.body.classList.add('menu-open');
+                    } else {
+                        menu.classList.remove('open');
+                        overlay.classList.remove('open');
+                        if (toggleBtn) {
+                            toggleBtn.classList.remove('open');
+                            toggleBtn.setAttribute('aria-expanded', 'false');
+                        }
+                        menu.setAttribute('aria-hidden', 'true');
+                        document.body.classList.remove('menu-open');
+                    }
+                };
+            }
+        })();
