@@ -929,6 +929,9 @@
         .footer-social-link.yt-link:hover {
             color: #ff0000 !important;
         }
+        .footer-social-link.maps-link:hover {
+            color: #38bdf8 !important;
+        }
         .footer-bottom {
             display: flex;
             align-items: center;
