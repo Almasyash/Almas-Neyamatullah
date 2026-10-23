@@ -911,6 +911,24 @@
         .footer-links a:hover {
             color: var(--accent);
         }
+        .footer-social-link {
+            transition: color 0.22s ease, transform 0.2s ease;
+        }
+        .footer-social-link:hover {
+            transform: translateY(-1px);
+        }
+        .footer-social-link.gh-link:hover {
+            color: #ffffff !important;
+        }
+        .footer-social-link.ig-link:hover {
+            color: #e1306c !important;
+        }
+        .footer-social-link.fb-link:hover {
+            color: #1877f2 !important;
+        }
+        .footer-social-link.yt-link:hover {
+            color: #ff0000 !important;
+        }
         .footer-bottom {
             display: flex;
             align-items: center;
